@@ -24,14 +24,16 @@ TEXT = {
         full="This is an investor education and awareness initiative. All Mutual Fund investors have to go through "
              "a one-time KYC (Know Your Customer) process. Investors should deal only with Registered Mutual Fund "
              "Distributors (MFD).",
-        since="Trusted Since 2008", scan="Scan &amp; say hi"),
+        since="Trusted Since 2008", scan="Scan &amp; say hi",
+        products=["Mutual Funds", "Fixed Deposits", "Debentures", "Gov. Bonds", "Capital Gain Bonds", "SIF", "GIFT City"]),
     "hi": dict(
         amfi="AMFI पंजीकृत म्यूचुअल फंड वितरक | ARN NO-60930",
         warn="म्यूचुअल फंड निवेश बाज़ार जोखिमों के अधीन हैं, योजना संबंधी सभी दस्तावेज़ ध्यान से पढ़ें।",
         full="यह निवेशक शिक्षा एवं जागरूकता पहल है। सभी म्यूचुअल फंड निवेशकों को एक बार KYC (अपने ग्राहक को "
              "जानिए) प्रक्रिया पूरी करनी होती है। निवेशकों को केवल पंजीकृत म्यूचुअल फंड वितरक (MFD) से ही "
              "लेन-देन करना चाहिए।",
-        since="2008 से भरोसेमंद", scan="स्कैन करें, बात करें"),
+        since="2008 से भरोसेमंद", scan="स्कैन करें, बात करें",
+        products=["म्यूचुअल फंड", "फिक्स्ड डिपॉज़िट", "डिबेंचर", "सरकारी बॉन्ड", "कैपिटल गेन बॉन्ड", "SIF", "GIFT City"]),
 }
 
 PHONE_SVG = ('<svg viewBox="0 0 24 24" class="ico" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 '
@@ -66,6 +68,12 @@ body.hi * { letter-spacing:0 !important; }
 .qrb .qr { background:#fff; padding:7px; border-radius:8px; }
 .qrb .qr svg { display:block; }
 .qrb .qrl { font-weight:700; margin-top:5px; white-space:nowrap; }
+.band { flex:none; height:40px; display:flex; align-items:center; gap:22px; padding:0 40px 0 0; background:var(--navy);
+  color:#fff; border-top:3px solid var(--orange); font-family:var(--sans); }
+.band .since { height:100%; display:flex; align-items:center; background:var(--orange); padding:0 22px 0 40px;
+  font-weight:800; font-size:19px; white-space:nowrap; clip-path:polygon(0 0,100% 0,calc(100% - 16px) 100%,0 100%); padding-right:34px; }
+.band .prods { flex:1; display:flex; justify-content:space-between; align-items:center; font-weight:700; font-size:19px; white-space:nowrap; }
+.band .sep { color:var(--orange); }
 .legal { flex:none; text-align:center; line-height:1.3; padding:3px 14px 4px; font-family:var(--sans); }
 .legal b { font-weight:700; }
 .legal .fn { opacity:.85; }
@@ -104,7 +112,7 @@ def qr_block(lang, message, size, label_size=13, color="#1B2666", label_color="i
 
 def legal(lang, panel, theme, note=""):
     t = TEXT[lang]
-    parts = [f'<div><b>{t["amfi"]}</b> &middot; {t["warn"]}</div>']
+    parts = [f'<div><b>{t["since"]} &middot; {t["amfi"]}</b> &middot; {t["warn"]}</div>']
     if panel in ("front", "back"):
         parts.append(f'<div>{t["full"]}</div>')
     if note:
@@ -112,7 +120,13 @@ def legal(lang, panel, theme, note=""):
     return f'<div class="legal {theme}" style="font-size:{LEGAL_SIZE[panel]}px">{"".join(parts)}</div>'
 
 
-def page(lang, title, w, h, css, stage, legal_html, bg):
+def products_band(lang):
+    t = TEXT[lang]
+    items = '<span class="sep">|</span>'.join(f"<span>{p}</span>" for p in t["products"])
+    return f'<div class="band"><div class="since">&#9733; {t["since"]}</div><div class="prods">{items}</div></div>'
+
+
+def page(lang, title, w, h, css, stage, legal_html, bg, band=""):
     return f"""<!DOCTYPE html>
 <html lang="{lang}">
 <head>
@@ -131,6 +145,7 @@ def page(lang, title, w, h, css, stage, legal_html, bg):
 <div class="stage">
 {stage}
 </div>
+{band}
 {legal_html}
 </div>
 </body>

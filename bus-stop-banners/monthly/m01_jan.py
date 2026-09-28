@@ -57,7 +57,7 @@ PAPER = """
 def panels(lang, t):
     items = "".join(f'<li class="strike">{i}</li>' for i in t["items"])
     front = dict(bg="var(--cream)", legal="navy", note=False, css=PAPER + """
-.paper { left:56px; top:28px; width:470px; height:296px; padding:14px 30px 0 70px; }
+.paper { left:56px; top:22px; width:470px; height:250px; padding:6px 30px 0 70px; }
 .paper .t { font-size:34px; color:var(--navy); line-height:40px; }
 .paper ul { list-style:none; font-size:32px; line-height:40px; color:var(--navy); margin-top:6px; }
 .copy { position:absolute; left:600px; right:56px; top:52px; }

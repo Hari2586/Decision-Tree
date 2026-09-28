@@ -45,9 +45,9 @@ def toggle(w, h, on_px):
 
 def panels(lang, t):
     front = dict(bg="var(--cream)", legal="navy", note=True, css=TOGGLE + """
-.tw { position:absolute; left:70px; top:92px; }
+.tw { position:absolute; left:70px; top:80px; }
 .tlbl { position:absolute; left:74px; top:38px; font-size:28px; font-weight:800; color:var(--navy); }
-.pause { position:absolute; left:470px; top:74px; width:92px; height:92px; border-radius:50%; background:var(--navy);
+.pause { position:absolute; left:420px; top:96px; width:92px; height:92px; border-radius:50%; background:var(--navy);
   display:flex; align-items:center; justify-content:center; gap:12px; box-shadow:0 8px 20px rgba(27,38,102,.3); }
 .pause i { width:12px; height:40px; background:#fff; border-radius:3px; }
 .copy { position:absolute; left:660px; right:60px; top:44px; }
@@ -55,11 +55,11 @@ def panels(lang, t):
 .copy .b { font-size:58px; margin-top:2px; }
 .copy .c { font-size:22px; font-weight:600; margin-top:12px; }
 .row { position:absolute; left:660px; right:60px; bottom:24px; display:flex; justify-content:space-between; align-items:center; }
-.chips { position:absolute; left:70px; bottom:34px; display:flex; gap:8px; flex-wrap:wrap; width:540px; }
-.chips span { border:2px solid var(--navy); border-radius:30px; padding:4px 12px; font-size:16px; font-weight:700; }
+.chips { position:absolute; left:70px; bottom:22px; display:flex; gap:8px; flex-wrap:nowrap; width:560px; }
+.chips span { border:2px solid var(--navy); border-radius:30px; padding:3px 10px; font-size:14px; font-weight:700; white-space:nowrap; }
 """, html=f"""
 <div class="tlbl">{t['toggle']}</div>
-<div class="tw">{toggle(380, 150, 44)}</div>
+<div class="tw">{toggle(330, 124, 40)}</div>
 <div class="pause"><i></i><i></i></div>
 <div class="chips">{''.join(f'<span>{c[0]}</span>' for c in t['cards'])}</div>
 <div class="copy"><div class="a">{t['f_h1']}</div><div class="b d">{t['f_h2']}</div><div class="c">{t['f_sub']}</div></div>
