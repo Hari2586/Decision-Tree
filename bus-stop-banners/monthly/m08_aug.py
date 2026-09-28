@@ -1,0 +1,85 @@
+"""August: Independence Day. India became independent in 1947. When will you? (retirement)"""
+from framework import call, logo, qr_block
+
+KEY = "08-aug"
+MSG = {"en": "Hi MoneyHoney! I saw your bus stop ad. I want to plan my retirement.",
+       "hi": "Namaste MoneyHoney! Maine bus stop par aapka ad dekha. Mujhe retirement planning karni hai."}
+NOTE = {"en": "*Illustration at an assumed 6% p.a. inflation for understanding only. Actual inflation may differ.",
+        "hi": "*6% वार्षिक अनुमानित महँगाई पर केवल समझाने हेतु उदाहरण। वास्तविक महँगाई अलग हो सकती है।"}
+T = {
+    "en": dict(
+        f_h1="India got its independence in 1947.", f_h2="When will you get yours?",
+        f_sub="Plan your financial freedom: retire on your terms.",
+        l_cap="India&rsquo;s independence year.", r_cap="Your financial independence year. Let&rsquo;s fill in the blank.",
+        b_h1='Freedom needs <span class="o">a number.</span>',
+        b_a="&#8377;50,000", b_al="monthly expenses today", b_b="&#8377;1.6 lakh*", b_bl="needed every month, 20 years later",
+        b_sub="Build a corpus that pays you every month, just like a salary."),
+    "hi": dict(
+        f_h1="भारत 1947 में आज़ाद हुआ।", f_h2="आप कब होंगे?",
+        f_sub="अपनी financial आज़ादी की planning: अपनी शर्तों पर रिटायर हों।",
+        l_cap="भारत की आज़ादी का साल।", r_cap="आपकी financial आज़ादी का साल। चलिए, खाली जगह भरें।",
+        b_h1='आज़ादी का भी <span class="o">एक नंबर होता है।</span>',
+        b_a="&#8377;50,000", b_al="आज महीने का खर्च", b_b="&#8377;1.6 लाख*", b_bl="20 साल बाद हर महीने की ज़रूरत",
+        b_sub="ऐसा फंड बनाइए जो सैलरी की तरह हर महीने आपको पैसा दे।"),
+}
+
+YEAR_CSS = """
+.yr { font-family:'Lora', serif; font-weight:700; line-height:.9; letter-spacing:-.02em; }
+.blank { color:var(--orange); }
+.blank u { text-decoration:none; display:inline-block; border-bottom:.08em solid var(--orange); width:1.05em; height:.7em; margin-left:.04em; }
+"""
+
+
+def panels(lang, t):
+    front = dict(bg="#fff", legal="navy", note=False, css=YEAR_CSS + """
+.y1 { position:absolute; left:56px; top:40px; font-size:150px; color:var(--navy); }
+.y2 { position:absolute; left:56px; top:180px; font-size:150px; }
+.copy { position:absolute; left:560px; right:60px; top:48px; }
+.copy .a { font-size:40px; color:var(--muted); font-family:var(--sans); font-weight:800; line-height:var(--lt); }
+.copy .b { font-size:64px; margin-top:4px; }
+.copy .c { font-size:22px; font-weight:600; margin-top:10px; }
+.row { position:absolute; left:560px; right:60px; bottom:26px; display:flex; justify-content:space-between; align-items:center; }
+.bar { position:absolute; left:500px; top:40px; bottom:30px; width:6px; background:var(--orange); }
+""", html=f"""
+<div class="y1 yr">1947</div><div class="y2 yr blank">20<u></u></div><div class="bar"></div>
+<div class="copy"><div class="a">{t['f_h1']}</div><div class="b d o">{t['f_h2']}</div><div class="c">{t['f_sub']}</div></div>
+<div class="row">{logo(42)}{call(44)}</div>""")
+
+    left = dict(bg="var(--navy)", legal="dark", note=False, css=YEAR_CSS + """
+.yr { position:absolute; left:26px; top:84px; font-size:126px; color:#fff; }
+.cap { position:absolute; left:30px; right:26px; top:222px; font-size:26px; color:var(--orange); }
+.bot { position:absolute; left:30px; bottom:14px; color:#fff; }
+.lg { position:absolute; left:28px; top:24px; }
+""", html=f"""
+<div class="lg">{logo(22, chip=True)}</div><div class="yr">1947</div><div class="cap d">{t['l_cap']}</div><div class="bot">{call(28)}</div>""")
+
+    right = dict(bg="#fff", legal="navy", note=False, css=YEAR_CSS + """
+.yr { position:absolute; left:26px; top:84px; font-size:126px; }
+.cap { position:absolute; left:30px; right:26px; top:222px; font-size:22px; color:var(--navy); }
+.bot { position:absolute; left:30px; bottom:14px; }
+.lg { position:absolute; left:28px; top:24px; }
+""", html=f"""
+<div class="lg">{logo(24)}</div><div class="yr blank">20<u></u></div><div class="cap d">{t['r_cap']}</div><div class="bot">{call(28)}</div>""")
+
+    back = dict(bg="var(--cream)", legal="navy", note=True, css=YEAR_CSS + """
+.lg { position:absolute; left:44px; top:26px; }
+.h1 { position:absolute; left:44px; width:360px; top:96px; font-size:46px; }
+.flow { position:absolute; left:440px; right:320px; top:56px; display:flex; flex-direction:column; gap:12px; }
+.bx { background:#fff; border-radius:14px; padding:14px 18px; box-shadow:0 2px 10px rgba(27,38,102,.07); }
+.bx .v { font-family:var(--display); font-weight:var(--dw); font-size:44px; line-height:1.05; }
+.bx .l { font-size:15px; color:var(--muted); font-weight:600; }
+.bx.hl { background:var(--navy); } .bx.hl .v { color:var(--orange); } .bx.hl .l { color:rgba(255,255,255,.85); }
+.ar { font-size:14px; font-weight:800; color:var(--orange); padding-left:18px; letter-spacing:.06em; }
+.sub { position:absolute; left:44px; width:360px; bottom:26px; font-size:16px; font-weight:600; }
+.cta { position:absolute; right:0; top:0; bottom:0; width:280px; background:var(--orange); color:#fff; display:flex;
+  flex-direction:column; align-items:center; justify-content:center; gap:14px; }
+.cta .call .ico { color:#fff; }
+""", html=f"""
+<div class="lg">{logo(42)}</div>
+<div class="h1 d">{t['b_h1']}</div>
+<div class="flow"><div class="bx"><div class="v">{t['b_a']}</div><div class="l">{t['b_al']}</div></div>
+<div class="ar">&darr; 6% &times; 20</div>
+<div class="bx hl"><div class="v">{t['b_b']}</div><div class="l">{t['b_bl']}</div></div></div>
+<div class="sub">{t['b_sub']}</div>
+<div class="cta">{qr_block(lang, MSG[lang], 128, 14, label_color="#fff")}{call(26)}</div>""")
+    return dict(front=front, left=left, right=right, back=back)
