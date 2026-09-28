@@ -99,7 +99,7 @@ def logo_block(cls="brand"):
     return f"""<div class="{cls}">
   <img class="logo" src="data:image/png;base64,{LOGO}" alt="MoneyHoney">
   <div class="tagline">Think Big &bull; Act Fast</div>
-  <div class="trusted">(Trusted Since 2007)</div>
+  <div class="trusted">(Trusted Since 2008)</div>
 </div>"""
 
 
@@ -152,7 +152,7 @@ FRONT_BODY = f"""
   <div class="num">{PHONE_ICON} {PHONE_DISPLAY[4:]}</div>
   <div class="row">
     <div class="qr">{QR}</div>
-    <p><b>Scan to call</b><br>or dial +91 77380 32704<br>Mon&ndash;Sat</p>
+    <p><b>Scan to call</b><br>or dial +91 77380 32704</p>
   </div>
 </div>
 <div class="foot"><div class="amfi">AMFI Registered Mutual Fund Distributor &nbsp;<span class="o">|</span>&nbsp; <b>ARN NO-60930</b></div></div>
@@ -201,7 +201,7 @@ def side_body(pre, h1, sub):
   </div>
 </div>
 <div class="foot">
-  <div class="amfi">AMFI Registered Mutual Fund Distributor | ARN NO-60930 | Trusted Since 2007</div>
+  <div class="amfi">AMFI Registered Mutual Fund Distributor | ARN NO-60930 | Trusted Since 2008</div>
   <div class="disc">Mutual Fund investments are subject to market risks, read all scheme related documents carefully.</div>
 </div>
 """
@@ -254,11 +254,11 @@ BACK_BODY = f"""
 <div class="main">
   <div class="head">
     <img class="logo" src="data:image/png;base64,{LOGO}" alt="MoneyHoney">
-    <div><div class="tagline">Think Big &bull; Act Fast</div><div class="trusted">(Trusted Since 2007)</div></div>
+    <div><div class="tagline">Think Big &bull; Act Fast</div><div class="trusted">(Trusted Since 2008)</div></div>
   </div>
   <h1>You have a few minutes.<br><span class="o">Let&rsquo;s talk about your next 20 years.</span></h1>
   <div class="reasons">
-    <div class="r"><div class="n">01</div><div><div class="t">Trusted since 2007</div><div class="s">Families have relied on us for years.</div></div></div>
+    <div class="r"><div class="n">01</div><div><div class="t">Trusted since 2008</div><div class="s">Families have relied on us for years.</div></div></div>
     <div class="r"><div class="n">02</div><div><div class="t">One advisor, every option</div><div class="s">MFs, FDs, bonds, SIF &amp; GIFT City in one place.</div></div></div>
     <div class="r"><div class="n">03</div><div><div class="t">Free portfolio review</div><div class="s">Share your goal, get a clear plan. No charge.</div></div></div>
   </div>
@@ -269,7 +269,7 @@ BACK_BODY = f"""
   <div class="num">{PHONE_ICON} {PHONE_DISPLAY[4:]}</div>
   <div class="qr">{QR}</div>
   <div class="scan"><b>Scan to call</b> &bull; +91 77380 32704</div>
-  <div class="hrs">Call Mon&ndash;Sat &bull; Free portfolio review</div>
+  <div class="hrs">One call &bull; Free portfolio review</div>
 </div>
 <div class="strip">
   <div class="services">{services_html()}</div>
