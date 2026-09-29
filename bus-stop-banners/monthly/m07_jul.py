@@ -13,7 +13,7 @@ T = {
         l_words=["Job loss.", "Hospital bill.", "Urgent repair."], l_cap="Life doesn&rsquo;t check the forecast.",
         r_big="6 months", r_cap="of expenses, kept ready. Your financial umbrella.",
         b_h1='How big should <span class="o">your umbrella</span> be?',
-        b_sub="Keep 6 months of expenses safe, easy to withdraw, and separate from long-term money.",
+        b_sub="Keep 6 months of expenses set aside, easy to withdraw, and separate from long-term money.",
         eq=[("&#8377;40,000", "monthly expenses"), ("6 months", "of cover"), ("&#8377;2.4 lakh*", "emergency fund")]),
     "hi": dict(
         f_h1="तूफ़ान के बीच कोई छाता नहीं खरीदता।",
@@ -21,7 +21,7 @@ T = {
         l_words=["नौकरी जाना।", "अस्पताल का बिल।", "अचानक मरम्मत।"], l_cap="मुसीबत मौसम देखकर नहीं आती।",
         r_big="6 महीने", r_cap="के खर्च, हमेशा तैयार। यही है आपका financial छाता।",
         b_h1='आपका <span class="o">छाता</span> कितना बड़ा हो?',
-        b_sub="6 महीने के खर्च सुरक्षित रखें, आसानी से निकालने लायक और लंबी अवधि के पैसों से अलग।",
+        b_sub="6 महीने के खर्च अलग रखें, जो ज़रूरत पड़ने पर आसानी से निकल सकें।",
         eq=[("&#8377;40,000", "महीने का खर्च"), ("6 महीने", "की सुरक्षा"), ("&#8377;2.4 लाख*", "emergency fund")]),
 }
 
@@ -39,7 +39,7 @@ def umb(c1, c2):
 
 def panels(lang, t):
     front = dict(bg="#0C1632", legal="navy", note=False, css=f".stage {{ {RAIN} }}" + """
-.u { position:absolute; left:70px; top:30px; width:300px; height:300px; }
+.u { position:absolute; left:90px; top:18px; width:250px; height:250px; }
 .dry { position:absolute; left:92px; top:168px; width:256px; height:160px; background:#0C1632;
   clip-path:polygon(0 0, 100% 0, 88% 100%, 12% 100%); opacity:.9; }
 .copy { position:absolute; left:440px; right:60px; top:44px; color:#fff; }

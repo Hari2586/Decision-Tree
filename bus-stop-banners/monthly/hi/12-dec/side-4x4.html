@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MoneyHoney 12-dec side hi</title>
+<link rel="stylesheet" href="../../assets/fonts.css">
+<style>
+
+* { margin:0; padding:0; box-sizing:border-box; }
+:root { --navy:#1B2666; --orange:#E8511A; --cream:#F4EFE9; --ink:#0C1632; --muted:#5B6478; --gold:#F6B53D; }
+body.en { --display:'Lora', serif; --sans:'DM Sans', sans-serif; --hand:'Caveat', cursive; --dw:700; --lt:1.04; }
+body.hi { --display:'Mukta', sans-serif; --sans:'Mukta', sans-serif; --hand:'Kalam', cursive; --dw:800; --lt:1.16; }
+html, body { background:#8a8a8a; }
+body { padding:24px; font-family:var(--sans); }
+@media print { html, body { background:none; padding:0; } .banner { margin:0 !important; } }
+.banner { position:relative; overflow:hidden; margin:0 auto; display:flex; flex-direction:column; color:var(--navy); }
+.stage { position:relative; flex:1; min-height:0; overflow:hidden; }
+.d { font-family:var(--display); font-weight:var(--dw); line-height:var(--lt); }
+.s { font-family:var(--sans); }
+.h { font-family:var(--hand); font-weight:700; }
+.o { color:var(--orange); }
+body.hi * { letter-spacing:0 !important; }
+.g { color:var(--gold); }
+.w { color:#fff; }
+.n { color:var(--navy); }
+.call { display:inline-flex; align-items:center; gap:.28em; font-family:'DM Sans', sans-serif; font-weight:800;
+  white-space:nowrap; letter-spacing:-.01em; line-height:1; }
+.call .ico { width:.78em; height:.78em; color:var(--orange); flex:none; }
+.call.onorange .ico { color:#fff; }
+.logo img { display:block; height:100%; width:auto; }
+.logo.chip { background:#fff; border-radius:8px; padding:5px 10px; }
+.qrb { display:flex; flex-direction:column; align-items:center; }
+.qrb .qr { background:#fff; padding:7px; border-radius:8px; }
+.qrb .qr svg { display:block; }
+.qrb .qrl { font-weight:700; margin-top:5px; white-space:nowrap; }
+.band { flex:none; height:40px; display:flex; align-items:center; gap:22px; padding:0 40px 0 0; background:var(--navy);
+  color:#fff; border-top:3px solid var(--orange); font-family:var(--sans); }
+.band .since { height:100%; display:flex; align-items:center; background:var(--orange); padding:0 22px 0 40px;
+  font-weight:800; font-size:19px; white-space:nowrap; clip-path:polygon(0 0,100% 0,calc(100% - 16px) 100%,0 100%); padding-right:34px; }
+.band .prods { flex:1; display:flex; justify-content:space-between; align-items:center; font-weight:700; font-size:19px; white-space:nowrap; }
+.band .sep { color:var(--orange); }
+.warn { flex:none; height:44px; display:flex; align-items:center; justify-content:center; text-align:center;
+  background:#fff; color:#0C1632; font-family:'DM Sans', sans-serif; font-weight:800; line-height:1.15; padding:0 14px;
+  border-top:3px solid var(--orange); }
+.legal { flex:none; text-align:center; line-height:1.3; padding:3px 14px 4px; font-family:var(--sans); }
+.legal b { font-weight:700; }
+.legal .fn { opacity:.85; }
+.legal.dark { background:var(--ink); color:rgba(255,255,255,.88); }
+.legal.navy { background:var(--navy); color:rgba(255,255,255,.88); }
+.legal.light { background:#fff; color:var(--muted); border-top:1px solid #E0D8CE; }
+.legal.cream { background:var(--cream); color:var(--muted); border-top:1px solid #E0D8CE; }
+.legal.orange { background:var(--orange); color:#fff; }
+
+.banner { width:400px; height:400px; background:#fff; }
+
+.cal { background:#fff; border-radius:14px; overflow:hidden; box-shadow:0 16px 40px rgba(12,22,50,.3); text-align:center; }
+.cal .band { background:var(--navy); color:#fff; font-family:'DM Sans'; font-weight:800; letter-spacing:.2em; padding:.55em 0 .45em;
+  position:relative; }
+body.hi .cal .band { font-family:'Mukta'; letter-spacing:.05em; }
+.cal .band i { position:absolute; top:-.3em; width:.5em; height:1em; border-radius:.3em; background:#C9CFE0; }
+.cal .band i:first-child { left:25%; } .cal .band i:nth-child(2) { right:25%; }
+.cal .day { font-family:'Lora', serif; font-weight:700; color:var(--navy); line-height:1.05; padding-bottom:.05em; }
+
+.tg { position:relative; border-radius:999px; background:var(--orange); box-shadow:inset 0 -4px 0 rgba(0,0,0,.12); }
+.tg .knob { position:absolute; top:8%; right:4%; height:84%; aspect-ratio:1; border-radius:50%; background:#fff;
+  box-shadow:0 6px 16px rgba(0,0,0,.25); }
+.tg .on { position:absolute; left:12%; top:50%; transform:translateY(-50%); color:#fff; font-family:'DM Sans'; font-weight:800; }
+.hand { position:absolute; width:36%; height:0; border-top:6px dashed var(--navy); }
+
+.clk { position:relative; border-radius:50%; }
+.clk .in { position:absolute; inset:14%; border-radius:50%; background:var(--navy); }
+.clk .hd1, .clk .hd2 { position:absolute; left:50%; bottom:50%; width:6%; margin-left:-3%; background:#fff; border-radius:4px; transform-origin:bottom center; }
+.clk .hd1 { height:30%; transform:rotate(0deg); } .clk .hd2 { height:22%; transform:rotate(120deg); }
+.clk::before { content:''; position:absolute; left:50%; top:-10%; width:18%; height:12%; margin-left:-9%; background:var(--navy); border-radius:4px; }
+.tag { position:absolute; background:var(--orange); color:#fff; font-weight:800; border-radius:6px; transform:rotate(-8deg);
+  box-shadow:0 6px 14px rgba(0,0,0,.2); font-family:var(--sans); }
+
+.lg { position:absolute; left:26px; top:18px; }
+.vis { position:absolute; right:18px; top:12px; width:110px; height:104px; display:flex; align-items:center; justify-content:center; }
+.vis > svg { width:100%; height:100%; }
+.setup { position:absolute; left:26px; right:140px; top:62px; color:var(--navy); font-family:var(--sans); font-weight:800;
+  font-size:21px; line-height:1.18; opacity:.9; }
+.punch { position:absolute; left:26px; right:20px; top:128px; color:var(--orange); font-size:31px; }
+.cta { position:absolute; left:26px; right:20px; bottom:12px; display:flex; align-items:center; gap:14px; color:var(--navy); }
+.cta .qr { width:90px; height:90px; background:#fff; padding:6px; border-radius:7px; flex:none; }
+.cta .qr svg { display:block; }
+.cta .sl { font-size:13px; font-weight:700; opacity:.85; margin-bottom:5px; }
+.cta .call .ico { color:var(--orange); }
+.mn { background:#fff; transform:rotate(-4deg); box-shadow:0 6px 14px rgba(27,38,102,.15); padding:8px 14px; color:var(--navy);
+  font-size:22px; line-height:1.15; display:flex; flex-direction:column; border-radius:4px; }
+.mn s { text-decoration-color:var(--orange); text-decoration-thickness:3px; }
+.mn span { border:3px solid var(--orange); border-radius:50%; padding:0 8px; margin-left:-8px; }
+.bigv { font-family:'DM Sans'; font-weight:800; font-size:30px; color:var(--orange); white-space:nowrap; }
+.yr { white-space:nowrap; font-family:'Lora', serif; font-weight:700; font-size:50px; color:var(--orange); line-height:1; }
+.yr u { text-decoration:none; display:inline-block; border-bottom:.08em solid var(--orange); width:1.05em; height:.7em; margin-left:.04em; }
+
+</style>
+</head>
+<body class="hi" data-w="400" data-h="400">
+<div class="banner">
+<div class="stage">
+
+<div class="lg"><div class="logo" style="height:22px;"><img src="../../assets/logo.png" alt="MoneyHoney"></div></div>
+<div class="vis"><svg width="110" height="70" viewBox="0 0 110 70"><polyline points="" fill="none" stroke="#1B2666" stroke-width="5" stroke-linejoin="round"/><polyline points="0,42 38,12 61,30 104,6" fill="none" stroke="#E8511A" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/><path d="M80 4h24v24" fill="none" stroke="#E8511A" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+<div class="setup">हेल्थ चेक-अप: हो गया।</div>
+<div class="punch d">वेल्थ चेक-अप: मुफ़्त बुक करें।*</div>
+<div class="cta"><div class="qr"><svg viewBox="0 0 49 49" width="100%" height="100%" shape-rendering="crispEdges" class="segno"><path class="qrline" stroke="#1b2666" d="M0 0.5h7m3 0h1m4 0h3m5 0h2m2 0h5m3 0h2m3 0h1m1 0h7m-49 1h1m5 0h1m4 0h3m1 0h3m1 0h1m1 0h1m1 0h1m1 0h3m1 0h1m1 0h1m1 0h2m2 0h4m1 0h1m5 0h1m-49 1h1m1 0h3m1 0h1m1 0h1m2 0h5m2 0h3m4 0h1m1 0h7m1 0h1m3 0h2m1 0h1m1 0h3m1 0h1m-49 1h1m1 0h3m1 0h1m1 0h2m1 0h3m2 0h3m4 0h2m2 0h1m8 0h1m2 0h1m2 0h1m1 0h3m1 0h1m-49 1h1m1 0h3m1 0h1m1 0h1m3 0h1m2 0h3m3 0h6m3 0h1m1 0h2m1 0h3m4 0h1m1 0h3m1 0h1m-49 1h1m5 0h1m1 0h4m4 0h1m4 0h2m3 0h2m1 0h1m4 0h3m1 0h1m3 0h1m5 0h1m-49 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-41 1h3m1 0h1m1 0h2m1 0h2m3 0h1m3 0h1m1 0h1m1 0h1m1 0h2m1 0h1m2 0h2m-40 1h1m1 0h5m4 0h4m1 0h1m2 0h2m1 0h6m1 0h3m1 0h2m1 0h1m3 0h1m1 0h5m-44 1h2m2 0h1m1 0h10m3 0h4m1 0h5m1 0h1m1 0h3m4 0h2m-40 1h4m3 0h2m3 0h1m2 0h1m4 0h1m1 0h2m3 0h2m1 0h3m1 0h1m1 0h2m1 0h1m4 0h1m-48 1h2m1 0h1m2 0h1m2 0h1m8 0h1m4 0h1m3 0h1m1 0h4m1 0h1m4 0h1m2 0h3m1 0h2m-49 1h3m1 0h1m1 0h3m3 0h2m1 0h1m6 0h3m5 0h1m2 0h2m1 0h2m1 0h2m2 0h1m2 0h3m-49 1h2m6 0h1m1 0h1m1 0h3m2 0h2m2 0h2m1 0h2m2 0h3m2 0h1m1 0h3m4 0h2m3 0h1m-47 1h6m1 0h1m1 0h1m2 0h2m1 0h1m1 0h1m1 0h2m2 0h1m1 0h1m1 0h1m5 0h1m3 0h2m5 0h4m-49 1h2m5 0h1m2 0h1m1 0h2m4 0h3m4 0h2m1 0h3m1 0h1m1 0h1m4 0h1m1 0h1m2 0h1m3 0h1m-49 1h1m2 0h1m2 0h3m2 0h3m2 0h2m2 0h3m1 0h1m1 0h2m3 0h1m2 0h3m1 0h2m1 0h1m1 0h1m2 0h1m-47 1h2m3 0h1m2 0h2m1 0h1m1 0h6m3 0h2m5 0h2m1 0h2m2 0h2m3 0h3m-44 1h1m1 0h2m1 0h4m2 0h1m1 0h1m2 0h2m1 0h1m1 0h2m1 0h1m1 0h1m6 0h3m1 0h2m4 0h3m1 0h2m-49 1h2m3 0h1m1 0h1m1 0h4m1 0h1m1 0h4m3 0h1m3 0h2m1 0h3m4 0h4m1 0h3m3 0h1m-46 1h2m1 0h1m1 0h1m1 0h1m1 0h6m2 0h3m1 0h1m5 0h1m3 0h1m1 0h1m1 0h3m5 0h1m1 0h1m-49 1h1m1 0h1m4 0h3m3 0h1m2 0h2m1 0h1m1 0h1m2 0h2m1 0h1m2 0h2m1 0h1m1 0h3m4 0h3m-45 1h1m3 0h6m1 0h6m1 0h1m3 0h8m1 0h1m2 0h1m1 0h1m1 0h1m1 0h5m3 0h1m-49 1h1m1 0h1m1 0h1m3 0h3m4 0h2m1 0h2m1 0h2m3 0h1m1 0h1m4 0h1m3 0h2m1 0h1m3 0h2m2 0h1m-47 1h3m1 0h1m1 0h6m4 0h5m1 0h1m1 0h2m1 0h3m4 0h3m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m-48 1h1m2 0h1m3 0h1m1 0h2m2 0h6m1 0h2m3 0h1m2 0h2m2 0h1m1 0h3m1 0h2m3 0h2m-46 1h1m1 0h1m1 0h6m4 0h1m2 0h1m1 0h1m2 0h5m6 0h2m3 0h11m-47 1h2m1 0h1m4 0h1m2 0h1m2 0h3m2 0h4m1 0h1m1 0h6m1 0h1m4 0h1m4 0h1m2 0h1m-45 1h3m2 0h1m3 0h1m1 0h1m1 0h2m1 0h3m2 0h1m1 0h1m2 0h1m2 0h1m2 0h2m1 0h1m2 0h1m1 0h1m1 0h3m-44 1h1m1 0h6m1 0h2m1 0h1m3 0h5m1 0h1m1 0h2m4 0h1m1 0h1m1 0h1m5 0h1m-46 1h1m1 0h1m1 0h3m2 0h3m6 0h2m2 0h1m1 0h2m1 0h1m5 0h3m1 0h4m1 0h2m1 0h4m-49 1h2m1 0h1m1 0h1m1 0h2m3 0h5m1 0h2m5 0h4m2 0h2m4 0h1m3 0h1m1 0h1m3 0h1m-48 1h2m1 0h1m1 0h4m1 0h3m1 0h2m2 0h1m1 0h2m1 0h1m3 0h1m1 0h3m3 0h2m2 0h1m1 0h1m2 0h5m-49 1h6m1 0h1m3 0h1m1 0h1m3 0h3m1 0h2m1 0h1m1 0h1m1 0h3m2 0h1m1 0h1m1 0h1m3 0h1m1 0h1m3 0h1m-43 1h3m2 0h5m2 0h1m4 0h1m2 0h1m8 0h2m2 0h3m1 0h1m2 0h1m2 0h1m-49 1h3m1 0h2m1 0h1m1 0h1m1 0h1m8 0h3m1 0h5m3 0h1m4 0h2m1 0h1m-41 1h2m1 0h4m1 0h4m5 0h5m1 0h1m1 0h1m4 0h1m2 0h1m1 0h3m1 0h3m4 0h1m1 0h1m-49 1h1m1 0h3m3 0h4m1 0h1m5 0h1m1 0h5m2 0h1m1 0h1m2 0h1m1 0h1m1 0h1m1 0h2m2 0h1m1 0h1m1 0h1m-47 1h1m3 0h2m1 0h1m1 0h1m1 0h9m1 0h3m2 0h3m1 0h1m2 0h1m3 0h5m2 0h4m-48 1h3m4 0h2m4 0h1m2 0h2m2 0h1m1 0h7m1 0h2m2 0h1m1 0h2m1 0h1m4 0h1m1 0h1m-48 1h3m3 0h1m4 0h1m1 0h6m1 0h8m7 0h2m1 0h7m1 0h2m-40 1h1m2 0h4m2 0h3m1 0h2m3 0h1m2 0h2m1 0h2m1 0h3m2 0h1m3 0h2m1 0h1m-48 1h7m2 0h3m1 0h1m1 0h1m3 0h1m1 0h2m1 0h1m1 0h1m7 0h3m1 0h1m1 0h1m1 0h1m1 0h2m1 0h2m-49 1h1m5 0h1m1 0h2m1 0h1m3 0h1m3 0h4m3 0h1m1 0h6m6 0h1m3 0h1m2 0h1m-48 1h1m1 0h3m1 0h1m1 0h1m1 0h2m8 0h1m1 0h6m1 0h2m5 0h1m3 0h5m1 0h1m1 0h1m-49 1h1m1 0h3m1 0h1m1 0h1m2 0h2m1 0h3m1 0h2m2 0h2m3 0h1m1 0h2m4 0h3m2 0h5m2 0h2m-49 1h1m1 0h3m1 0h1m1 0h1m3 0h1m1 0h1m1 0h2m1 0h1m1 0h7m5 0h4m1 0h1m2 0h3m-44 1h1m5 0h1m3 0h3m2 0h4m1 0h3m1 0h2m2 0h6m3 0h1m1 0h1m2 0h1m5 0h1m-49 1h7m1 0h1m1 0h1m1 0h1m3 0h2m2 0h1m5 0h1m2 0h2m2 0h4m1 0h2m1 0h1m3 0h4"/></svg></div>
+<div><div class="sl">स्कैन करें, बात करें</div><div class="call " style="font-size:29px"><svg viewBox="0 0 24 24" class="ico" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span>74000 60800</span></div></div></div>
+</div>
+
+<div class="warn" style="font-size:13px">Mutual Fund investments are subject to market risks, read all scheme related documents carefully.</div><div class="legal navy" style="font-size:6.8px"><div><b>Since 2008 &middot; AMFI Registered Mutual Fund Distributor | ARN NO-60930</b></div><div class="fn">*Free, no-obligation portfolio review. Recommendations depend on your goals and risk profile.</div></div>
+</div>
+</body>
+</html>

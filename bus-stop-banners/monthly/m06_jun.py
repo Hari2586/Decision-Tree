@@ -37,10 +37,10 @@ def icon(svg, c1, c2):
 
 def panels(lang, t):
     front = dict(bg="var(--navy)", legal="dark", note=True, css="""
-.copy { position:absolute; left:60px; top:34px; right:520px; color:#fff; }
+.copy { position:absolute; left:60px; top:24px; right:520px; color:#fff; }
 .copy .a { font-size:44px; } .copy .b { font-size:44px; color:var(--orange); }
 .copy .q { font-size:26px; font-weight:700; margin-top:10px; color:rgba(255,255,255,.85); }
-.tl { position:absolute; left:60px; right:520px; bottom:40px; height:86px; }
+.tl { position:absolute; left:60px; right:520px; bottom:12px; height:86px; }
 .tl .ln { position:absolute; left:74px; right:74px; top:36px; border-top:5px dotted rgba(255,255,255,.5); }
 .tl .ic { position:absolute; top:0; width:74px; height:74px; }
 .tl .ic.a { left:0; } .tl .ic.b { right:0; }

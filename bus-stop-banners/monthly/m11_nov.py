@@ -45,14 +45,14 @@ def panels(lang, t):
 .or { position:absolute; left:48%; top:50%; width:84px; height:84px; margin:-30px 0 0 -42px; border-radius:50%; background:#fff;
   color:var(--navy); font-weight:800; font-size:28px; display:flex; align-items:center; justify-content:center; z-index:2;
   box-shadow:0 8px 20px rgba(0,0,0,.25); }
-.side { position:absolute; top:92px; color:#fff; display:flex; gap:24px; align-items:center; }
+.side { position:absolute; top:72px; color:#fff; display:flex; gap:24px; align-items:center; }
 .side.a { left:60px; } .side.bb { left:52%; margin-left:80px; }
-.side .ic { width:120px; height:120px; flex:none; }
+.side .ic { width:96px; height:96px; flex:none; }
 .side .l { font-size:20px; font-weight:800; opacity:.8; }
-.side .h { font-family:var(--display); font-weight:var(--dw); font-size:58px; line-height:var(--lt); }
+.side .h { font-family:var(--display); font-weight:var(--dw); font-size:50px; line-height:var(--lt); }
 .side .s { font-size:24px; font-weight:700; }
 .side.bb .s { color:var(--orange); }
-.row { position:absolute; left:52%; margin-left:80px; right:60px; bottom:22px; display:flex; justify-content:space-between; align-items:center; color:#fff; }
+.row { position:absolute; left:52%; margin-left:80px; right:60px; bottom:12px; display:flex; justify-content:space-between; align-items:center; color:#fff; }
 """, html=f"""
 <div class="b"></div><div class="top"><span>{t['top']}</span></div><div class="or">{t['or_']}</div>
 <div class="side a"><div class="ic">{BAG.replace('{c}', '#fff')}</div><div><div class="l">{t['a_lbl']}</div><div class="h">{t['a_h']}</div><div class="s">{t['a_s']}</div></div></div>

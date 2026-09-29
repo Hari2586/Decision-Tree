@@ -32,8 +32,8 @@ YEAR_CSS = """
 
 def panels(lang, t):
     front = dict(bg="#fff", legal="navy", note=False, css=YEAR_CSS + """
-.y1 { position:absolute; left:56px; top:40px; font-size:150px; color:var(--navy); }
-.y2 { position:absolute; left:56px; top:180px; font-size:150px; }
+.y1 { position:absolute; left:56px; top:22px; font-size:124px; color:var(--navy); }
+.y2 { position:absolute; left:56px; top:142px; font-size:124px; }
 .copy { position:absolute; left:560px; right:60px; top:48px; }
 .copy .a { font-size:40px; color:var(--muted); font-family:var(--sans); font-weight:800; line-height:var(--lt); }
 .copy .b { font-size:64px; margin-top:4px; }

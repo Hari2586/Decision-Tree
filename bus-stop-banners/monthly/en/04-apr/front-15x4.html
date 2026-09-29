@@ -40,6 +40,9 @@ body.hi * { letter-spacing:0 !important; }
   font-weight:800; font-size:19px; white-space:nowrap; clip-path:polygon(0 0,100% 0,calc(100% - 16px) 100%,0 100%); padding-right:34px; }
 .band .prods { flex:1; display:flex; justify-content:space-between; align-items:center; font-weight:700; font-size:19px; white-space:nowrap; }
 .band .sep { color:var(--orange); }
+.warn { flex:none; height:44px; display:flex; align-items:center; justify-content:center; text-align:center;
+  background:#fff; color:#0C1632; font-family:'DM Sans', sans-serif; font-weight:800; line-height:1.15; padding:0 14px;
+  border-top:3px solid var(--orange); }
 .legal { flex:none; text-align:center; line-height:1.3; padding:3px 14px 4px; font-family:var(--sans); }
 .legal b { font-weight:700; }
 .legal .fn { opacity:.85; }
@@ -58,10 +61,10 @@ body.hi * { letter-spacing:0 !important; }
 .m .arr { font-size:60px; font-weight:800; }
 .m.up .v, .m.up .arr { color:var(--navy); }
 .m.flat .v, .m.flat .arr { color:#B7BDCC; }
-.q { position:absolute; left:470px; top:222px; font-family:'Lora'; font-weight:700; font-size:90px; color:var(--orange); }
+.q { position:absolute; left:520px; top:150px; font-family:'Lora'; font-weight:700; font-size:80px; color:var(--orange); }
 .copy { position:absolute; left:660px; right:60px; top:48px; }
 .copy .a { font-size:52px; } .copy .b { font-size:52px; color:var(--orange); }
-.copy .c { font-size:21px; margin-top:12px; color:var(--muted); font-weight:600; }
+.copy .c { font-size:19px; margin-top:6px; color:var(--muted); font-weight:600; }
 .row { position:absolute; left:660px; right:60px; bottom:26px; display:flex; justify-content:space-between; align-items:center; }
 .st { position:absolute; left:0; bottom:0; opacity:.07; }
 
@@ -75,10 +78,10 @@ body.hi * { letter-spacing:0 !important; }
 <div class="m flat"><div class="k">SIP</div><div class="v">+0%</div><div class="arr">&rarr;</div></div></div>
 <div class="q">?</div>
 <div class="copy"><div class="a d">Your salary got a hike.</div><div class="b d">Did your SIP?</div><div class="c">Raise your SIP by 10% every year and see the difference.</div></div>
-<div class="row"><div class="logo" style="height:42px;"><img src="../../assets/logo.png" alt="MoneyHoney"></div><div class="call " style="font-size:44px"><svg viewBox="0 0 24 24" class="ico" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span>77380 32704</span></div></div>
+<div class="row"><div class="logo" style="height:42px;"><img src="../../assets/logo.png" alt="MoneyHoney"></div><div class="call " style="font-size:44px"><svg viewBox="0 0 24 24" class="ico" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span>74000 60800</span></div></div>
 </div>
-<div class="band"><div class="since">&#9733; Trusted Since 2008</div><div class="prods"><span>Mutual Funds</span><span class="sep">|</span><span>Fixed Deposits</span><span class="sep">|</span><span>Debentures</span><span class="sep">|</span><span>Gov. Bonds</span><span class="sep">|</span><span>Capital Gain Bonds</span><span class="sep">|</span><span>SIF</span><span class="sep">|</span><span>GIFT City</span></div></div>
-<div class="legal navy" style="font-size:8.6px"><div><b>Trusted Since 2008 &middot; AMFI Registered Mutual Fund Distributor | ARN NO-60930</b> &middot; Mutual Fund investments are subject to market risks, read all scheme related documents carefully.</div><div>This is an investor education and awareness initiative. All Mutual Fund investors have to go through a one-time KYC (Know Your Customer) process. Investors should deal only with Registered Mutual Fund Distributors (MFD).</div><div class="fn">*Illustration: &#8377;5,000 monthly SIP for 20 years at an assumed 12% p.a. return, with and without a 10% yearly step-up, for understanding only. Mutual funds do not guarantee returns.</div></div>
+<div class="band"><div class="since">&#9733; Since 2008</div><div class="prods"><span>Mutual Funds</span><span class="sep">|</span><span>Fixed Deposits</span><span class="sep">|</span><span>Debentures</span><span class="sep">|</span><span>Gov. Bonds</span><span class="sep">|</span><span>Capital Gain Bonds</span><span class="sep">|</span><span>SIF</span><span class="sep">|</span><span>GIFT City</span></div></div>
+<div class="warn" style="font-size:21px">Mutual Fund investments are subject to market risks, read all scheme related documents carefully.</div><div class="legal navy" style="font-size:8.6px"><div><b>Since 2008 &middot; AMFI Registered Mutual Fund Distributor | ARN NO-60930</b> &middot; This is an investor education and awareness initiative. All Mutual Fund investors have to go through a one-time KYC (Know Your Customer) process. Investors should deal only with Registered Mutual Fund Distributors (MFD). &middot; Fixed Deposits, Debentures, Gov. Bonds, Capital Gain Bonds and GIFT City products are not Mutual Fund products.</div><div class="fn">*Illustration: &#8377;5,000 monthly SIP for 20 years at an assumed 12% p.a. return, with and without a 10% yearly step-up, for understanding only. Mutual funds do not guarantee returns.</div></div>
 </div>
 </body>
 </html>

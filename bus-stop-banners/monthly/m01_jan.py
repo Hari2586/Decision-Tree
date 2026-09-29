@@ -103,12 +103,12 @@ def panels(lang, t):
 .copy .d { font-size:35px; margin-top:10px; }
 .sub { font-size:18px; margin-top:16px; color:var(--navy); font-weight:500; }
 .brand { position:absolute; left:44px; bottom:22px; }
-.chart { position:absolute; left:470px; top:36px; width:540px; height:250px; }
+.chart { position:absolute; left:480px; top:36px; width:500px; height:250px; }
 .chart .c1 { position:absolute; left:14px; top:0; font-size:15px; color:var(--navy); font-weight:700; }
 .chart .c2 { position:absolute; right:0; top:0; text-align:right; font-size:34px; color:var(--orange); }
 .chart svg { position:absolute; left:0; bottom:22px; }
 .chart .ax { position:absolute; bottom:0; font-size:13px; color:var(--muted); }
-.cta { position:absolute; right:0; top:0; bottom:0; width:170px; background:var(--navy); color:#fff;
+.cta { position:absolute; right:0; top:0; bottom:0; width:200px; background:var(--navy); color:#fff;
   display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; }
 .key { display:flex; gap:16px; position:absolute; left:14px; top:26px; font-size:13px; color:var(--muted); }
 .key i { display:inline-block; width:12px; height:12px; border-radius:3px; margin-right:5px; vertical-align:-1px; }
@@ -118,7 +118,7 @@ def panels(lang, t):
 <div class="chart">
   <div class="c2 d">{t['b_val']}</div>
   <div class="key"><span><i style="background:#1B2666"></i>{t['b_inv']}</span></div>
-  <svg width="540" height="160" viewBox="0 0 540 160">{_sip_bars()}</svg>
+  <svg width="500" height="160" viewBox="0 0 540 160">{_sip_bars()}</svg>
   <div class="ax" style="left:14px">{t['b_y1']}</div><div class="ax" style="right:14px">{t['b_y20']}</div>
 </div>
 <div class="cta">{qr_block(lang, MSG[lang], 118, 13, label_color="#fff")}{call(22)}</div>""")

@@ -64,10 +64,10 @@ def panels(lang, t):
 .m .arr { font-size:60px; font-weight:800; }
 .m.up .v, .m.up .arr { color:var(--navy); }
 .m.flat .v, .m.flat .arr { color:#B7BDCC; }
-.q { position:absolute; left:470px; top:222px; font-family:'Lora'; font-weight:700; font-size:90px; color:var(--orange); }
+.q { position:absolute; left:520px; top:150px; font-family:'Lora'; font-weight:700; font-size:80px; color:var(--orange); }
 .copy { position:absolute; left:660px; right:60px; top:48px; }
 .copy .a { font-size:52px; } .copy .b { font-size:52px; color:var(--orange); }
-.copy .c { font-size:21px; margin-top:12px; color:var(--muted); font-weight:600; }
+.copy .c { font-size:19px; margin-top:6px; color:var(--muted); font-weight:600; }
 .row { position:absolute; left:660px; right:60px; bottom:26px; display:flex; justify-content:space-between; align-items:center; }
 .st { position:absolute; left:0; bottom:0; opacity:.07; }
 """, html=f"""

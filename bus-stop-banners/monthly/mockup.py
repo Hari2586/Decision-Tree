@@ -14,18 +14,17 @@ S = 0.5  # previews are 2x; draw at 1 css px
 
 def compose(lang, key):
     d = PREV / lang / key
-    im = {p: Image.open(d / f"{p}.png") for p in ("front-15x4", "side-left-4x4", "side-right-4x4", "backdrop-12x4")}
+    im = {p: Image.open(d / f"{p}.png") for p in ("front-15x4", "side-4x4", "backdrop-12x4")}
     im = {k: v.resize((int(v.width * S), int(v.height * S))) for k, v in im.items()}
     gap, pad = 24, 30
-    W = 400 + 1200 + 400 + 2 * gap + 2 * pad
-    H = 400 + 400 + gap + 2 * pad + 40
+    W = 400 + 1200 + gap + 2 * pad
+    H = 400 + 400 + gap + 2 * pad + 20
     sheet = Image.new("RGB", (W, H), "#7d7d7d")
-    ImageDraw.Draw(sheet).text((pad, 12), f"{key.upper()}  |  {lang.upper()}", fill="white")
+    ImageDraw.Draw(sheet).text((pad, 12), f"{key.upper()}  |  {lang.upper()}  |  front, side, backdrop", fill="white")
     sheet.paste(im["front-15x4"], ((W - 1500) // 2, pad + 20))
     y = pad + 20 + 400 + gap
-    sheet.paste(im["side-left-4x4"], (pad, y))
+    sheet.paste(im["side-4x4"], (pad, y))
     sheet.paste(im["backdrop-12x4"], (pad + 400 + gap, y))
-    sheet.paste(im["side-right-4x4"], (pad + 1600 + 2 * gap, y))
     out = HERE.parent / "preview" / "monthly" / "mockups"
     out.mkdir(parents=True, exist_ok=True)
     sheet.save(out / f"{key}-{lang}.png")

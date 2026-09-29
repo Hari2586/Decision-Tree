@@ -42,14 +42,14 @@ def ecg(w, h, color_a="#1B2666", color_b="#E8511A", split=.55):
 
 def panels(lang, t):
     front = dict(bg="#fff", legal="navy", note=True, css="""
-.line { position:absolute; left:40px; right:40px; bottom:14px; opacity:.95; }
+.line { position:absolute; left:40px; right:40px; bottom:8px; opacity:.95; }
 .a { position:absolute; left:60px; top:36px; font-size:34px; font-weight:800; color:var(--muted); font-family:var(--sans); }
 .a b { color:#1F9D55; }
 .b { position:absolute; left:60px; top:84px; font-size:58px; }
 .b span { color:var(--orange); }
 .row { position:absolute; right:60px; top:36px; display:flex; flex-direction:column; align-items:flex-end; gap:12px; }
 """, html=f"""
-<div class="line">{ecg(1420, 130)}</div>
+<div class="line">{ecg(1420, 92)}</div>
 <div class="a">{t['f_a']} <b>{t['f_a2']} &#10003;</b></div>
 <div class="b d">{t['f_b']} <span>{t['f_b2']}</span></div>
 <div class="row">{call(44)}{logo(34)}</div>""")

@@ -11,30 +11,23 @@ import segno
 
 ROOT = pathlib.Path(__file__).parent
 ASSETS = "../../assets"
-PHONE = "77380 32704"
-WA_NUMBER = "917738032704"
+PHONE = "74000 60800"
+WA_NUMBER = "917400060800"
 
-SIZES = {"front": (1500, 400, "front-15x4"), "left": (400, 400, "side-left-4x4"),
-         "right": (400, 400, "side-right-4x4"), "back": (1200, 400, "backdrop-12x4")}
+SIZES = {"front": (1500, 400, "front-15x4"), "side": (400, 400, "side-4x4"), "back": (1200, 400, "backdrop-12x4")}
 
-TEXT = {
-    "en": dict(
-        amfi="AMFI Registered Mutual Fund Distributor | ARN NO-60930",
-        warn="Mutual Fund investments are subject to market risks, read all scheme related documents carefully.",
-        full="This is an investor education and awareness initiative. All Mutual Fund investors have to go through "
-             "a one-time KYC (Know Your Customer) process. Investors should deal only with Registered Mutual Fund "
-             "Distributors (MFD).",
-        since="Trusted Since 2008", scan="Scan &amp; say hi",
-        products=["Mutual Funds", "Fixed Deposits", "Debentures", "Gov. Bonds", "Capital Gain Bonds", "SIF", "GIFT City"]),
-    "hi": dict(
-        amfi="AMFI पंजीकृत म्यूचुअल फंड वितरक | ARN NO-60930",
-        warn="म्यूचुअल फंड निवेश बाज़ार जोखिमों के अधीन हैं, योजना संबंधी सभी दस्तावेज़ ध्यान से पढ़ें।",
-        full="यह निवेशक शिक्षा एवं जागरूकता पहल है। सभी म्यूचुअल फंड निवेशकों को एक बार KYC (अपने ग्राहक को "
-             "जानिए) प्रक्रिया पूरी करनी होती है। निवेशकों को केवल पंजीकृत म्यूचुअल फंड वितरक (MFD) से ही "
-             "लेन-देन करना चाहिए।",
-        since="2008 से भरोसेमंद", scan="स्कैन करें, बात करें",
-        products=["म्यूचुअल फंड", "फिक्स्ड डिपॉज़िट", "डिबेंचर", "सरकारी बॉन्ड", "कैपिटल गेन बॉन्ड", "SIF", "GIFT City"]),
-}
+# Compliance text stays in English on the Hindi banners too (only the creative copy is translated).
+LEGAL_EN = dict(
+    amfi="AMFI Registered Mutual Fund Distributor | ARN NO-60930",
+    warn="Mutual Fund investments are subject to market risks, read all scheme related documents carefully.",
+    full="This is an investor education and awareness initiative. All Mutual Fund investors have to go through "
+         "a one-time KYC (Know Your Customer) process. Investors should deal only with Registered Mutual Fund "
+         "Distributors (MFD).",
+    nonmf="Fixed Deposits, Debentures, Gov. Bonds, Capital Gain Bonds and GIFT City products are not Mutual Fund products.",
+    since="Since 2008",
+    products=["Mutual Funds", "Fixed Deposits", "Debentures", "Gov. Bonds", "Capital Gain Bonds", "SIF", "GIFT City"])
+TEXT = {"en": dict(LEGAL_EN, scan="Scan &amp; say hi"),
+        "hi": dict(LEGAL_EN, scan="स्कैन करें, बात करें")}
 
 PHONE_SVG = ('<svg viewBox="0 0 24 24" class="ico" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 '
              '15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 '
@@ -74,6 +67,9 @@ body.hi * { letter-spacing:0 !important; }
   font-weight:800; font-size:19px; white-space:nowrap; clip-path:polygon(0 0,100% 0,calc(100% - 16px) 100%,0 100%); padding-right:34px; }
 .band .prods { flex:1; display:flex; justify-content:space-between; align-items:center; font-weight:700; font-size:19px; white-space:nowrap; }
 .band .sep { color:var(--orange); }
+.warn { flex:none; height:44px; display:flex; align-items:center; justify-content:center; text-align:center;
+  background:#fff; color:#0C1632; font-family:'DM Sans', sans-serif; font-weight:800; line-height:1.15; padding:0 14px;
+  border-top:3px solid var(--orange); }
 .legal { flex:none; text-align:center; line-height:1.3; padding:3px 14px 4px; font-family:var(--sans); }
 .legal b { font-weight:700; }
 .legal .fn { opacity:.85; }
@@ -84,8 +80,8 @@ body.hi * { letter-spacing:0 !important; }
 .legal.orange { background:var(--orange); color:#fff; }
 """
 
-LEGAL_SIZE = {"front": 8.6, "back": 7.6, "left": 6.6, "right": 6.6}
-
+LEGAL_SIZE = {"front": 8.6, "back": 7.6, "side": 6.8}
+WARN_SIZE = {"front": 21, "back": 17.5, "side": 13}
 
 def qr_svg(message, color="#1B2666"):
     url = f"https://wa.me/{WA_NUMBER}?text={urllib.parse.quote(message)}"
@@ -111,13 +107,17 @@ def qr_block(lang, message, size, label_size=13, color="#1B2666", label_color="i
 
 
 def legal(lang, panel, theme, note=""):
+    """Standard warning in its own band (at least 10% of the panel height, large legible type),
+    then the AMFI/ARN line, investor-education text and any footnote."""
     t = TEXT[lang]
-    parts = [f'<div><b>{t["since"]} &middot; {t["amfi"]}</b> &middot; {t["warn"]}</div>']
+    small = [f'<b>{t["since"]} &middot; {t["amfi"]}</b>']
     if panel in ("front", "back"):
-        parts.append(f'<div>{t["full"]}</div>')
-    if note:
-        parts.append(f'<div class="fn">{note}</div>')
-    return f'<div class="legal {theme}" style="font-size:{LEGAL_SIZE[panel]}px">{"".join(parts)}</div>'
+        small.append(t["full"])
+    if panel == "front":
+        small.append(t["nonmf"])
+    lines = f'<div>{" &middot; ".join(small)}</div>' + (f'<div class="fn">{note}</div>' if note else "")
+    return (f'<div class="warn" style="font-size:{WARN_SIZE[panel]}px">{t["warn"]}</div>'
+            f'<div class="legal {theme}" style="font-size:{LEGAL_SIZE[panel]}px">{lines}</div>')
 
 
 def products_band(lang):
