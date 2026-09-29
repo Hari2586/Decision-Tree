@@ -1,32 +1,30 @@
 """May: FD maturing? Don't renew on autopilot (fixed income options)."""
-from framework import call, logo, qr_block
+from framework import call, lockup, logo, qr_block, side_cta
 
 KEY = "05-may"
-MSG = {"en": "Hi MoneyHoney! I saw your bus stop ad. My FD is maturing, please help me compare options.",
-       "hi": "Namaste MoneyHoney! Maine bus stop par aapka ad dekha. Meri FD mature ho rahi hai, options samjhaiye."}
-NOTE = {"en": "*Returns, safety and tax treatment differ across products. Debt funds and debentures carry risk; "
-              "read all offer documents carefully.",
-        "hi": "*अलग-अलग उत्पादों में रिटर्न, सुरक्षा और टैक्स अलग होते हैं। डेट फंड और डिबेंचर में जोखिम है; "
-              "सभी दस्तावेज़ ध्यान से पढ़ें।"}
+MSG = {"en": 'Hi! Bus stop ad: My FD is maturing.',
+       "hi": 'Hi! Bus stop ad: Meri FD mature ho rahi hai.'}
+NOTE = ("*Returns, safety and tax treatment differ across products. Debt funds and debentures carry risk; "
+              "read all offer documents carefully.")
+SIDE_NOTE = 'Returns, safety and tax treatment differ across products. Debt funds and debentures carry risk.'
+
 T = {
     "en": dict(
         toggle="Auto-renew FD", f_h1="FD maturing?", f_h2="Don&rsquo;t renew on autopilot.",
-        f_sub="Compare FDs, bonds, debentures and more, in one call.*",
-        l_q="Auto-renew?", l_cap="Wait. Compare first.",
-        r_big="5 options.<br>1 call.", r_list="FDs &bull; Debentures &bull; Gov. Bonds &bull; 54EC Bonds &bull; Debt Funds",
+        f_sub="Compare FDs, bonds, debentures and more before you decide.*",
+        s_big="5 options.<br>1 call.", s_list="FDs &bull; Debentures &bull; Gov. Bonds &bull; 54EC Bonds &bull; Debt Funds",
         b_h1='Before you renew, <span class="o">meet the other options.</span>',
         cards=[("FDs", "Fixed interest, tenure of your choice"), ("Debentures", "Fixed coupons from rated companies"),
                ("Gov. Bonds", "Backed by the Government of India"), ("54EC Bonds", "Save tax on property gains"),
                ("Debt Funds", "Flexible, market-linked")]),
     "hi": dict(
         toggle="FD ऑटो-रिन्यू", f_h1="FD मैच्योर हो रही है?", f_h2="बिना सोचे रिन्यू न करें।",
-        f_sub="FD, बॉन्ड, डिबेंचर और बाकी विकल्प, एक ही कॉल में तुलना करें।*",
-        l_q="ऑटो-रिन्यू?", l_cap="रुकिए। पहले तुलना करें।",
-        r_big="5 विकल्प।<br>1 कॉल।", r_list="FD &bull; डिबेंचर &bull; सरकारी बॉन्ड &bull; 54EC बॉन्ड &bull; डेट फंड",
+        f_sub="फ़ैसले से पहले FD, बॉन्ड, डिबेंचर और बाकी विकल्पों की तुलना करें।*",
+        s_big="5 विकल्प।<br>1 कॉल।", s_list="FDs &bull; Debentures &bull; Gov. Bonds &bull; 54EC Bonds &bull; Debt Funds",
         b_h1='रिन्यू करने से पहले, <span class="o">बाकी विकल्प भी जानिए।</span>',
-        cards=[("FD", "तय ब्याज, अपनी पसंद की अवधि"), ("डिबेंचर", "रेटेड कंपनियों से तय कूपन"),
-               ("सरकारी बॉन्ड", "भारत सरकार द्वारा समर्थित"), ("54EC बॉन्ड", "प्रॉपर्टी के मुनाफ़े पर टैक्स बचत"),
-               ("डेट फंड", "लचीले, बाज़ार से जुड़े")]),
+        cards=[("FDs", "तय ब्याज, अपनी पसंद की अवधि"), ("Debentures", "रेटेड कंपनियों से तय कूपन"),
+               ("Gov. Bonds", "भारत सरकार द्वारा समर्थित"), ("54EC Bonds", "प्रॉपर्टी के मुनाफ़े पर टैक्स बचत"),
+               ("Debt Funds", "लचीले, बाज़ार से जुड़े")]),
 }
 
 TOGGLE = """
@@ -65,26 +63,6 @@ def panels(lang, t):
 <div class="copy"><div class="a">{t['f_h1']}</div><div class="b d">{t['f_h2']}</div><div class="c">{t['f_sub']}</div></div>
 <div class="row">{logo(42)}{call(44)}</div>""")
 
-    left = dict(bg="var(--navy)", legal="dark", note=False, css=TOGGLE + """
-.q { position:absolute; left:30px; top:44px; color:#fff; font-size:48px; font-family:var(--sans); font-weight:800; line-height:var(--lt); }
-.tw { position:absolute; left:30px; top:130px; }
-.cap { position:absolute; left:30px; right:26px; top:250px; color:var(--orange); font-size:30px; }
-.bot { position:absolute; left:30px; bottom:14px; color:#fff; }
-.lg { position:absolute; right:24px; bottom:14px; }
-""", html=f"""
-<div class="q">{t['l_q']}</div><div class="tw">{toggle(210, 84, 26)}</div>
-<div class="cap d">{t['l_cap']}</div><div class="bot">{call(26)}</div><div class="lg">{logo(20, chip=True)}</div>""")
-
-    right = dict(bg="var(--orange)", legal="dark", note=True, css="""
-.big { position:absolute; left:28px; top:40px; color:#fff; font-size:66px; font-family:var(--sans); font-weight:800; line-height:var(--lt); }
-.list { position:absolute; left:30px; right:26px; top:216px; color:var(--navy); font-size:17px; font-weight:700; line-height:1.45; }
-.bot { position:absolute; left:30px; bottom:14px; color:var(--navy); }
-.bot .call .ico { color:var(--navy); }
-.lg { position:absolute; right:24px; bottom:14px; }
-""", html=f"""
-<div class="lg">{logo(20, chip=True)}</div>
-<div class="big">{t['r_big']}</div><div class="list">{t['r_list']}</div><div class="bot">{call(28)}</div>""")
-
     cards = "".join(f'<div class="cd"><div class="nm">{a}</div><div class="ds">{b}</div></div>' for a, b in t["cards"])
     back = dict(bg="#fff", legal="navy", note=True, css="""
 .lg { position:absolute; left:44px; top:26px; }
@@ -96,8 +74,24 @@ def panels(lang, t):
 .cta { position:absolute; right:0; top:0; bottom:0; width:280px; background:var(--cream); border-left:6px solid var(--orange);
   display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px; }
 """, html=f"""
-<div class="lg">{logo(42)}</div>
+<div class="lg">{lockup(40)}</div>
 <div class="h1 d">{t['b_h1']}</div>
 <div class="cards">{cards}</div>
 <div class="cta">{qr_block(lang, MSG[lang], 128, 14)}{call(26)}</div>""")
-    return dict(front=front, left=left, right=right, back=back)
+    return dict(front=front, back=back)
+
+
+def side(lang, t):
+    return dict(bg="var(--orange)", note=True, css=TOGGLE + """
+.lk { position:absolute; left:24px; top:18px; }
+.tw { position:absolute; right:24px; top:18px; }
+.big { position:absolute; left:24px; right:24px; top:64px; color:#fff; font-family:var(--sans); font-weight:800;
+  font-size:46px; line-height:1.02; }
+body.hi .big { line-height:1.12; }
+.list { position:absolute; left:24px; right:24px; top:168px; color:var(--navy); font-family:'DM Sans', sans-serif;
+  font-size:15.5px; font-weight:700; line-height:1.4; text-wrap-style:balance; }
+""", html=f"""
+<div class="lk">{lockup(22, chip=True)}</div>
+<div class="tw">{toggle(92, 40, 15)}</div>
+<div class="big">{t['s_big']}</div><div class="list lat">{t['s_list']}</div>
+{side_cta(lang, MSG[lang], color="#fff", icon="var(--navy)")}""")

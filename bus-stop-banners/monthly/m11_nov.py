@@ -1,20 +1,20 @@
 """November: the festive bonus. Option A: spend it. Option B: grow it (lump sum investing)."""
-from framework import call, logo, qr_block
+from framework import call, lockup, logo, qr_block, side_cta
 
 KEY = "11-nov"
-MSG = {"en": "Hi MoneyHoney! I saw your bus stop ad. I want to invest my bonus.",
-       "hi": "Namaste MoneyHoney! Maine bus stop par aapka ad dekha. Mujhe apna bonus invest karna hai."}
-NOTE = {"en": "*Illustration: &#8377;1 lakh invested once for 15 years at an assumed 12% p.a. return, for understanding only. "
-              "Mutual funds do not guarantee returns; actual returns may be higher or lower.",
-        "hi": "*उदाहरण: &#8377;1 लाख एक बार, 15 साल के लिए, 12% वार्षिक अनुमानित रिटर्न पर, केवल समझाने हेतु। म्यूचुअल फंड "
-              "रिटर्न की गारंटी नहीं देते; वास्तविक रिटर्न कम या ज़्यादा हो सकते हैं।"}
+MSG = {"en": 'Hi! Bus stop ad: Invest my bonus.',
+       "hi": 'Hi! Bus stop ad: Bonus invest karna hai.'}
+NOTE = ("*Illustration: &#8377;1 lakh invested once for 15 years at an assumed 12% p.a. return, for understanding only. "
+              "Mutual funds do not guarantee returns; actual returns may be higher or lower.")
+SIDE_NOTE = ''
+
 T = {
     "en": dict(
         top="Your &#8377;1 lakh bonus. Two futures.", or_="OR",
         a_lbl="Option A", a_h="Spend it.", a_s="Gone in 2 weeks.",
         b_lbl="Option B", b_h="Invest it.", b_s="&asymp; &#8377;5.5 lakh* in 15 years.",
-        l_h="Spend the bonus.", l_s="New phone. Sale shopping. Gone by December.",
-        r_h="Grow the bonus.", r_s="&#8377;1 lakh &rarr; &asymp; &#8377;5.5 lakh* in 15 years.",
+        s_alert=("Bank alert", "Bonus of &#8377;1,00,000 credited"), s_h="Give your bonus a job.",
+        s_sub="Before the sales find one for it.",
         b_h1='Where will your bonus be <span class="o">next Diwali?</span>',
         b_sub="Spend a little, invest the rest. Lump sum or step-by-step (STP): we&rsquo;ll help you choose.",
         yrs=["Today", "5 yrs", "10 yrs", "15 yrs"]),
@@ -22,10 +22,10 @@ T = {
         top="आपका &#8377;1 लाख का बोनस। दो रास्ते।", or_="या",
         a_lbl="रास्ता A", a_h="खर्च करें।", a_s="2 हफ़्ते में ख़त्म।",
         b_lbl="रास्ता B", b_h="निवेश करें।", b_s="15 साल में &asymp; &#8377;5.5 लाख*।",
-        l_h="बोनस खर्च करें।", l_s="नया फ़ोन। सेल की शॉपिंग। दिसंबर तक ख़त्म।",
-        r_h="बोनस बढ़ाएँ।", r_s="&#8377;1 लाख &rarr; 15 साल में &asymp; &#8377;5.5 लाख*।",
+        s_alert=("बैंक अलर्ट", "&#8377;1,00,000 का बोनस क्रेडिट हुआ"), s_h="अपने बोनस को काम पर लगाइए।",
+        s_sub="इससे पहले कि सेल उसे खर्च करवा दे।",
         b_h1='अगली दिवाली <span class="o">आपका बोनस कहाँ होगा?</span>',
-        b_sub="थोड़ा खर्च करें, बाकी निवेश करें। Lump sum या STP: हम चुनने में मदद करेंगे।",
+        b_sub="थोड़ा खर्च करें, बाकी निवेश करें। एकमुश्त या STP: हम चुनने में मदद करेंगे।",
         yrs=["आज", "5 साल", "10 साल", "15 साल"]),
 }
 
@@ -59,24 +59,6 @@ def panels(lang, t):
 <div class="side bb"><div class="ic">{ARROW.replace('{c}', '#E8511A')}</div><div><div class="l">{t['b_lbl']}</div><div class="h">{t['b_h']}</div><div class="s">{t['b_s']}</div></div></div>
 <div class="row">{logo(36, chip=True)}{call(42)}</div>""")
 
-    def side_panel(letter, h, s, bg, ic, fg_s):
-        return f"""
-<div class="let">{letter}</div><div class="ic">{ic}</div>
-<div class="h">{h}</div><div class="s" style="color:{fg_s}">{s}</div>
-<div class="bot">{call(26)}</div><div class="lg">{logo(18, chip=True)}</div>"""
-    SIDE = """
-.let { position:absolute; left:22px; top:4px; color:rgba(255,255,255,.95); font-family:'DM Sans'; font-weight:800; font-size:170px; line-height:1; }
-.ic { position:absolute; right:30px; top:40px; width:110px; height:110px; }
-.h { position:absolute; left:28px; right:24px; top:196px; color:#fff; font-family:var(--display); font-weight:var(--dw); font-size:40px; line-height:var(--lt); }
-.s { position:absolute; left:28px; right:24px; top:250px; font-size:18px; font-weight:700; }
-.bot { position:absolute; left:28px; bottom:14px; color:#fff; }
-.lg { position:absolute; right:24px; bottom:14px; }
-"""
-    left = dict(bg="var(--orange)", legal="dark", note=False, css=SIDE + ".bot .call .ico { color:var(--navy); }",
-                html=side_panel("A", t["l_h"], t["l_s"], "", BAG.replace("{c}", "#1B2666"), "var(--navy)"))
-    right = dict(bg="var(--navy)", legal="dark", note=True, css=SIDE,
-                 html=side_panel("B", t["r_h"], t["r_s"], "", ARROW.replace("{c}", "#E8511A"), "var(--orange)"))
-
     vals = [1.12 ** y for y in (0, 5, 10, 15)]
     unit = "लाख" if lang == "hi" else "lakh"
     bars = ""
@@ -96,9 +78,28 @@ def panels(lang, t):
   flex-direction:column; align-items:center; justify-content:center; gap:14px; }
 .cta .call .ico { color:#fff; }
 """, html=f"""
-<div class="lg">{logo(42)}</div>
+<div class="lg">{lockup(40)}</div>
 <div class="h1 d">{t['b_h1']}</div>
 <div class="sub">{t['b_sub']}</div>
 <div class="bars">{bars}</div>
 <div class="cta">{qr_block(lang, MSG[lang], 128, 14, label_color="#fff")}{call(26)}</div>""")
-    return dict(front=front, left=left, right=right, back=back)
+    return dict(front=front, back=back)
+
+
+def side(lang, t):
+    return dict(bg="var(--navy)", note=False, css="""
+.lk { position:absolute; left:24px; top:18px; }
+.alert { position:absolute; left:24px; right:24px; top:62px; background:#fff; border-radius:14px; padding:10px 14px;
+  display:flex; align-items:center; gap:12px; box-shadow:0 10px 24px rgba(0,0,0,.3); }
+.alert .rs { width:36px; height:36px; flex:none; border-radius:50%; background:var(--orange); color:#fff; font-weight:800;
+  font-size:20px; display:flex; align-items:center; justify-content:center; font-family:'DM Sans', sans-serif; }
+.alert .k { font-size:12px; font-weight:700; color:var(--muted); }
+.alert .v { font-size:16px; font-weight:800; color:var(--navy); white-space:nowrap; }
+.hl { position:absolute; left:24px; right:24px; top:136px; color:#fff; font-size:32px; }
+body.hi .hl { font-size:30px; }
+.sub { position:absolute; left:24px; right:24px; top:210px; color:var(--orange); font-size:18px; font-weight:700; }
+""", html=f"""
+<div class="lk">{lockup(22, chip=True)}</div>
+<div class="alert"><div class="rs">&#8377;</div><div><div class="k">{t['s_alert'][0]}</div><div class="v">{t['s_alert'][1]}</div></div></div>
+<div class="hl d">{t['s_h']}</div><div class="sub">{t['s_sub']}</div>
+{side_cta(lang, MSG[lang], color="#fff")}""")

@@ -1,23 +1,24 @@
 """August: Independence Day. India became independent in 1947. When will you? (retirement)"""
-from framework import call, logo, qr_block
+from framework import call, lockup, logo, qr_block, side_cta
 
 KEY = "08-aug"
-MSG = {"en": "Hi MoneyHoney! I saw your bus stop ad. I want to plan my retirement.",
-       "hi": "Namaste MoneyHoney! Maine bus stop par aapka ad dekha. Mujhe retirement planning karni hai."}
-NOTE = {"en": "*Illustration at an assumed 6% p.a. inflation for understanding only. Actual inflation may differ.",
-        "hi": "*6% वार्षिक अनुमानित महँगाई पर केवल समझाने हेतु उदाहरण। वास्तविक महँगाई अलग हो सकती है।"}
+MSG = {"en": 'Hi! Bus stop ad: Plan my retirement.',
+       "hi": 'Hi! Bus stop ad: Retirement planning karni hai.'}
+NOTE = ("*Illustration at an assumed 6% p.a. inflation for understanding only. Actual inflation may differ.")
+SIDE_NOTE = ''
+
 T = {
     "en": dict(
         f_h1="India got its independence in 1947.", f_h2="When will you get yours?",
         f_sub="Plan your financial freedom: retire on your terms.",
-        l_cap="India&rsquo;s independence year.", r_cap="Your financial independence year. Let&rsquo;s fill in the blank.",
+        s_cap='Your financial freedom year.<br><span class="o">Let&rsquo;s fill in the blank.</span>',
         b_h1='Freedom needs <span class="o">a number.</span>',
         b_a="&#8377;50,000", b_al="monthly expenses today", b_b="&#8377;1.6 lakh*", b_bl="needed every month, 20 years later",
         b_sub="Build a corpus that pays you every month, just like a salary."),
     "hi": dict(
         f_h1="भारत 1947 में आज़ाद हुआ।", f_h2="आप कब होंगे?",
-        f_sub="अपनी financial आज़ादी की planning: अपनी शर्तों पर रिटायर हों।",
-        l_cap="भारत की आज़ादी का साल।", r_cap="आपकी financial आज़ादी का साल। चलिए, खाली जगह भरें।",
+        f_sub="अपनी आर्थिक आज़ादी की योजना बनाइए, अपनी शर्तों पर रिटायर होइए।",
+        s_cap='आपकी आर्थिक आज़ादी का साल।<br><span class="o">चलिए, खाली जगह भरें।</span>',
         b_h1='आज़ादी का भी <span class="o">एक नंबर होता है।</span>',
         b_a="&#8377;50,000", b_al="आज महीने का खर्च", b_b="&#8377;1.6 लाख*", b_bl="20 साल बाद हर महीने की ज़रूरत",
         b_sub="ऐसा फंड बनाइए जो सैलरी की तरह हर महीने आपको पैसा दे।"),
@@ -45,22 +46,6 @@ def panels(lang, t):
 <div class="copy"><div class="a">{t['f_h1']}</div><div class="b d o">{t['f_h2']}</div><div class="c">{t['f_sub']}</div></div>
 <div class="row">{logo(42)}{call(44)}</div>""")
 
-    left = dict(bg="var(--navy)", legal="dark", note=False, css=YEAR_CSS + """
-.yr { position:absolute; left:26px; top:84px; font-size:126px; color:#fff; }
-.cap { position:absolute; left:30px; right:26px; top:222px; font-size:26px; color:var(--orange); }
-.bot { position:absolute; left:30px; bottom:14px; color:#fff; }
-.lg { position:absolute; left:28px; top:24px; }
-""", html=f"""
-<div class="lg">{logo(22, chip=True)}</div><div class="yr">1947</div><div class="cap d">{t['l_cap']}</div><div class="bot">{call(28)}</div>""")
-
-    right = dict(bg="#fff", legal="navy", note=False, css=YEAR_CSS + """
-.yr { position:absolute; left:26px; top:84px; font-size:126px; }
-.cap { position:absolute; left:30px; right:26px; top:222px; font-size:22px; color:var(--navy); }
-.bot { position:absolute; left:30px; bottom:14px; }
-.lg { position:absolute; left:28px; top:24px; }
-""", html=f"""
-<div class="lg">{logo(24)}</div><div class="yr blank">20<u></u></div><div class="cap d">{t['r_cap']}</div><div class="bot">{call(28)}</div>""")
-
     back = dict(bg="var(--cream)", legal="navy", note=True, css=YEAR_CSS + """
 .lg { position:absolute; left:44px; top:26px; }
 .h1 { position:absolute; left:44px; width:360px; top:96px; font-size:46px; }
@@ -75,11 +60,24 @@ def panels(lang, t):
   flex-direction:column; align-items:center; justify-content:center; gap:14px; }
 .cta .call .ico { color:#fff; }
 """, html=f"""
-<div class="lg">{logo(42)}</div>
+<div class="lg">{lockup(40)}</div>
 <div class="h1 d">{t['b_h1']}</div>
 <div class="flow"><div class="bx"><div class="v">{t['b_a']}</div><div class="l">{t['b_al']}</div></div>
 <div class="ar">&darr; 6% &times; 20</div>
 <div class="bx hl"><div class="v">{t['b_b']}</div><div class="l">{t['b_bl']}</div></div></div>
 <div class="sub">{t['b_sub']}</div>
 <div class="cta">{qr_block(lang, MSG[lang], 128, 14, label_color="#fff")}{call(26)}</div>""")
-    return dict(front=front, left=left, right=right, back=back)
+    return dict(front=front, back=back)
+
+
+def side(lang, t):
+    return dict(bg="#fff", note=False, css=YEAR_CSS + """
+.lk { position:absolute; left:24px; top:18px; }
+.yr { position:absolute; left:20px; top:52px; font-size:118px; }
+.cap { position:absolute; left:24px; right:30px; top:180px; font-size:24px; color:var(--navy); }
+body.hi .cap { font-size:23px; }
+""", html=f"""
+<div class="lk">{lockup(24)}</div>
+<div class="yr blank">20<u></u></div>
+<div class="cap d">{t['s_cap']}</div>
+{side_cta(lang, MSG[lang])}""")

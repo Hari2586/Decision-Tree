@@ -1,27 +1,25 @@
 """September: sold a property? The tax-saving clock has started (54EC capital gain bonds)."""
-from framework import call, logo, qr_block
+from framework import call, lockup, logo, qr_block, side_cta
 
 KEY = "09-sep"
-MSG = {"en": "Hi MoneyHoney! I saw your bus stop ad. I sold a property and want to know about 54EC bonds.",
-       "hi": "Namaste MoneyHoney! Maine bus stop par aapka ad dekha. Maine property bechi hai, 54EC bonds ke baare mein batayein."}
-NOTE = {"en": "*Section 54EC: exemption on long-term capital gains from land or building, investment up to &#8377;50 lakh "
-              "per financial year within 6 months of transfer, 5-year lock-in. Tax benefits as per current laws, subject to change.",
-        "hi": "*धारा 54EC: ज़मीन या भवन से दीर्घकालिक पूंजीगत लाभ पर छूट, बिक्री के 6 महीने के अंदर प्रति वित्त वर्ष "
-              "&#8377;50 लाख तक निवेश, 5 साल का लॉक-इन। टैक्स लाभ मौजूदा कानूनों के अनुसार, बदल सकते हैं।"}
+MSG = {"en": 'Hi! Bus stop ad: I sold a property. 54EC bonds?',
+       "hi": 'Hi! Bus stop ad: Property bechi hai, 54EC bonds?'}
+NOTE = ("*Section 54EC: exemption on long-term capital gains from land or building, investment up to &#8377;50 lakh "
+              "per financial year within 6 months of transfer, 5-year lock-in. Tax benefits as per current laws, subject to change.")
+SIDE_NOTE = ''
+
 T = {
     "en": dict(
         sold="SOLD", f_h1="Sold a property?", f_h2="The tax-saving clock has started.",
         f_sub="Invest in 54EC bonds within 6 months of the sale.*",
-        l_big="Sold!", l_cap="Congratulations on the sale. Now protect the profit.",
-        r_big="6 months", r_cap="to save capital gains tax with 54EC bonds.*",
+        s_big="Congrats on the sale!", s_cap="Now let&rsquo;s protect the profit.", s_ask="Ask us about 54EC bonds.",
         b_h1='Your profit worked hard. <span class="o">Don&rsquo;t hand it to tax.</span>',
         months=["Sale", "M1", "M2", "M3", "M4", "M5", "M6"], end="54EC bonds",
         facts=["Up to &#8377;50 lakh a financial year", "5-year lock-in", "Issued by government-owned companies"]),
     "hi": dict(
         sold="बिक गया", f_h1="प्रॉपर्टी बेची?", f_h2="टैक्स बचाने की घड़ी चल रही है।",
         f_sub="बिक्री के 6 महीने के अंदर 54EC बॉन्ड में निवेश करें।*",
-        l_big="बिक गई!", l_cap="बिक्री की बधाई। अब मुनाफ़े को बचाइए।",
-        r_big="6 महीने", r_cap="54EC बॉन्ड से कैपिटल गेन टैक्स बचाने के लिए।*",
+        s_big="बिक्री की बधाई!", s_cap="अब मुनाफ़े को बचाने की बारी।", s_ask="54EC बॉन्ड के बारे में पूछिए।",
         b_h1='मेहनत का मुनाफ़ा, <span class="o">टैक्स में क्यों जाए?</span>',
         months=["बिक्री", "M1", "M2", "M3", "M4", "M5", "M6"], end="54EC बॉन्ड",
         facts=["प्रति वित्त वर्ष &#8377;50 लाख तक", "5 साल का लॉक-इन", "सरकारी कंपनियों द्वारा जारी"]),
@@ -67,27 +65,6 @@ def panels(lang, t):
 <div class="copy"><div class="a">{t['f_h1']}</div><div class="b d">{t['f_h2']}</div><div class="c">{t['f_sub']}</div></div>
 <div class="row">{logo(42)}{call(44)}</div>""")
 
-    left = dict(bg="#fff", legal="navy", note=False, css=CLOCK + """
-.hs { position:absolute; left:30px; top:40px; width:170px; height:170px; }
-.tag { left:150px; top:44px; font-size:22px; padding:4px 12px; }
-.big { position:absolute; left:30px; top:214px; font-size:54px; font-family:var(--sans); font-weight:800; line-height:1; color:var(--orange); }
-.cap { position:absolute; left:30px; right:26px; top:274px; font-size:18px; font-weight:600; color:var(--navy); }
-.bot { position:absolute; left:30px; bottom:12px; }
-.lg { position:absolute; right:24px; top:28px; }
-""", html=f"""
-<div class="hs">{house('#1B2666', '#fff')}</div><div class="tag">{t['sold']}</div><div class="lg">{logo(20)}</div>
-<div class="big">{t['l_big']}</div><div class="cap">{t['l_cap']}</div><div class="bot">{call(26)}</div>""")
-
-    right = dict(bg="var(--navy)", legal="dark", note=True, css=CLOCK + """
-.ck { position:absolute; right:30px; top:30px; }
-.big { position:absolute; left:28px; top:176px; color:#fff; font-size:66px; font-family:var(--sans); font-weight:800; line-height:1; }
-.cap { position:absolute; left:30px; right:26px; top:252px; color:var(--orange); font-size:19px; font-weight:700; line-height:1.3; }
-.bot { position:absolute; left:30px; bottom:12px; color:#fff; }
-.lg { position:absolute; left:28px; top:30px; }
-""", html=f"""
-<div class="lg">{logo(22, chip=True)}</div><div class="ck">{clock(130, '50%')}</div>
-<div class="big">{t['r_big']}</div><div class="cap">{t['r_cap']}</div><div class="bot">{call(28)}</div>""")
-
     months = "".join(f'<div class="mo{" s" if i == 0 else ""}">{m}</div>' for i, m in enumerate(t["months"]))
     facts = "".join(f"<li>{f}</li>" for f in t["facts"])
     back = dict(bg="#fff", legal="navy", note=True, css="""
@@ -102,9 +79,24 @@ def panels(lang, t):
 .cta { position:absolute; right:0; top:0; bottom:0; width:280px; background:var(--navy); color:#fff; display:flex;
   flex-direction:column; align-items:center; justify-content:center; gap:14px; }
 """, html=f"""
-<div class="lg">{logo(42)}</div>
+<div class="lg">{lockup(40)}</div>
 <div class="h1 d">{t['b_h1']}</div>
 <div class="tl">{months}<div class="end">&rarr; {t['end']}</div></div>
 <ul class="facts">{facts}</ul>
 <div class="cta">{qr_block(lang, MSG[lang], 128, 14, label_color="#fff")}{call(26)}</div>""")
-    return dict(front=front, left=left, right=right, back=back)
+    return dict(front=front, back=back)
+
+
+def side(lang, t):
+    return dict(bg="var(--cream)", note=False, css=CLOCK + """
+.lk { position:absolute; left:24px; top:18px; }
+.hs { position:absolute; right:24px; top:60px; width:100px; height:100px; }
+.tag { right:88px; top:58px; font-size:17px; padding:3px 10px; }
+.big { position:absolute; left:24px; right:150px; top:66px; font-size:34px; }
+.cap { position:absolute; left:24px; right:24px; top:168px; font-size:23px; color:var(--orange); }
+.ask { position:absolute; left:24px; right:24px; top:204px; font-size:16px; font-weight:700; color:var(--navy); }
+""", html=f"""
+<div class="lk">{lockup(24)}</div>
+<div class="hs">{house('#1B2666', '#F4EFE9')}</div><div class="tag">{t['sold']}</div>
+<div class="big d">{t['s_big']}</div><div class="cap d">{t['s_cap']}</div><div class="ask">{t['s_ask']}</div>
+{side_cta(lang, MSG[lang])}""")

@@ -1,24 +1,23 @@
 """June: schools reopen. First day of school today, first day of college in 15 years (child education)."""
-from framework import call, logo, qr_block
+from framework import call, lockup, logo, qr_block, side_cta
 
 KEY = "06-jun"
-MSG = {"en": "Hi MoneyHoney! I saw your bus stop ad. I want to plan for my child's education.",
-       "hi": "Namaste MoneyHoney! Maine bus stop par aapka ad dekha. Mujhe bachche ki padhai ke liye planning karni hai."}
-NOTE = {"en": "*Illustration at an assumed 10% p.a. education cost inflation for understanding only. Actual costs may differ.",
-        "hi": "*10% वार्षिक अनुमानित शिक्षा महँगाई पर केवल समझाने हेतु उदाहरण। वास्तविक खर्च अलग हो सकता है।"}
+MSG = {"en": "Hi! Bus stop ad: Plan my child's education.",
+       "hi": 'Hi! Bus stop ad: Bachche ki padhai ki planning.'}
+NOTE = ("*Illustration at an assumed 10% p.a. education cost inflation for understanding only. Actual costs may differ.")
+SIDE_NOTE = ''
+
 T = {
     "en": dict(
         f_h1="Today: first day of school.", f_h2="In 15 years: first day of college.",
         f_q="Will the fees be ready?", t_a="Age 3 &middot; &#8377;20 lakh today", t_b="Age 18 &middot; &asymp; &#8377;84 lakh*",
-        l_age="Age 3", l_cap="Packing the school bag today.",
-        r_age="Age 18", r_cap="Is the college fund packed too?",
+        s1=("School bag", "Packed &#10003;"), s2=("College fund", "Packed?"),
         b_h1='Their dreams have a due date. <span class="o">Let&rsquo;s be ready.</span>',
         b_sub="Cost of a &#8377;20 lakh degree as your child grows up*", yrs=["Today", "+5 yrs", "+10 yrs", "+15 yrs"]),
     "hi": dict(
         f_h1="आज: स्कूल का पहला दिन।", f_h2="15 साल बाद: कॉलेज का पहला दिन।",
         f_q="क्या फीस तैयार होगी?", t_a="उम्र 3 &middot; आज &#8377;20 लाख", t_b="उम्र 18 &middot; &asymp; &#8377;84 लाख*",
-        l_age="उम्र 3", l_cap="आज स्कूल बैग तैयार।",
-        r_age="उम्र 18", r_cap="क्या कॉलेज फंड भी तैयार है?",
+        s1=("स्कूल बैग", "तैयार &#10003;"), s2=("कॉलेज फंड", "तैयार?"),
         b_h1='सपनों की भी एक तारीख़ होती है। <span class="o">चलिए, तैयार रहें।</span>',
         b_sub="बच्चे के बड़े होने के साथ &#8377;20 लाख की डिग्री का खर्च*", yrs=["आज", "+5 साल", "+10 साल", "+15 साल"]),
 }
@@ -54,27 +53,6 @@ def panels(lang, t):
 <div class="la">{t['t_a']}</div><div class="lb">{t['t_b']}</div></div>
 <div class="side">{logo(50)}{call(48)}</div>""")
 
-    left = dict(bg="var(--cream)", legal="navy", note=False, css="""
-.ic { position:absolute; left:30px; top:34px; width:150px; height:150px; }
-.age { position:absolute; left:30px; top:196px; font-size:62px; font-family:var(--sans); font-weight:800; line-height:1; color:var(--navy); }
-.cap { position:absolute; left:30px; right:26px; top:266px; font-size:22px; font-weight:600; color:var(--muted); }
-.bot { position:absolute; left:30px; bottom:14px; }
-.lg { position:absolute; right:24px; top:30px; }
-""", html=f"""
-<div class="ic">{icon(BAG, '#1B2666', '#E8511A')}</div><div class="lg">{logo(22)}</div>
-<div class="age">{t['l_age']}</div><div class="cap">{t['l_cap']}</div><div class="bot">{call(28)}</div>""")
-
-    right = dict(bg="var(--orange)", legal="dark", note=False, css="""
-.ic { position:absolute; right:26px; top:34px; width:160px; height:160px; }
-.age { position:absolute; left:30px; top:196px; font-size:62px; font-family:var(--sans); font-weight:800; line-height:1; color:#fff; }
-.cap { position:absolute; left:30px; right:26px; top:262px; font-size:21px; color:var(--navy); }
-.bot { position:absolute; left:30px; bottom:14px; color:#fff; }
-.bot .call .ico { color:var(--navy); }
-.lg { position:absolute; left:28px; top:30px; }
-""", html=f"""
-<div class="ic">{icon(CAP, '#1B2666', '#fff')}</div><div class="lg">{logo(22, chip=True)}</div>
-<div class="age">{t['r_age']}</div><div class="cap d">{t['r_cap']}</div><div class="bot">{call(28)}</div>""")
-
     costs = [20 * 1.1 ** y for y in (0, 5, 10, 15)]
     unit = "लाख" if lang == "hi" else "lakh"
     bars = ""
@@ -97,10 +75,30 @@ def panels(lang, t):
 .cta { position:absolute; right:0; top:0; bottom:0; width:260px; background:var(--navy); color:#fff; display:flex;
   flex-direction:column; align-items:center; justify-content:center; gap:14px; }
 """, html=f"""
-<div class="lg">{logo(42)}</div>
+<div class="lg">{lockup(40)}</div>
 <div class="h1 d">{t['b_h1']}</div>
 <div class="ics"><div class="i">{icon(BAG, '#1B2666', '#E8511A')}</div><div class="dots"></div><div class="i">{icon(CAP, '#E8511A', '#1B2666')}</div></div>
 <div class="sub">{t['b_sub']}</div>
 <div class="bars">{bars}</div>
 <div class="cta">{qr_block(lang, MSG[lang], 124, 14, label_color="#fff")}{call(24)}</div>""")
-    return dict(front=front, left=left, right=right, back=back)
+    return dict(front=front, back=back)
+
+
+def side(lang, t):
+    rows = "".join(
+        f'<div class="r {k}"><div class="i">{ic}</div><div><div class="k">{a}</div><div class="v d">{b}</div></div></div>'
+        for k, (a, b), ic in (("one", t["s1"], icon(BAG, "#fff", "#1B2666")), ("two", t["s2"], icon(CAP, "#1B2666", "#fff"))))
+    return dict(bg="var(--orange)", note=False, css="""
+.lk { position:absolute; left:24px; top:18px; }
+.rows { position:absolute; left:24px; right:24px; top:56px; }
+.r { display:flex; align-items:center; gap:18px; padding:6px 0; }
+.r.one { border-bottom:2px dashed rgba(255,255,255,.55); padding-bottom:10px; }
+.r.two { padding-top:10px; }
+.r .i { width:52px; height:52px; flex:none; }
+.r .k { font-size:17px; font-weight:700; }
+.r .v { font-size:33px; }
+.r.one { color:#fff; } .r.two { color:var(--navy); }
+""", html=f"""
+<div class="lk">{lockup(22, chip=True)}</div>
+<div class="rows">{rows}</div>
+{side_cta(lang, MSG[lang], color="#fff", icon="var(--navy)")}""")

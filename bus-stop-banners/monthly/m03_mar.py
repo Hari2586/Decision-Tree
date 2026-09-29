@@ -1,27 +1,25 @@
 """March: the tax-saving deadline, told with a tear-off calendar (ELSS last call)."""
-from framework import call, logo, qr_block
+from framework import call, lockup, logo, qr_block, side_cta
 
 KEY = "03-mar"
-MSG = {"en": "Hi MoneyHoney! I saw your bus stop ad. I want to save tax before 31 March.",
-       "hi": "Namaste MoneyHoney! Maine bus stop par aapka ad dekha. Mujhe 31 March se pehle tax bachana hai."}
-NOTE = {"en": "*Under the old tax regime, 30% slab plus 4% cess, on &#8377;1.5 lakh invested in ELSS. Tax benefits "
-              "as per current laws, subject to change. ELSS is subject to market risk.",
-        "hi": "*पुरानी टैक्स व्यवस्था में 30% स्लैब + 4% सेस, ELSS में &#8377;1.5 लाख निवेश पर। टैक्स लाभ मौजूदा "
-              "कानूनों के अनुसार, बदल सकते हैं। ELSS में बाज़ार जोखिम है।"}
+MSG = {"en": 'Hi! Bus stop ad: Save tax before 31 March.',
+       "hi": 'Hi! Bus stop ad: 31 March se pehle tax bachana hai.'}
+NOTE = ("*Under the old tax regime, 30% slab plus 4% cess, on &#8377;1.5 lakh invested in ELSS. Tax benefits "
+              "as per current laws, subject to change. ELSS is subject to market risk.")
+SIDE_NOTE = ''
+
 T = {
     "en": dict(
         mon="MARCH", f_h1="The last date to save tax this year.",
         f_h2="Invest in ELSS before 31 March. Save up to &#8377;46,800*.",
-        l_big="Tick.<br>Tock.", l_sub="Tax-saving time is running out.",
-        r_h="After 31 March, this year&rsquo;s tax saving is gone.",
+        s_big="Tick.<br>Tock.", s_sub="Tax-saving time is running out.",
         b_h1='3 steps. 1 call. <span class="o">Done before 31 March.</span>',
         steps=[("Call or scan", "Talk to us today"), ("Quick KYC", "If not already done"),
                ("Invest in ELSS", "Save up to &#8377;46,800*")]),
     "hi": dict(
         mon="मार्च", f_h1="इस साल टैक्स बचाने की आख़िरी तारीख़।",
         f_h2="31 मार्च से पहले ELSS में निवेश करें। &#8377;46,800* तक बचाएँ।",
-        l_big="टिक।<br>टिक।", l_sub="टैक्स बचाने का समय ख़त्म हो रहा है।",
-        r_h="31 मार्च के बाद इस साल की टैक्स बचत का मौका ख़त्म।",
+        s_big="टिक।<br>टिक।", s_sub="टैक्स बचाने का समय निकल रहा है।",
         b_h1='3 कदम। 1 कॉल। <span class="o">31 मार्च से पहले काम पूरा।</span>',
         steps=[("कॉल या स्कैन", "आज ही बात करें"), ("आसान KYC", "अगर पहले नहीं हुआ"),
                ("ELSS में निवेश", "&#8377;46,800* तक बचत")]),
@@ -38,7 +36,7 @@ CAL = """
 .cal .band { background:var(--navy); color:#fff; font-family:'DM Sans'; font-weight:800; letter-spacing:.2em; padding:.55em 0 .45em;
   position:relative; }
 body.hi .cal .band { font-family:'Mukta'; letter-spacing:.05em; }
-.cal .band i { position:absolute; top:-.3em; width:.5em; height:1em; border-radius:.3em; background:#C9CFE0; }
+.cal .band i { position:absolute; top:-.3em; width:.5em; height:1em; border-radius:.3em; background:var(--lmuted); }
 .cal .band i:first-child { left:25%; } .cal .band i:nth-child(2) { right:25%; }
 .cal .day { font-family:'Lora', serif; font-weight:700; color:var(--navy); line-height:1.05; padding-bottom:.05em; }
 """
@@ -59,27 +57,6 @@ def panels(lang, t):
 <div class="copy"><div class="a">{t['f_h1']}</div><div class="b">{t['f_h2']}</div></div>
 <div class="row">{logo(36, chip=True)}<div class="pill">{call(40)}</div></div>""")
 
-    left = dict(bg="#fff", legal="dark", note=False, css="""
-.col { position:absolute; left:28px; right:26px; top:28px; }
-.big { font-size:92px; color:var(--navy); font-family:var(--sans); font-weight:800; line-height:.95; }
-body.hi .big { font-size:84px; line-height:1.12; }
-.bar { width:90px; height:8px; background:var(--orange); margin:18px 0 14px; }
-.sub { font-size:22px; font-weight:700; color:var(--orange); }
-.bot { position:absolute; left:30px; right:26px; bottom:14px; display:flex; justify-content:space-between; align-items:center; }
-""", html=f"""
-<div class="col"><div class="big">{t['l_big']}</div><div class="bar"></div><div class="sub">{t['l_sub']}</div></div>
-<div class="bot">{call(26)}{logo(22)}</div>""")
-
-    right = dict(bg="var(--navy)", legal="dark", note=False, css=CAL + """
-.calw { position:absolute; left:34px; top:28px; }
-.rh { position:absolute; left:30px; right:26px; top:196px; color:#fff; font-size:27px; }
-.bot { position:absolute; left:30px; bottom:14px; color:#fff; }
-.lg { position:absolute; right:24px; top:34px; }
-""", html=f"""
-<div class="calw">{calendar(130, t['mon'], 74, 15, rot=-6)}</div><div class="lg">{logo(24, chip=True)}</div>
-<div class="rh d">{t['r_h']}</div>
-<div class="bot">{call(28)}</div>""")
-
     steps = "".join(f'<div class="st"><div class="nm d">{i + 1}</div><div><div class="a">{a}</div><div class="b">{b}</div></div></div>'
                     + ('<div class="ar">&rarr;</div>' if i < 2 else "") for i, (a, b) in enumerate(t["steps"]))
     back = dict(bg="var(--cream)", legal="dark", note=True, css=CAL + """
@@ -97,9 +74,33 @@ body.hi .big { font-size:84px; line-height:1.12; }
   display:flex; align-items:center; justify-content:center; flex-direction:column; gap:16px; }
 .cta .call .ico { color:#fff; }
 """, html=f"""
-<div class="lg">{logo(44)}</div>
+<div class="lg">{lockup(40)}</div>
 <div class="calw">{calendar(120, t['mon'], 66, 13, rot=5)}</div>
 <div class="h1 d">{t['b_h1']}</div>
 <div class="steps">{steps}</div>
 <div class="cta">{qr_block(lang, MSG[lang], 128, 14, label_color="#fff")}{call(26)}</div>""")
-    return dict(front=front, left=left, right=right, back=back)
+    return dict(front=front, back=back)
+
+
+HOURGLASS = ('<svg viewBox="0 0 64 64" width="100%" height="100%"><rect x="12" y="4" width="40" height="6" rx="3" fill="#1B2666"/>'
+             '<rect x="12" y="54" width="40" height="6" rx="3" fill="#1B2666"/><path d="M17 10h30c0 12-9 17-12 22 3 5 12 10 '
+             '12 22H17c0-12 9-17 12-22-3-5-12-10-12-22z" fill="none" stroke="#1B2666" stroke-width="3" stroke-linejoin="round"/>'
+             '<path d="M25 22h14c-1.6 3.6-4.6 5.6-7 8.2-2.4-2.6-5.4-4.6-7-8.2z" fill="#E8511A"/>'
+             '<path d="M32 33v12" stroke="#E8511A" stroke-width="2" stroke-dasharray="2 2"/>'
+             '<path d="M20 52c2-6.5 7-9 12-9s10 2.5 12 9z" fill="#E8511A"/></svg>')
+
+
+def side(lang, t):
+    return dict(bg="#fff", note=False, css="""
+.lk { position:absolute; left:24px; top:18px; }
+.hg { position:absolute; right:30px; top:66px; width:100px; height:100px; }
+.flow { position:absolute; left:24px; right:24px; top:54px; }
+.big { font-family:var(--sans); font-weight:800; font-size:58px; line-height:.98; color:var(--navy); }
+body.hi .big { font-size:56px; line-height:1.05; }
+.bar { width:84px; height:7px; background:var(--orange); margin:12px 0 10px; }
+.sub { font-size:20px; font-weight:700; color:var(--orange); }
+""", html=f"""
+<div class="lk">{lockup(24)}</div>
+<div class="hg">{HOURGLASS}</div>
+<div class="flow"><div class="big">{t['s_big']}</div><div class="bar"></div><div class="sub">{t['s_sub']}</div></div>
+{side_cta(lang, MSG[lang])}""")

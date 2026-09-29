@@ -1,28 +1,27 @@
 """July: monsoon. Nobody buys an umbrella in the middle of a storm (emergency fund)."""
-from framework import call, logo, qr_block
+from framework import call, lockup, logo, qr_block, side_cta
 
 KEY = "07-jul"
-MSG = {"en": "Hi MoneyHoney! I saw your bus stop ad. I want to build an emergency fund.",
-       "hi": "Namaste MoneyHoney! Maine bus stop par aapka ad dekha. Mujhe emergency fund banana hai."}
-NOTE = {"en": "*Example for illustration only. Your emergency fund depends on your own expenses and needs.",
-        "hi": "*केवल उदाहरण। आपका emergency fund आपके अपने खर्चों और ज़रूरतों पर निर्भर करता है।"}
+MSG = {"en": 'Hi! Bus stop ad: Build my emergency fund.',
+       "hi": 'Hi! Bus stop ad: Emergency fund banana hai.'}
+NOTE = ("*Example for illustration only. Your emergency fund depends on your own expenses and needs.")
+SIDE_NOTE = ''
+
 T = {
     "en": dict(
         f_h1="Nobody buys an umbrella in the middle of a storm.",
         f_h2="Build your emergency fund before you need it.",
-        l_words=["Job loss.", "Hospital bill.", "Urgent repair."], l_cap="Life doesn&rsquo;t check the forecast.",
-        r_big="6 months", r_cap="of expenses, kept ready. Your financial umbrella.",
+        s_words=["Job loss.", "Hospital bill.", "Urgent repair."], s_cap="Life doesn&rsquo;t check the forecast.",
         b_h1='How big should <span class="o">your umbrella</span> be?',
         b_sub="Keep 6 months of expenses set aside, easy to withdraw, and separate from long-term money.",
         eq=[("&#8377;40,000", "monthly expenses"), ("6 months", "of cover"), ("&#8377;2.4 lakh*", "emergency fund")]),
     "hi": dict(
         f_h1="तूफ़ान के बीच कोई छाता नहीं खरीदता।",
-        f_h2="Emergency fund ज़रूरत से पहले बनाइए।",
-        l_words=["नौकरी जाना।", "अस्पताल का बिल।", "अचानक मरम्मत।"], l_cap="मुसीबत मौसम देखकर नहीं आती।",
-        r_big="6 महीने", r_cap="के खर्च, हमेशा तैयार। यही है आपका financial छाता।",
+        f_h2="इमरजेंसी फंड ज़रूरत से पहले बनाइए।",
+        s_words=["नौकरी जाना।", "अस्पताल का बिल।", "अचानक मरम्मत।"], s_cap="मुसीबत मौसम देखकर नहीं आती।",
         b_h1='आपका <span class="o">छाता</span> कितना बड़ा हो?',
         b_sub="6 महीने के खर्च अलग रखें, जो ज़रूरत पड़ने पर आसानी से निकल सकें।",
-        eq=[("&#8377;40,000", "महीने का खर्च"), ("6 महीने", "की सुरक्षा"), ("&#8377;2.4 लाख*", "emergency fund")]),
+        eq=[("&#8377;40,000", "महीने का खर्च"), ("6 महीने", "की सुरक्षा"), ("&#8377;2.4 लाख*", "इमरजेंसी फंड")]),
 }
 
 UMBRELLA = ('<svg viewBox="0 0 120 120" width="100%" height="100%"><path d="M60 10C30 10 8 32 6 58c6-6 12-6 18 0 6-6 12-6 18 '
@@ -50,28 +49,6 @@ def panels(lang, t):
 <div class="copy"><div class="a d">{t['f_h1']}</div><div class="b">{t['f_h2']}</div></div>
 <div class="row">{logo(40, chip=True)}{call(46)}</div>""")
 
-    words = "".join(f"<div>{w}</div>" for w in t["l_words"])
-    left = dict(bg="#0C1632", legal="navy", note=False, css=f".stage {{ {RAIN} }}" + """
-.words { position:absolute; left:30px; right:24px; top:34px; color:#fff; font-size:42px; font-family:var(--sans); font-weight:800; line-height:var(--lt); }
-.words div:nth-child(2) { color:var(--orange); }
-.cap { position:absolute; left:30px; right:24px; top:228px; color:rgba(255,255,255,.85); font-size:24px; }
-.bot { position:absolute; left:30px; bottom:14px; color:#fff; }
-.lg { position:absolute; right:24px; bottom:14px; }
-""", html=f"""
-<div class="words">{words}</div><div class="cap d">{t['l_cap']}</div>
-<div class="bot">{call(26)}</div><div class="lg">{logo(18, chip=True)}</div>""")
-
-    right = dict(bg="var(--orange)", legal="navy", note=True, css="""
-.u { position:absolute; right:24px; top:20px; width:118px; height:118px; }
-.big { position:absolute; left:28px; top:156px; color:#fff; font-size:70px; font-family:var(--sans); font-weight:800; line-height:1; }
-.cap { position:absolute; left:30px; right:26px; top:232px; color:var(--navy); font-size:20px; font-weight:700; line-height:1.3; }
-.bot { position:absolute; left:30px; bottom:14px; color:#fff; }
-.bot .call .ico { color:var(--navy); }
-.lg { position:absolute; left:28px; top:28px; }
-""", html=f"""
-<div class="lg">{logo(22, chip=True)}</div><div class="u">{umb('#fff', '#1B2666')}</div>
-<div class="big">{t['r_big']}</div><div class="cap">{t['r_cap']}</div><div class="bot">{call(28)}</div>""")
-
     eq = t["eq"]
     back = dict(bg="#0C1632", legal="navy", note=True, css=f".stage {{ {RAIN} }}" + """
 .lg { position:absolute; left:44px; top:26px; }
@@ -87,11 +64,28 @@ def panels(lang, t):
   align-items:center; justify-content:center; gap:12px; }
 .cta .u { width:70px; height:70px; position:absolute; top:16px; right:18px; opacity:.9; }
 """, html=f"""
-<div class="lg">{logo(40, chip=True)}</div>
+<div class="lg">{lockup(38, chip=True)}</div>
 <div class="h1 d">{t['b_h1']}</div>
 <div class="eq"><div class="t"><div class="v">{eq[0][0]}</div><div class="l">{eq[0][1]}</div></div><div class="op">&times;</div>
 <div class="t"><div class="v">{eq[1][0]}</div><div class="l">{eq[1][1]}</div></div><div class="op">=</div>
 <div class="t hl"><div class="v">{eq[2][0]}</div><div class="l">{eq[2][1]}</div></div></div>
 <div class="sub">{t['b_sub']}</div>
 <div class="cta">{qr_block(lang, MSG[lang], 128, 14)}{call(26)}</div>""")
-    return dict(front=front, left=left, right=right, back=back)
+    return dict(front=front, back=back)
+
+
+def side(lang, t):
+    words = "".join(f"<div>{w}</div>" for w in t["s_words"])
+    return dict(bg="#0C1632", note=False, css=f".stage {{ {RAIN} }}" + """
+.lk { position:absolute; left:24px; top:18px; }
+.u { position:absolute; right:22px; top:14px; width:62px; height:62px; }
+.words { position:absolute; left:24px; right:24px; top:68px; color:#fff; font-family:var(--sans); font-weight:800;
+  font-size:36px; line-height:1.12; }
+body.hi .words { font-size:34px; line-height:1.2; }
+.words div:nth-child(2) { color:var(--orange); }
+.cap { position:absolute; left:24px; right:24px; top:198px; color:rgba(255,255,255,.88); font-size:20px; }
+""", html=f"""
+<div class="lk">{lockup(22, chip=True)}</div>
+<div class="u">{umb('#E8511A', '#fff')}</div>
+<div class="words">{words}</div><div class="cap d">{t['s_cap']}</div>
+{side_cta(lang, MSG[lang], color="#fff")}""")
