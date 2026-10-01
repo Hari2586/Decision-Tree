@@ -12,18 +12,18 @@ T = {
     "en": dict(
         toggle="Auto-renew FD", f_h1="FD maturing?", f_h2="Don&rsquo;t renew on autopilot.",
         f_sub="Compare FDs, bonds, debentures and more before you decide.*",
-        s_big="5 options.<br>1 call.", s_list="FDs &bull; Debentures &bull; Gov. Bonds &bull; 54EC Bonds &bull; Debt Funds",
+        s_big="5 options.<br>1 call.", s_list="FDs &bull; Debentures &bull; Gov. Bonds &bull; Capital Gain Bonds &bull; Debt Funds",
         b_h1='Before you renew, <span class="o">meet the other options.</span>',
         cards=[("FDs", "Fixed interest, tenure of your choice"), ("Debentures", "Fixed coupons from rated companies"),
-               ("Gov. Bonds", "Backed by the Government of India"), ("54EC Bonds", "Save tax on property gains"),
+               ("Gov. Bonds", "Backed by the Government of India"), ("Capital Gain Bonds", "Save tax on property gains"),
                ("Debt Funds", "Flexible, market-linked")]),
     "hi": dict(
         toggle="FD ऑटो-रिन्यू", f_h1="FD मैच्योर हो रही है?", f_h2="बिना सोचे रिन्यू न करें।",
         f_sub="फ़ैसले से पहले FD, बॉन्ड, डिबेंचर और बाकी विकल्पों की तुलना करें।*",
-        s_big="5 विकल्प।<br>1 कॉल।", s_list="FDs &bull; Debentures &bull; Gov. Bonds &bull; 54EC Bonds &bull; Debt Funds",
+        s_big="5 विकल्प।<br>1 कॉल।", s_list="FDs &bull; Debentures &bull; Gov. Bonds &bull; Capital Gain Bonds &bull; Debt Funds",
         b_h1='रिन्यू करने से पहले, <span class="o">बाकी विकल्प भी जानिए।</span>',
         cards=[("FDs", "तय ब्याज, अपनी पसंद की अवधि"), ("Debentures", "रेटेड कंपनियों से तय कूपन"),
-               ("Gov. Bonds", "भारत सरकार द्वारा समर्थित"), ("54EC Bonds", "प्रॉपर्टी के मुनाफ़े पर टैक्स बचत"),
+               ("Gov. Bonds", "भारत सरकार द्वारा समर्थित"), ("Capital Gain Bonds", "प्रॉपर्टी के मुनाफ़े पर टैक्स बचत"),
                ("Debt Funds", "लचीले, बाज़ार से जुड़े")]),
 }
 
@@ -46,7 +46,7 @@ def panels(lang, t):
 .tw { position:absolute; left:70px; top:80px; }
 .tlbl { position:absolute; left:74px; top:38px; font-size:28px; font-weight:800; color:var(--navy); }
 .pause { position:absolute; left:420px; top:96px; width:92px; height:92px; border-radius:50%; background:var(--navy);
-  display:flex; align-items:center; justify-content:center; gap:12px; box-shadow:0 8px 20px rgba(27,38,102,.3); }
+  display:flex; align-items:center; justify-content:center; gap:12px; box-shadow:0 8px 20px rgba(22,32,91,.3); }
 .pause i { width:12px; height:40px; background:#fff; border-radius:3px; }
 .copy { position:absolute; left:660px; right:60px; top:44px; }
 .copy .a { font-size:40px; font-weight:800; color:var(--muted); line-height:var(--lt); }

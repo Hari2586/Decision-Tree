@@ -50,7 +50,7 @@ def panels(lang, t):
 .lg { position:absolute; left:44px; top:26px; }
 .h1 { position:absolute; left:44px; width:360px; top:96px; font-size:46px; }
 .flow { position:absolute; left:440px; right:320px; top:56px; display:flex; flex-direction:column; gap:12px; }
-.bx { background:#fff; border-radius:14px; padding:14px 18px; box-shadow:0 2px 10px rgba(27,38,102,.07); }
+.bx { background:#fff; border-radius:14px; padding:14px 18px; box-shadow:0 2px 10px rgba(22,32,91,.07); }
 .bx .v { font-family:var(--display); font-weight:var(--dw); font-size:44px; line-height:1.05; }
 .bx .l { font-size:15px; color:var(--muted); font-weight:600; }
 .bx.hl { background:var(--navy); } .bx.hl .v { color:var(--orange); } .bx.hl .l { color:rgba(255,255,255,.85); }

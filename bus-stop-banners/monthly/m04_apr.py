@@ -41,13 +41,13 @@ def _chart(w, h):
     def pts(vals):
         return " ".join(f"{(i + 1) * w / 20:.1f},{h - v / top * (h - 8):.1f}" for i, v in enumerate(vals))
     return (f'<svg width="{w}" height="{h}" viewBox="0 0 {w} {h}">'
-            f'<polygon points="0,{h} {pts(up)} {w},{h}" fill="rgba(232,81,26,.14)"/>'
-            f'<polyline points="0,{h} {pts(up)}" fill="none" stroke="#E8511A" stroke-width="5" stroke-linejoin="round"/>'
-            f'<polyline points="0,{h} {pts(flat)}" fill="none" stroke="#1B2666" stroke-width="4" stroke-dasharray="10 8"/>'
+            f'<polygon points="0,{h} {pts(up)} {w},{h}" fill="rgba(255,74,0,.14)"/>'
+            f'<polyline points="0,{h} {pts(up)}" fill="none" stroke="#FF4A00" stroke-width="5" stroke-linejoin="round"/>'
+            f'<polyline points="0,{h} {pts(flat)}" fill="none" stroke="#16205B" stroke-width="4" stroke-dasharray="10 8"/>'
             f'<line x1="0" y1="{h}" x2="{w}" y2="{h}" stroke="#B0B8C5" stroke-width="2"/></svg>')
 
 
-def _stairs(n, w, h, color="#E8511A"):
+def _stairs(n, w, h, color="#FF4A00"):
     sw, sh = w / n, h / n
     d = f"M0 {h} " + " ".join(f"V{h - (i + 1) * sh:.1f} H{(i + 1) * sw:.1f}" for i in range(n)) + f" V{h} Z"
     return f'<svg width="{w}" height="{h}" viewBox="0 0 {w} {h}"><path d="{d}" fill="{color}"/></svg>'

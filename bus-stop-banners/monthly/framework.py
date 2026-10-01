@@ -30,8 +30,8 @@ PHONE_SVG = ('<svg viewBox="0 0 24 24" class="ico" aria-hidden="true"><path fill
 
 BASE_CSS = """
 * { margin:0; padding:0; box-sizing:border-box; }
-:root { --navy:#1B2666; --orange:#E8511A; --cream:#F4EFE9; --warm:#FDFBF7; --ink:#0C1632;
-  --muted:color-mix(in srgb, #1B2666 72%, #ffffff); --lmuted:#B0B8C5; --line:#E0D8CE; }
+:root { --navy:#16205B; --orange:#FF4A00; --cream:#F4EFE9; --warm:#FDFBF7; --ink:#0D1440;
+  --muted:color-mix(in srgb, #16205B 72%, #ffffff); --lmuted:#B0B8C5; --line:#E0D8CE; }
 body.en { --display:'Lora', serif; --sans:'DM Sans', sans-serif; --hand:'Caveat', cursive; --dw:700; --lt:1.06; }
 body.hi { --display:'Mukta', sans-serif; --sans:'Mukta', sans-serif; --hand:'Kalam', cursive; --dw:800; --lt:1.2; }
 html, body { background:#8a8a8a; }
@@ -86,7 +86,7 @@ body.hi *:not(.lat) { letter-spacing:0 !important; }
 """
 
 
-def qr_svg(message, color="#1B2666"):
+def qr_svg(message, color="#16205B"):
     url = f"https://wa.me/{WA_NUMBER}?text={urllib.parse.quote(message, safe='!,.:?')}"
     q = segno.make(url, error="m")
     n = q.symbol_size(border=0)[0]
@@ -101,16 +101,16 @@ def call(size, cls=""):
 
 def logo(height, chip=False, style=""):
     return (f'<div class="logo{" chip" if chip else ""}" style="height:{height + (12 if chip else 0)}px;{style}">'
-            f'<img src="{ASSETS}/logo.png" alt="MoneyHoney"></div>')
+            f'<img src="{ASSETS}/logo.svg" alt="MoneyHoney"></div>')
 
 
 def lockup(height, chip=False, style=""):
     """Logo with the 'Since 2008' tag beside it."""
     return (f'<div class="lockup{" chip" if chip else ""}" style="--lh:{height}px;{style}">'
-            f'<img src="{ASSETS}/logo.png" alt="MoneyHoney"><span class="since lat">{LEGAL["since"]}</span></div>')
+            f'<img src="{ASSETS}/logo.svg" alt="MoneyHoney"><span class="since lat">{LEGAL["since"]}</span></div>')
 
 
-def qr_block(lang, message, size, label_size=13, color="#1B2666", label_color="inherit"):
+def qr_block(lang, message, size, label_size=13, color="#16205B", label_color="inherit"):
     return (f'<div class="qrb"><div class="qr" style="width:{size}px;height:{size}px">{qr_svg(message, color)}</div>'
             f'<div class="qrl" style="font-size:{label_size}px;color:{label_color}">{SCAN[lang]}</div></div>')
 

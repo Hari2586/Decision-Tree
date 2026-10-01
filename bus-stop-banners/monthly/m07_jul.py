@@ -28,7 +28,7 @@ UMBRELLA = ('<svg viewBox="0 0 120 120" width="100%" height="100%"><path d="M60 
             '0 6-6 12-6 18 0 6-6 12-6 18 0 6-6 12-6 18 0 6-6 12-6 18 0C112 32 90 10 60 10z" fill="{c1}"/><path d="M60 '
             '10c-12 10-18 28-18 48M60 10c12 10 18 28 18 48" stroke="{c2}" stroke-width="2.5" fill="none" opacity=".35"/>'
             '<path d="M60 58v42a8 8 0 0 1-16 0" stroke="{c2}" stroke-width="5" fill="none" stroke-linecap="round"/></svg>')
-RAIN = ("background-color:#0C1632; background-image:repeating-linear-gradient(105deg, rgba(255,255,255,.07) 0 2px, "
+RAIN = ("background-color:#0D1440; background-image:repeating-linear-gradient(105deg, rgba(255,255,255,.07) 0 2px, "
         "transparent 2px 26px), repeating-linear-gradient(105deg, rgba(255,255,255,.04) 0 1px, transparent 1px 13px);")
 
 
@@ -37,20 +37,20 @@ def umb(c1, c2):
 
 
 def panels(lang, t):
-    front = dict(bg="#0C1632", legal="navy", note=False, css=f".stage {{ {RAIN} }}" + """
+    front = dict(bg="#0D1440", legal="navy", note=False, css=f".stage {{ {RAIN} }}" + """
 .u { position:absolute; left:90px; top:18px; width:250px; height:250px; }
-.dry { position:absolute; left:92px; top:168px; width:256px; height:160px; background:#0C1632;
+.dry { position:absolute; left:92px; top:168px; width:256px; height:160px; background:#0D1440;
   clip-path:polygon(0 0, 100% 0, 88% 100%, 12% 100%); opacity:.9; }
 .copy { position:absolute; left:440px; right:60px; top:44px; color:#fff; }
 .copy .a { font-size:50px; } .copy .b { font-size:30px; color:var(--orange); font-weight:800; margin-top:14px; font-family:var(--sans); }
 .row { position:absolute; left:440px; right:60px; bottom:26px; display:flex; justify-content:space-between; align-items:center; color:#fff; }
 """, html=f"""
-<div class="u">{umb('#E8511A', '#fff')}</div>
+<div class="u">{umb('#FF4A00', '#fff')}</div>
 <div class="copy"><div class="a d">{t['f_h1']}</div><div class="b">{t['f_h2']}</div></div>
 <div class="row">{logo(40, chip=True)}{call(46)}</div>""")
 
     eq = t["eq"]
-    back = dict(bg="#0C1632", legal="navy", note=True, css=f".stage {{ {RAIN} }}" + """
+    back = dict(bg="#0D1440", legal="navy", note=True, css=f".stage {{ {RAIN} }}" + """
 .lg { position:absolute; left:44px; top:26px; }
 .h1 { position:absolute; left:44px; right:340px; top:92px; color:#fff; font-size:40px; }
 .eq { position:absolute; left:44px; right:340px; top:170px; display:flex; align-items:center; gap:14px; }
@@ -76,7 +76,7 @@ def panels(lang, t):
 
 def side(lang, t):
     words = "".join(f"<div>{w}</div>" for w in t["s_words"])
-    return dict(bg="#0C1632", note=False, css=f".stage {{ {RAIN} }}" + """
+    return dict(bg="#0D1440", note=False, css=f".stage {{ {RAIN} }}" + """
 .lk { position:absolute; left:24px; top:18px; }
 .u { position:absolute; right:22px; top:14px; width:62px; height:62px; }
 .words { position:absolute; left:24px; right:24px; top:68px; color:#fff; font-family:var(--sans); font-weight:800;
@@ -86,6 +86,6 @@ body.hi .words { font-size:34px; line-height:1.2; }
 .cap { position:absolute; left:24px; right:24px; top:198px; color:rgba(255,255,255,.88); font-size:20px; }
 """, html=f"""
 <div class="lk">{lockup(22, chip=True)}</div>
-<div class="u">{umb('#E8511A', '#fff')}</div>
+<div class="u">{umb('#FF4A00', '#fff')}</div>
 <div class="words">{words}</div><div class="cap d">{t['s_cap']}</div>
 {side_cta(lang, MSG[lang], color="#fff")}""")

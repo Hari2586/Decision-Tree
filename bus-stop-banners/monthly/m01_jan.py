@@ -39,15 +39,15 @@ def _sip_bars():
         h = 150 * v / top
         inv = 150 * 5000 * 12 * (i + 1) / top
         x = 14 + i * 26
-        bars.append(f'<rect x="{x}" y="{160 - h:.1f}" width="18" height="{h:.1f}" rx="3" fill="#E8511A"/>'
-                    f'<rect x="{x}" y="{160 - inv:.1f}" width="18" height="{inv:.1f}" rx="3" fill="#1B2666"/>')
+        bars.append(f'<rect x="{x}" y="{160 - h:.1f}" width="18" height="{h:.1f}" rx="3" fill="#FF4A00"/>'
+                    f'<rect x="{x}" y="{160 - inv:.1f}" width="18" height="{inv:.1f}" rx="3" fill="#16205B"/>')
     return "".join(bars)
 
 
 PAPER = """
-.paper { position:absolute; background:#fff; transform:rotate(-2.5deg); box-shadow:0 10px 30px rgba(27,38,102,.16);
-  background-image:repeating-linear-gradient(#fff 0 39px, rgba(27,38,102,.12) 39px 40px); border-radius:4px; }
-.paper::before { content:''; position:absolute; top:0; bottom:0; left:46px; width:2px; background:rgba(232,81,26,.45); }
+.paper { position:absolute; background:#fff; transform:rotate(-2.5deg); box-shadow:0 10px 30px rgba(22,32,91,.16);
+  background-image:repeating-linear-gradient(#fff 0 39px, rgba(22,32,91,.12) 39px 40px); border-radius:4px; }
+.paper::before { content:''; position:absolute; top:0; bottom:0; left:46px; width:2px; background:rgba(255,74,0,.45); }
 .strike { text-decoration:line-through; text-decoration-color:var(--orange); text-decoration-thickness:4px; }
 .circled { display:inline-block; border:4px solid var(--orange); border-radius:50%; padding:0 18px; margin-left:-18px; }
 """
@@ -88,7 +88,7 @@ def panels(lang, t):
 <div class="brand">{lockup(38)}</div>
 <div class="chart">
   <div class="c2 d">{t['b_val']}</div>
-  <div class="key"><span><i style="background:#1B2666"></i>{t['b_inv']}</span></div>
+  <div class="key"><span><i style="background:#16205B"></i>{t['b_inv']}</span></div>
   <svg width="500" height="160" viewBox="0 0 540 160">{_sip_bars()}</svg>
   <div class="ax" style="left:14px">{t['b_y1']}</div><div class="ax" style="right:14px">{t['b_y20']}</div>
 </div>
@@ -104,8 +104,8 @@ def side(lang, t):
 .lk { position:absolute; left:24px; top:18px; }
 .cards { position:absolute; left:24px; right:24px; top:64px; display:flex; gap:16px; }
 .card { flex:1; position:relative; background:#fff; border-radius:4px; padding:8px 10px 12px 28px;
-  box-shadow:0 8px 20px rgba(27,38,102,.13); background-image:repeating-linear-gradient(#fff 0 29px, rgba(27,38,102,.12) 29px 30px); }
-.card::before { content:''; position:absolute; top:0; bottom:0; left:18px; width:2px; background:rgba(232,81,26,.45); }
+  box-shadow:0 8px 20px rgba(22,32,91,.13); background-image:repeating-linear-gradient(#fff 0 29px, rgba(22,32,91,.12) 29px 30px); }
+.card::before { content:''; position:absolute; top:0; bottom:0; left:18px; width:2px; background:rgba(255,74,0,.45); }
 .card.a { transform:rotate(-3deg); } .card.b { transform:rotate(2.5deg); }
 .card .n { font-family:var(--hand); font-weight:700; font-size:19px; line-height:30px; color:var(--muted); }
 .card .it { font-family:var(--hand); font-weight:700; font-size:27px; line-height:30px; color:var(--navy); white-space:nowrap; }

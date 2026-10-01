@@ -30,7 +30,7 @@ T = {
         b_sub="इस त्योहार, अपने बच्चे के नाम पर SIP शुरू करें।"),
 }
 
-def diya(bowl="#E8511A", flame="#E8511A", glow="#E8511A", dots="#F4EFE9", gid="gl"):
+def diya(bowl="#FF4A00", flame="#FF4A00", glow="#FF4A00", dots="#F4EFE9", gid="gl"):
     return (f'<svg viewBox="0 0 120 120" width="100%" height="100%"><defs><radialGradient id="{gid}"><stop offset="0" '
             f'stop-color="{glow}" stop-opacity=".5"/><stop offset="1" stop-color="{glow}" stop-opacity="0"/></radialGradient>'
             f'</defs><circle cx="60" cy="46" r="44" fill="url(#{gid})"/><path d="M60 18c8 12 12 20 12 27a12 12 0 0 1-24 0'
@@ -40,13 +40,13 @@ def diya(bowl="#E8511A", flame="#E8511A", glow="#E8511A", dots="#F4EFE9", gid="g
 
 
 DIYA = diya()
-SPARKLE = ("background-color:#0C1632; background-image:radial-gradient(circle, rgba(232,81,26,.6) 0 1.6px, transparent 2.2px), "
+SPARKLE = ("background-color:#0D1440; background-image:radial-gradient(circle, rgba(255,74,0,.6) 0 1.6px, transparent 2.2px), "
            "radial-gradient(circle, rgba(255,255,255,.35) 0 1.2px, transparent 1.8px); background-size:46px 46px, 73px 73px; "
            "background-position:0 0, 20px 30px;")
 
 
 def panels(lang, t):
-    front = dict(bg="#0C1632", legal="navy", note=False, css=f".stage {{ {SPARKLE} }}" + """
+    front = dict(bg="#0D1440", legal="navy", note=False, css=f".stage {{ {SPARKLE} }}" + """
 .dy { position:absolute; left:80px; top:30px; width:300px; height:300px; }
 .copy { position:absolute; left:450px; right:60px; top:42px; color:#fff; }
 .copy .a { font-size:40px; color:rgba(255,255,255,.75); font-family:var(--sans); font-weight:800; line-height:var(--lt); }
@@ -65,12 +65,12 @@ def panels(lang, t):
     xs = [30, 270, 510, 730]
     ys = [H - 22 - v / vals[-1] * (H - 44) for v in vals]
     path = "M" + " ".join(f"{x},{y:.0f}" for x, y in zip(xs, ys))
-    nodes = "".join(f'<circle cx="{x}" cy="{y:.0f}" r="{16 if i == 3 else 9}" fill="{"#E8511A" if i == 3 else "#fff"}" '
-                    f'stroke="#E8511A" stroke-width="4"/>' for i, (x, y) in enumerate(zip(xs, ys)))
+    nodes = "".join(f'<circle cx="{x}" cy="{y:.0f}" r="{16 if i == 3 else 9}" fill="{"#FF4A00" if i == 3 else "#fff"}" '
+                    f'stroke="#FF4A00" stroke-width="4"/>' for i, (x, y) in enumerate(zip(xs, ys)))
     labels = "".join(
         f'<div class="ms{" last" if i == 3 else " first" if i == 0 else ""}" style="left:{x}px;top:{y:.0f}px"><div class="v">{v}</div><div class="a">{a_}</div></div>'
         for i, ((a_, v), x, y) in enumerate(zip(t["steps"], xs, ys)))
-    back = dict(bg="#0C1632", legal="navy", note=True, css=f".stage {{ {SPARKLE} }}" + """
+    back = dict(bg="#0D1440", legal="navy", note=True, css=f".stage {{ {SPARKLE} }}" + """
 .lg { position:absolute; left:44px; top:24px; }
 .tag { position:absolute; left:400px; top:36px; color:#fff; font-size:13px; font-weight:700; letter-spacing:.06em;
   border:1.5px solid rgba(255,255,255,.55); border-radius:30px; padding:3px 12px; }
@@ -92,7 +92,7 @@ def panels(lang, t):
 <div class="tag">{t['tag']}</div>
 <div class="h1 d">{t['b_h1']}</div>
 <div class="journey"><svg width="{W}" height="{H}" viewBox="0 0 {W} {H}">
-<path d="{path}" fill="none" stroke="#E8511A" stroke-width="4" stroke-dasharray="2 10" stroke-linecap="round"/>{nodes}</svg>{labels}</div>
+<path d="{path}" fill="none" stroke="#FF4A00" stroke-width="4" stroke-dasharray="2 10" stroke-linecap="round"/>{nodes}</svg>{labels}</div>
 <div class="inv">{t['inv']} &middot; {t['b_sub']}</div>
 <div class="cta">{qr_block(lang, MSG[lang], 128, 14)}{call(26)}</div>""")
     return dict(front=front, back=back)
@@ -109,6 +109,6 @@ def side(lang, t):
 .cap { position:absolute; left:24px; right:24px; top:176px; color:#fff; font-size:17px; font-weight:700; line-height:1.25; }
 """, html=f"""
 <div class="lk">{lockup(22, chip=True)}</div>
-<div class="dy">{diya(bowl="#1B2666", flame="#fff", glow="#fff", dots="#E8511A", gid="gls")}</div>
+<div class="dy">{diya(bowl="#16205B", flame="#fff", glow="#fff", dots="#FF4A00", gid="gls")}</div>
 <div class="stag">{t['tag']}</div><div class="big lat">{t['s_big']}</div><div class="dur">{t['s_dur']}</div><div class="cap">{t['s_cap']}</div>
 {side_cta(lang, MSG[lang], color="var(--navy)", icon="#fff")}""")

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MoneyHoney 09-sep stop 2 back</title>
+<link rel="stylesheet" href="../../assets/fonts.css">
+<style>
+
+* { margin:0; padding:0; box-sizing:border-box; }
+:root { --navy:#16205B; --orange:#FF4A00; --cream:#F4EFE9; --warm:#FDFBF7; --ink:#0D1440;
+  --muted:color-mix(in srgb, #16205B 72%, #ffffff); --lmuted:#B0B8C5; --line:#E0D8CE; }
+body.en { --display:'Lora', serif; --sans:'DM Sans', sans-serif; --hand:'Caveat', cursive; --dw:700; --lt:1.06; }
+body.hi { --display:'Mukta', sans-serif; --sans:'Mukta', sans-serif; --hand:'Kalam', cursive; --dw:800; --lt:1.2; }
+html, body { background:#8a8a8a; }
+body { padding:24px; font-family:var(--sans); }
+@media print { html, body { background:none; padding:0; } .banner { margin:0 !important; } }
+.banner { position:relative; overflow:hidden; margin:0 auto; display:flex; flex-direction:column; color:var(--navy); }
+.stage { position:relative; flex:1; min-height:0; overflow:hidden; }
+.d { font-family:var(--display); font-weight:var(--dw); line-height:var(--lt); }
+.stage div { text-wrap-style:pretty; }
+.stage .d, .stage .hl, .stage .h1 { text-wrap-style:balance; }
+.stage .cal div { text-wrap-style:auto; }
+.s { font-family:var(--sans); }
+.h { font-family:var(--hand); font-weight:700; }
+.o { color:var(--orange); }
+body.hi *:not(.lat) { letter-spacing:0 !important; }
+.w { color:#fff; }
+.n { color:var(--navy); }
+.call { display:inline-flex; align-items:center; gap:.28em; font-family:'DM Sans', sans-serif; font-weight:800;
+  white-space:nowrap; letter-spacing:-.01em; line-height:1; }
+.call .ico { width:.78em; height:.78em; color:var(--orange); flex:none; }
+.call.onorange .ico { color:#fff; }
+.logo img { display:block; height:100%; width:auto; }
+.logo.chip { background:#fff; border-radius:8px; padding:5px 10px; }
+.qrb { display:flex; flex-direction:column; align-items:center; }
+.qrb .qr { background:#fff; padding:10px; border-radius:8px; }
+.qrb .qr svg { display:block; }
+.qrb .qrl { font-weight:700; margin-top:5px; white-space:nowrap; }
+.pband { flex:none; height:42px; display:flex; align-items:center; gap:22px; padding:0 40px 0 0; background:var(--navy);
+  color:#fff; border-top:3px solid var(--orange); font-family:var(--sans); }
+.pband .since { height:100%; display:flex; align-items:center; background:var(--orange); padding:0 22px 0 40px;
+  font-weight:800; font-size:19px; white-space:nowrap; clip-path:polygon(0 0,100% 0,calc(100% - 16px) 100%,0 100%); padding-right:34px; }
+.pband .prods { flex:1; display:flex; justify-content:space-between; align-items:center; font-weight:700; font-size:19px; white-space:nowrap; }
+.pband .sep { color:var(--orange); }
+.lockup { display:inline-flex; align-items:center; gap:calc(var(--lh) * .34); }
+.lockup img { display:block; height:var(--lh); width:auto; }
+.lockup .since { font-family:'DM Sans', sans-serif; font-weight:700; font-size:calc(var(--lh) * .44); color:var(--navy);
+  line-height:1; white-space:nowrap; padding-left:calc(var(--lh) * .34); border-left:2px solid var(--orange); }
+.lockup.chip { background:#fff; border-radius:8px; padding:6px 12px; }
+.scta { position:absolute; display:flex; align-items:center; gap:14px; }
+.scta .qr { flex:none; background:#fff; padding:8px; border-radius:8px; box-shadow:0 0 0 1.5px var(--line); }
+.scta .qr svg { display:block; }
+.scta .call .ico { color:var(--ico); }
+.scta .sl { font-weight:700; opacity:.85; margin-bottom:6px; white-space:nowrap; }
+.cz { flex:none; background:#fff; text-align:center; font-family:'DM Sans', sans-serif; border-top:3px solid var(--orange); }
+.cz-w { color:#000; font-weight:700; line-height:1.22; text-wrap-style:balance; }
+.cz-m { color:var(--navy); display:flex; flex-wrap:wrap; justify-content:center; column-gap:1.4em; row-gap:.2em; line-height:1.3; }
+.cz-m b { font-weight:700; }
+.cz-m .fn { color:var(--muted); text-wrap-style:balance; }
+.cz-front { border-top:0; padding:8px 40px 8px; } .cz-front .cz-w { font-size:21px; } .cz-front .cz-m { font-size:10.5px; margin-top:5px; }
+.cz-back { padding:8px 36px 8px; } .cz-back .cz-w { font-size:18.5px; } .cz-back .cz-m { font-size:9.6px; margin-top:4px; }
+.cz-side { padding:7px 14px 7px; } .cz-side .cz-w { font-size:12.6px; } .cz-side .cz-m { font-size:7.8px; margin-top:4px; }
+
+.banner { width:1200px; height:400px; background:#fff; }
+
+.lg { position:absolute; left:44px; top:24px; }
+.h1 { position:absolute; left:44px; right:330px; top:84px; color:var(--navy); font-size:36px; }
+.h1 .o { color:var(--orange); }
+.cta { position:absolute; right:0; top:0; bottom:0; width:280px; background:var(--navy); color:#fff; display:flex;
+  flex-direction:column; align-items:center; justify-content:center; gap:14px; }
+.cta .call .ico { color:var(--orange); }
+.bs { position:absolute; left:44px; right:330px; bottom:20px; color:var(--muted); font-size:16px; font-weight:600; }
+.card { background:var(--cream); border-radius:12px; color:var(--navy); }
+.card .a { font-weight:800; font-size:20px; } .card .b { font-size:15px; color:var(--muted); margin-top:3px; }
+.cmp { position:absolute; left:44px; right:330px; top:148px; display:flex; gap:16px; }
+.col { flex:1; padding:14px 18px; }
+.col h3 { font-size:20px; font-weight:800; margin-bottom:6px; }
+.col ul { list-style:none; } .col li { font-size:17px; padding:3px 0; display:flex; gap:10px; align-items:center; }
+.col .m { width:22px; height:22px; flex:none; border-radius:50%; display:flex; align-items:center; justify-content:center;
+  font-size:13px; font-weight:800; font-family:'DM Sans', sans-serif; }
+.col.l { opacity:.9; } .col.l .m { background:var(--lmuted); color:#fff; }
+.col.r { background:var(--orange); color:#fff; } .col.r .m { background:#fff; color:var(--orange); }
+</style>
+</head>
+<body class="hi p-back" data-w="1200" data-h="400">
+<div class="banner">
+<div class="stage">
+<div class="lg"><div class="lockup" style="--lh:38px;"><img src="../../assets/logo.svg" alt="MoneyHoney"><span class="since lat">Since 2008</span></div></div><div class="h1 d">रिटायरमेंट के बाद भी <span class="o">हर महीने &lsquo;सैलरी&rsquo;।</span></div><div class="cta"><div class="qrb"><div class="qr" style="width:128px;height:128px"><svg viewBox="0 0 41 41" width="100%" height="100%" shape-rendering="crispEdges" class="segno"><path class="qrline" stroke="#16205b" d="M0 0.5h7m1 0h1m1 0h4m6 0h2m1 0h1m1 0h1m1 0h1m1 0h1m2 0h1m1 0h7m-41 1h1m5 0h1m4 0h1m1 0h2m3 0h5m1 0h2m4 0h3m1 0h1m5 0h1m-41 1h1m1 0h3m1 0h1m4 0h5m1 0h3m2 0h3m1 0h1m1 0h2m1 0h1m2 0h1m1 0h3m1 0h1m-41 1h1m1 0h3m1 0h1m1 0h3m1 0h1m4 0h1m2 0h2m1 0h3m1 0h1m2 0h1m3 0h1m1 0h3m1 0h1m-41 1h1m1 0h3m1 0h1m1 0h1m1 0h3m2 0h1m1 0h1m2 0h1m2 0h1m2 0h3m1 0h1m1 0h1m1 0h1m1 0h3m1 0h1m-41 1h1m5 0h1m1 0h4m2 0h1m1 0h1m1 0h3m7 0h2m1 0h1m2 0h1m5 0h1m-41 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-33 1h2m1 0h1m5 0h1m1 0h1m1 0h2m3 0h2m1 0h2m-31 1h1m3 0h1m1 0h3m2 0h1m1 0h2m2 0h3m1 0h1m4 0h1m2 0h1m1 0h1m1 0h5m2 0h1m-41 1h1m1 0h1m1 0h2m2 0h1m1 0h1m2 0h2m5 0h1m1 0h4m1 0h1m2 0h1m2 0h1m1 0h3m2 0h1m-40 1h1m4 0h1m1 0h2m2 0h1m2 0h1m1 0h1m3 0h1m1 0h1m1 0h1m1 0h1m1 0h2m1 0h1m1 0h1m1 0h1m3 0h1m-40 1h1m2 0h1m2 0h2m2 0h1m1 0h3m1 0h1m3 0h4m1 0h2m1 0h4m1 0h2m1 0h1m-38 1h2m1 0h1m1 0h2m2 0h2m1 0h1m3 0h2m1 0h4m3 0h1m2 0h2m1 0h1m2 0h1m-36 1h1m1 0h3m3 0h3m2 0h2m3 0h2m1 0h1m2 0h5m4 0h2m1 0h1m1 0h1m1 0h1m-41 1h2m2 0h4m3 0h1m3 0h1m1 0h1m1 0h1m1 0h4m2 0h1m1 0h1m2 0h4m3 0h2m-41 1h2m1 0h1m1 0h1m2 0h1m1 0h3m4 0h1m1 0h5m3 0h3m1 0h1m5 0h1m1 0h1m-38 1h1m2 0h3m2 0h2m1 0h2m2 0h1m3 0h2m4 0h3m1 0h1m3 0h1m1 0h1m2 0h1m-41 1h3m2 0h1m3 0h1m1 0h8m1 0h1m2 0h1m2 0h2m4 0h5m1 0h3m-40 1h1m1 0h1m2 0h3m1 0h1m1 0h1m5 0h1m1 0h4m1 0h3m1 0h1m2 0h1m2 0h1m1 0h1m2 0h1m-41 1h1m2 0h2m2 0h3m1 0h3m1 0h2m3 0h2m2 0h1m2 0h1m1 0h2m1 0h1m1 0h2m-36 1h2m1 0h1m1 0h2m1 0h1m1 0h1m2 0h3m3 0h1m3 0h1m1 0h2m1 0h2m1 0h3m5 0h2m-36 1h1m1 0h1m2 0h1m1 0h4m2 0h1m1 0h1m1 0h2m2 0h3m1 0h1m1 0h1m3 0h1m3 0h1m-38 1h5m1 0h1m4 0h4m2 0h4m3 0h3m2 0h1m1 0h1m2 0h2m1 0h1m-39 1h1m1 0h2m3 0h3m1 0h2m2 0h1m2 0h4m2 0h1m1 0h3m6 0h1m-38 1h1m1 0h5m2 0h1m2 0h1m1 0h1m2 0h3m1 0h1m4 0h1m2 0h2m1 0h2m1 0h3m1 0h2m-40 1h1m1 0h2m2 0h1m1 0h2m2 0h3m4 0h6m1 0h2m1 0h1m1 0h2m1 0h2m1 0h1m1 0h1m-41 1h4m1 0h4m5 0h1m1 0h2m5 0h2m1 0h2m4 0h4m4 0h1m-41 1h2m1 0h1m1 0h1m3 0h1m4 0h1m1 0h6m2 0h1m1 0h2m1 0h1m1 0h3m1 0h1m1 0h1m1 0h1m-37 1h1m1 0h2m2 0h1m1 0h1m2 0h4m1 0h1m1 0h2m1 0h1m1 0h5m1 0h1m2 0h1m3 0h2m-41 1h6m2 0h2m2 0h3m2 0h6m4 0h2m4 0h4m1 0h3m-35 1h2m4 0h1m1 0h2m1 0h1m2 0h2m4 0h2m5 0h1m1 0h1m1 0h1m1 0h2m-38 1h2m2 0h1m1 0h1m1 0h1m4 0h3m2 0h2m1 0h1m1 0h5m2 0h1m1 0h3m1 0h2m-41 1h2m1 0h2m1 0h2m2 0h2m2 0h4m1 0h6m2 0h1m1 0h1m1 0h6m2 0h1m-32 1h3m1 0h2m1 0h2m1 0h1m1 0h4m1 0h3m1 0h4m3 0h5m-41 1h7m1 0h1m4 0h2m2 0h1m2 0h1m2 0h2m2 0h1m1 0h1m1 0h2m1 0h1m1 0h1m1 0h3m-41 1h1m5 0h1m2 0h2m1 0h1m2 0h1m1 0h2m3 0h1m1 0h1m2 0h1m1 0h1m2 0h1m3 0h1m2 0h2m-41 1h1m1 0h3m1 0h1m1 0h2m1 0h5m2 0h1m1 0h1m1 0h2m1 0h2m2 0h1m1 0h6m-37 1h1m1 0h3m1 0h1m2 0h2m1 0h1m1 0h1m2 0h1m2 0h1m2 0h4m1 0h5m2 0h1m3 0h1m-40 1h1m1 0h3m1 0h1m2 0h1m5 0h2m4 0h3m3 0h2m1 0h1m2 0h1m3 0h1m2 0h1m-41 1h1m5 0h1m4 0h1m1 0h2m3 0h1m2 0h2m3 0h4m2 0h2m1 0h1m1 0h1m1 0h2m-41 1h7m1 0h5m1 0h1m3 0h2m1 0h1m4 0h1m2 0h1m2 0h1m2 0h3m1 0h1"/></svg></div><div class="qrl" style="font-size:14px;color:inherit">स्कैन करें, बात करें</div></div><div class="call " style="font-size:26px"><svg viewBox="0 0 24 24" class="ico" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span>74000 60800</span></div></div><div class="cmp"><div class="card col l"><h3>एकमुश्त रकम, बिना प्लान</h3><ul><li><span class="m">&times;</span>खर्च का अंदाज़ा नहीं</li><li><span class="m">&times;</span>पैसा जल्दी ख़त्म होने का डर</li><li><span class="m">&times;</span>महँगाई का असर</li></ul></div><div class="card col r"><h3>SWP के साथ</h3><ul><li><span class="m">&#10003;</span>हर महीने तय रकम*</li><li><span class="m">&#10003;</span>बाकी रकम निवेश में</li><li><span class="m">&#10003;</span>ज़रूरत के हिसाब से बदलाव</li></ul></div></div>
+</div>
+
+<div class="cz cz-back"><div class="cz-w">Mutual Fund investments are subject to market risks, read all scheme related documents carefully.</div><div class="cz-m"><b>AMFI Registered Mutual Fund Distributor | ARN NO-60930</b><span class="fn">*SWP withdrawals are not guaranteed; they depend on the fund value and may reduce the capital invested.</span></div></div>
+</div>
+</body>
+</html>

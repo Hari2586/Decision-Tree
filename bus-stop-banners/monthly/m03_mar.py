@@ -32,7 +32,7 @@ def calendar(w, mon, day_px, band_px, rot=-4):
 
 
 CAL = """
-.cal { background:#fff; border-radius:14px; overflow:hidden; box-shadow:0 16px 40px rgba(12,22,50,.3); text-align:center; }
+.cal { background:#fff; border-radius:14px; overflow:hidden; box-shadow:0 16px 40px rgba(13,20,64,.3); text-align:center; }
 .cal .band { background:var(--navy); color:#fff; font-family:'DM Sans'; font-weight:800; letter-spacing:.2em; padding:.55em 0 .45em;
   position:relative; }
 body.hi .cal .band { font-family:'Mukta'; letter-spacing:.05em; }
@@ -65,7 +65,7 @@ def panels(lang, t):
 .h1 { position:absolute; left:44px; right:420px; top:112px; font-size:40px; }
 .steps { position:absolute; left:44px; right:330px; bottom:30px; display:flex; align-items:center; gap:10px; }
 .st { flex:1; display:flex; gap:12px; align-items:center; background:#fff; border-radius:12px; padding:12px 14px;
-  box-shadow:0 2px 10px rgba(27,38,102,.07); }
+  box-shadow:0 2px 10px rgba(22,32,91,.07); }
 .st .nm { width:44px; height:44px; flex:none; border-radius:50%; background:var(--orange); color:#fff; font-size:26px;
   display:flex; align-items:center; justify-content:center; line-height:1; }
 .st .a { font-weight:800; font-size:18px; } .st .b { font-size:13.5px; color:var(--muted); margin-top:2px; }
@@ -82,12 +82,12 @@ def panels(lang, t):
     return dict(front=front, back=back)
 
 
-HOURGLASS = ('<svg viewBox="0 0 64 64" width="100%" height="100%"><rect x="12" y="4" width="40" height="6" rx="3" fill="#1B2666"/>'
-             '<rect x="12" y="54" width="40" height="6" rx="3" fill="#1B2666"/><path d="M17 10h30c0 12-9 17-12 22 3 5 12 10 '
-             '12 22H17c0-12 9-17 12-22-3-5-12-10-12-22z" fill="none" stroke="#1B2666" stroke-width="3" stroke-linejoin="round"/>'
-             '<path d="M25 22h14c-1.6 3.6-4.6 5.6-7 8.2-2.4-2.6-5.4-4.6-7-8.2z" fill="#E8511A"/>'
-             '<path d="M32 33v12" stroke="#E8511A" stroke-width="2" stroke-dasharray="2 2"/>'
-             '<path d="M20 52c2-6.5 7-9 12-9s10 2.5 12 9z" fill="#E8511A"/></svg>')
+HOURGLASS = ('<svg viewBox="0 0 64 64" width="100%" height="100%"><rect x="12" y="4" width="40" height="6" rx="3" fill="#16205B"/>'
+             '<rect x="12" y="54" width="40" height="6" rx="3" fill="#16205B"/><path d="M17 10h30c0 12-9 17-12 22 3 5 12 10 '
+             '12 22H17c0-12 9-17 12-22-3-5-12-10-12-22z" fill="none" stroke="#16205B" stroke-width="3" stroke-linejoin="round"/>'
+             '<path d="M25 22h14c-1.6 3.6-4.6 5.6-7 8.2-2.4-2.6-5.4-4.6-7-8.2z" fill="#FF4A00"/>'
+             '<path d="M32 33v12" stroke="#FF4A00" stroke-width="2" stroke-dasharray="2 2"/>'
+             '<path d="M20 52c2-6.5 7-9 12-9s10 2.5 12 9z" fill="#FF4A00"/></svg>')
 
 
 def side(lang, t):

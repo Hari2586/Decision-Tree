@@ -23,7 +23,7 @@ T = {
 }
 
 
-def ecg(w, h, color_a="#1B2666", color_b="#E8511A", split=.55):
+def ecg(w, h, color_a="#16205B", color_b="#FF4A00", split=.55):
     mid = h * .6
     pts, x = [], 0
     beat = [(0, 0), (10, 0), (16, -18), (22, 30), (30, -70), (38, 40), (44, 0), (70, 0)]

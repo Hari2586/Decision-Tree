@@ -31,8 +31,8 @@ def compose(lang, key):
 
 
 if __name__ == "__main__":
-    keys = sys.argv[1:] or sorted(p.name for p in (PREV / "en").iterdir() if p.is_dir())
+    keys = sys.argv[1:] or sorted(p.name for p in (PREV / "hi").iterdir() if p.is_dir() and p.name != "mockups")
     for k in keys:
-        for lang in ("en", "hi"):
+        for lang in ("hi",):
             compose(lang, k)
             print("mockup", k, lang)

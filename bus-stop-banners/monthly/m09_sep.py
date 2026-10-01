@@ -1,27 +1,27 @@
-"""September: sold a property? The tax-saving clock has started (54EC capital gain bonds)."""
+"""September: sold a property? The tax-saving clock has started (Capital Gain Bonds)."""
 from framework import call, lockup, logo, qr_block, side_cta
 
 KEY = "09-sep"
-MSG = {"en": 'Hi! Bus stop ad: I sold a property. 54EC bonds?',
-       "hi": 'Hi! Bus stop ad: Property bechi hai, 54EC bonds?'}
-NOTE = ("*Section 54EC: exemption on long-term capital gains from land or building, investment up to &#8377;50 lakh "
+MSG = {"en": 'Hi! Bus stop ad: I sold a property. Capital Gain Bonds?',
+       "hi": 'Hi! Bus stop ad: Property bechi hai, Capital Gain Bonds?'}
+NOTE = ("*Capital Gain Bonds: exemption on long-term capital gains from land or building, investment up to &#8377;50 lakh "
               "per financial year within 6 months of transfer, 5-year lock-in. Tax benefits as per current laws, subject to change.")
 SIDE_NOTE = ''
 
 T = {
     "en": dict(
         sold="SOLD", f_h1="Sold a property?", f_h2="The tax-saving clock has started.",
-        f_sub="Invest in 54EC bonds within 6 months of the sale.*",
-        s_big="Congrats on the sale!", s_cap="Now let&rsquo;s protect the profit.", s_ask="Ask us about 54EC bonds.",
+        f_sub="Invest in Capital Gain Bonds within 6 months of the sale.*",
+        s_big="Congrats on the sale!", s_cap="Now let&rsquo;s protect the profit.", s_ask="Ask us about Capital Gain Bonds.",
         b_h1='Your profit worked hard. <span class="o">Don&rsquo;t hand it to tax.</span>',
-        months=["Sale", "M1", "M2", "M3", "M4", "M5", "M6"], end="54EC bonds",
+        months=["Sale", "M1", "M2", "M3", "M4", "M5", "M6"], end="Capital Gain Bonds",
         facts=["Up to &#8377;50 lakh a financial year", "5-year lock-in", "Issued by government-owned companies"]),
     "hi": dict(
         sold="बिक गया", f_h1="प्रॉपर्टी बेची?", f_h2="टैक्स बचाने की घड़ी चल रही है।",
-        f_sub="बिक्री के 6 महीने के अंदर 54EC बॉन्ड में निवेश करें।*",
-        s_big="बिक्री की बधाई!", s_cap="अब मुनाफ़े को बचाने की बारी।", s_ask="54EC बॉन्ड के बारे में पूछिए।",
+        f_sub="बिक्री के 6 महीने के अंदर कैपिटल गेन बॉन्ड में निवेश करें।*",
+        s_big="बिक्री की बधाई!", s_cap="अब मुनाफ़े को बचाने की बारी।", s_ask="कैपिटल गेन बॉन्ड के बारे में पूछिए।",
         b_h1='मेहनत का मुनाफ़ा, <span class="o">टैक्स में क्यों जाए?</span>',
-        months=["बिक्री", "M1", "M2", "M3", "M4", "M5", "M6"], end="54EC बॉन्ड",
+        months=["बिक्री", "M1", "M2", "M3", "M4", "M5", "M6"], end="कैपिटल गेन बॉन्ड",
         facts=["प्रति वित्त वर्ष &#8377;50 लाख तक", "5 साल का लॉक-इन", "सरकारी कंपनियों द्वारा जारी"]),
 }
 
@@ -60,7 +60,7 @@ def panels(lang, t):
 .copy .b { font-size:48px; margin-top:4px; } .copy .c { font-size:22px; font-weight:600; margin-top:12px; }
 .row { position:absolute; left:620px; right:60px; bottom:26px; display:flex; justify-content:space-between; align-items:center; }
 """, html=f"""
-<div class="hs">{house('#1B2666', '#F4EFE9')}</div><div class="tag">{t['sold']}</div>
+<div class="hs">{house('#16205B', '#F4EFE9')}</div><div class="tag">{t['sold']}</div>
 <div class="ck">{clock(200, '50%')}</div>
 <div class="copy"><div class="a">{t['f_h1']}</div><div class="b d">{t['f_h2']}</div><div class="c">{t['f_sub']}</div></div>
 <div class="row">{logo(42)}{call(44)}</div>""")
@@ -97,6 +97,6 @@ def side(lang, t):
 .ask { position:absolute; left:24px; right:24px; top:204px; font-size:16px; font-weight:700; color:var(--navy); }
 """, html=f"""
 <div class="lk">{lockup(24)}</div>
-<div class="hs">{house('#1B2666', '#F4EFE9')}</div><div class="tag">{t['sold']}</div>
+<div class="hs">{house('#16205B', '#F4EFE9')}</div><div class="tag">{t['sold']}</div>
 <div class="big d">{t['s_big']}</div><div class="cap d">{t['s_cap']}</div><div class="ask">{t['s_ask']}</div>
 {side_cta(lang, MSG[lang])}""")

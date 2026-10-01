@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MoneyHoney 03-mar stop 2 front</title>
+<link rel="stylesheet" href="../../assets/fonts.css">
+<style>
+
+* { margin:0; padding:0; box-sizing:border-box; }
+:root { --navy:#16205B; --orange:#FF4A00; --cream:#F4EFE9; --warm:#FDFBF7; --ink:#0D1440;
+  --muted:color-mix(in srgb, #16205B 72%, #ffffff); --lmuted:#B0B8C5; --line:#E0D8CE; }
+body.en { --display:'Lora', serif; --sans:'DM Sans', sans-serif; --hand:'Caveat', cursive; --dw:700; --lt:1.06; }
+body.hi { --display:'Mukta', sans-serif; --sans:'Mukta', sans-serif; --hand:'Kalam', cursive; --dw:800; --lt:1.2; }
+html, body { background:#8a8a8a; }
+body { padding:24px; font-family:var(--sans); }
+@media print { html, body { background:none; padding:0; } .banner { margin:0 !important; } }
+.banner { position:relative; overflow:hidden; margin:0 auto; display:flex; flex-direction:column; color:var(--navy); }
+.stage { position:relative; flex:1; min-height:0; overflow:hidden; }
+.d { font-family:var(--display); font-weight:var(--dw); line-height:var(--lt); }
+.stage div { text-wrap-style:pretty; }
+.stage .d, .stage .hl, .stage .h1 { text-wrap-style:balance; }
+.stage .cal div { text-wrap-style:auto; }
+.s { font-family:var(--sans); }
+.h { font-family:var(--hand); font-weight:700; }
+.o { color:var(--orange); }
+body.hi *:not(.lat) { letter-spacing:0 !important; }
+.w { color:#fff; }
+.n { color:var(--navy); }
+.call { display:inline-flex; align-items:center; gap:.28em; font-family:'DM Sans', sans-serif; font-weight:800;
+  white-space:nowrap; letter-spacing:-.01em; line-height:1; }
+.call .ico { width:.78em; height:.78em; color:var(--orange); flex:none; }
+.call.onorange .ico { color:#fff; }
+.logo img { display:block; height:100%; width:auto; }
+.logo.chip { background:#fff; border-radius:8px; padding:5px 10px; }
+.qrb { display:flex; flex-direction:column; align-items:center; }
+.qrb .qr { background:#fff; padding:10px; border-radius:8px; }
+.qrb .qr svg { display:block; }
+.qrb .qrl { font-weight:700; margin-top:5px; white-space:nowrap; }
+.pband { flex:none; height:42px; display:flex; align-items:center; gap:22px; padding:0 40px 0 0; background:var(--navy);
+  color:#fff; border-top:3px solid var(--orange); font-family:var(--sans); }
+.pband .since { height:100%; display:flex; align-items:center; background:var(--orange); padding:0 22px 0 40px;
+  font-weight:800; font-size:19px; white-space:nowrap; clip-path:polygon(0 0,100% 0,calc(100% - 16px) 100%,0 100%); padding-right:34px; }
+.pband .prods { flex:1; display:flex; justify-content:space-between; align-items:center; font-weight:700; font-size:19px; white-space:nowrap; }
+.pband .sep { color:var(--orange); }
+.lockup { display:inline-flex; align-items:center; gap:calc(var(--lh) * .34); }
+.lockup img { display:block; height:var(--lh); width:auto; }
+.lockup .since { font-family:'DM Sans', sans-serif; font-weight:700; font-size:calc(var(--lh) * .44); color:var(--navy);
+  line-height:1; white-space:nowrap; padding-left:calc(var(--lh) * .34); border-left:2px solid var(--orange); }
+.lockup.chip { background:#fff; border-radius:8px; padding:6px 12px; }
+.scta { position:absolute; display:flex; align-items:center; gap:14px; }
+.scta .qr { flex:none; background:#fff; padding:8px; border-radius:8px; box-shadow:0 0 0 1.5px var(--line); }
+.scta .qr svg { display:block; }
+.scta .call .ico { color:var(--ico); }
+.scta .sl { font-weight:700; opacity:.85; margin-bottom:6px; white-space:nowrap; }
+.cz { flex:none; background:#fff; text-align:center; font-family:'DM Sans', sans-serif; border-top:3px solid var(--orange); }
+.cz-w { color:#000; font-weight:700; line-height:1.22; text-wrap-style:balance; }
+.cz-m { color:var(--navy); display:flex; flex-wrap:wrap; justify-content:center; column-gap:1.4em; row-gap:.2em; line-height:1.3; }
+.cz-m b { font-weight:700; }
+.cz-m .fn { color:var(--muted); text-wrap-style:balance; }
+.cz-front { border-top:0; padding:8px 40px 8px; } .cz-front .cz-w { font-size:21px; } .cz-front .cz-m { font-size:10.5px; margin-top:5px; }
+.cz-back { padding:8px 36px 8px; } .cz-back .cz-w { font-size:18.5px; } .cz-back .cz-m { font-size:9.6px; margin-top:4px; }
+.cz-side { padding:7px 14px 7px; } .cz-side .cz-w { font-size:12.6px; } .cz-side .cz-m { font-size:7.8px; margin-top:4px; }
+
+.banner { width:1500px; height:400px; background:var(--orange); }
+
+.kick { font-size:21px; font-weight:700; color:rgba(255,255,255,.92); }
+.t1 { font-size:42px; color:#fff; } .t2 { font-size:42px; color:var(--navy); }
+.sub { font-size:19px; font-weight:600; color:rgba(255,255,255,.92); margin-top:6px; }
+.row { position:absolute; bottom:14px; display:flex; align-items:center; justify-content:space-between; color:#fff; }
+.row .call .ico { color:#fff; }
+.vis { position:absolute; }
+
+.lh { position:absolute; left:0; top:0; bottom:0; width:48%; background:var(--orange); padding:44px 40px 0 60px; }
+.rh { position:absolute; right:0; top:0; bottom:0; width:52%; background:var(--navy); padding:44px 60px 0 70px; }
+.lh .kick { color:rgba(255,255,255,.92); } .lh .t1 { color:#fff; font-size:44px; margin-top:6px; }
+.rh .t2 { color:#fff; font-size:44px; } .rh .t2 span { color:var(--orange); }
+.rh .sub { color:rgba(255,255,255,.85); }
+.vis { left:60px; bottom:18px; width:110px; height:110px; }
+.row { left:calc(48% + 70px); right:60px; color:#fff; }
+.or { position:absolute; left:48%; top:50%; transform:translate(-50%,-50%); width:72px; height:72px; border-radius:50%;
+  background:#fff; color:var(--navy); font-size:28px; font-weight:800; display:flex; align-items:center; justify-content:center; }
+</style>
+</head>
+<body class="hi p-front" data-w="1500" data-h="400">
+<div class="banner">
+<div class="stage">
+<div class="lh"><div class="kick">महिला दिवस पर</div><div class="t1 d">घर का बजट वो संभालती है।</div></div><div class="rh"><div class="t2 d"><span>अब अपना निवेश भी।</span></div><div class="sub">हर महिला के नाम, उसकी अपनी आर्थिक आज़ादी।</div></div><div class="vis"><svg viewBox="0 0 120 120" width="100%" height="100%"><circle cx="60" cy="40" r="24" fill="#16205B"/><path d="M36 40c0-22 48-22 48 0v18c-6-10-10-22-24-22S42 48 36 58z" fill="#fff"/><path d="M18 112c4-30 22-44 42-44s38 14 42 44z" fill="#16205B"/><path d="M50 70 60 86l10-16" fill="none" stroke="#fff" stroke-width="6" stroke-linejoin="round"/></svg></div><div class="or">&rarr;</div><div class="row"><div class="logo chip" style="height:44px;"><img src="../../assets/logo.svg" alt="MoneyHoney"></div><div class="call " style="font-size:40px"><svg viewBox="0 0 24 24" class="ico" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span>74000 60800</span></div></div>
+</div>
+<div class="pband"><div class="since">&#9733; Since 2008</div><div class="prods"><span>Mutual Funds</span><span class="sep">|</span><span>Fixed Deposits</span><span class="sep">|</span><span>Debentures</span><span class="sep">|</span><span>Gov. Bonds</span><span class="sep">|</span><span>Capital Gain Bonds</span><span class="sep">|</span><span>SIF</span><span class="sep">|</span><span>GIFT City</span></div></div>
+<div class="cz cz-front"><div class="cz-w">Mutual Fund investments are subject to market risks, read all scheme related documents carefully.</div><div class="cz-m"><b>AMFI Registered Mutual Fund Distributor | ARN NO-60930</b></div></div>
+</div>
+</body>
+</html>

@@ -56,7 +56,7 @@ def panels(lang, t):
 """, html=f"""
 <div class="b"></div><div class="top"><span>{t['top']}</span></div><div class="or">{t['or_']}</div>
 <div class="side a"><div class="ic">{BAG.replace('{c}', '#fff')}</div><div><div class="l">{t['a_lbl']}</div><div class="h">{t['a_h']}</div><div class="s">{t['a_s']}</div></div></div>
-<div class="side bb"><div class="ic">{ARROW.replace('{c}', '#E8511A')}</div><div><div class="l">{t['b_lbl']}</div><div class="h">{t['b_h']}</div><div class="s">{t['b_s']}</div></div></div>
+<div class="side bb"><div class="ic">{ARROW.replace('{c}', '#FF4A00')}</div><div><div class="l">{t['b_lbl']}</div><div class="h">{t['b_h']}</div><div class="s">{t['b_s']}</div></div></div>
 <div class="row">{logo(36, chip=True)}{call(42)}</div>""")
 
     vals = [1.12 ** y for y in (0, 5, 10, 15)]

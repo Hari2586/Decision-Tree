@@ -49,7 +49,7 @@ def panels(lang, t):
   align-items:center; justify-content:center; gap:22px; }
 """, html=f"""
 <div class="copy"><div class="a d">{t['f_h1']}</div><div class="b d">{t['f_h2']}</div><div class="q">{t['f_q']}</div></div>
-<div class="tl"><div class="ln"></div><div class="ic a">{icon(BAG, '#fff', '#E8511A')}</div><div class="ic b">{icon(CAP, '#E8511A', '#fff')}</div>
+<div class="tl"><div class="ln"></div><div class="ic a">{icon(BAG, '#fff', '#FF4A00')}</div><div class="ic b">{icon(CAP, '#FF4A00', '#fff')}</div>
 <div class="la">{t['t_a']}</div><div class="lb">{t['t_b']}</div></div>
 <div class="side">{logo(50)}{call(48)}</div>""")
 
@@ -77,7 +77,7 @@ def panels(lang, t):
 """, html=f"""
 <div class="lg">{lockup(40)}</div>
 <div class="h1 d">{t['b_h1']}</div>
-<div class="ics"><div class="i">{icon(BAG, '#1B2666', '#E8511A')}</div><div class="dots"></div><div class="i">{icon(CAP, '#E8511A', '#1B2666')}</div></div>
+<div class="ics"><div class="i">{icon(BAG, '#16205B', '#FF4A00')}</div><div class="dots"></div><div class="i">{icon(CAP, '#FF4A00', '#16205B')}</div></div>
 <div class="sub">{t['b_sub']}</div>
 <div class="bars">{bars}</div>
 <div class="cta">{qr_block(lang, MSG[lang], 124, 14, label_color="#fff")}{call(24)}</div>""")
@@ -87,7 +87,7 @@ def panels(lang, t):
 def side(lang, t):
     rows = "".join(
         f'<div class="r {k}"><div class="i">{ic}</div><div><div class="k">{a}</div><div class="v d">{b}</div></div></div>'
-        for k, (a, b), ic in (("one", t["s1"], icon(BAG, "#fff", "#1B2666")), ("two", t["s2"], icon(CAP, "#1B2666", "#fff"))))
+        for k, (a, b), ic in (("one", t["s1"], icon(BAG, "#fff", "#16205B")), ("two", t["s2"], icon(CAP, "#16205B", "#fff"))))
     return dict(bg="var(--orange)", note=False, css="""
 .lk { position:absolute; left:24px; top:18px; }
 .rows { position:absolute; left:24px; right:24px; top:56px; }

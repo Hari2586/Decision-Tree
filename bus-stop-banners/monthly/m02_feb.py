@@ -29,10 +29,10 @@ T = {
         b_sub="हम ELSS में निवेश और प्रूफ़, दोनों समय पर करवाने में मदद करेंगे।"),
 }
 
-BELL = ('<svg viewBox="0 0 64 64" width="100%" height="100%"><path fill="#E8511A" d="M32 6c-2.4 0-4 1.7-4 3.9v1.8C19.9 '
+BELL = ('<svg viewBox="0 0 64 64" width="100%" height="100%"><path fill="#FF4A00" d="M32 6c-2.4 0-4 1.7-4 3.9v1.8C19.9 '
         '13.4 15 20.3 15 28.6v11.2L10 46v3h44v-3l-5-6.2V28.6c0-8.3-4.9-15.2-13-16.9V9.9C36 7.7 34.4 6 32 6zm-6 46a6 6 '
         '0 0 0 12 0H26z"/><circle cx="48" cy="14" r="9" fill="#fff"/><text x="48" y="18.5" text-anchor="middle" '
-        'font-family="DM Sans" font-weight="800" font-size="13" fill="#1B2666">1</text></svg>')
+        'font-family="DM Sans" font-weight="800" font-size="13" fill="#16205B">1</text></svg>')
 
 CARD = """
 .notif { position:absolute; background:#fff; border-radius:22px; box-shadow:0 18px 40px rgba(0,0,0,.35); color:var(--ink); }
@@ -46,7 +46,7 @@ CARD = """
 
 def panels(lang, t):
     front = dict(bg="var(--navy)", legal="dark", note=True, css=CARD + """
-.stage { background:radial-gradient(circle at 22% 50%, #1B2666 0, #1B2666 35%, #0C1632 100%); }
+.stage { background:radial-gradient(circle at 22% 50%, #16205B 0, #16205B 35%, #0D1440 100%); }
 .notif { left:60px; top:70px; width:560px; padding:20px 26px 22px; transform:rotate(-2deg); }
 .notif .hd { font-size:17px; } .notif .ic { width:34px; height:34px; font-size:14px; }
 .notif .hd .sp { flex:1; } .notif .ti { font-size:25px; margin-top:12px; text-wrap-style:balance; } .notif .bd { font-size:18px; margin-top:6px; }
