@@ -1,6 +1,8 @@
 # MoneyHoney redesign: Phase 4 audit and Phase 5 verification
 
-Page: `redesign/site/index.html` (home). Direction: A, "The Ledger". Date: 8 Oct 2026.
+Pages: `redesign/site-a/index.html` (Direction A, "The Ledger") and `redesign/site-b/index.html` (Direction B, "Clear Glass"). Both share the same HTML body; only the stylesheet and font link differ. Date: 8 Oct 2026.
+
+Direction B results: no overflow at 390/768/1280; all 50 links at least 44px tall; 0 axe-core violations; fonts Manrope and Figtree loaded; content verification 100% match (same 96 fragments, 53 hrefs, identical head). Card icons are CSS-only masked SVGs on pseudo-elements, so no text or DOM nodes were added.
 
 ## Phase 4: audit
 
@@ -46,4 +48,4 @@ Method: both files parsed with Python's html.parser; style, script and SVG geome
 
 Result: 100% match. Compliance text (demo notice, lede sentence, footer identity line, both risk warnings, JSON-LD description) is verbatim and rendered at 13px or larger with AA contrast.
 
-Verification script: run `python3 -I verify.py redesign/original/index.html redesign/site/index.html` (script in session scratchpad; copy kept at `redesign/tools/verify.py`).
+Verification script: run `python3 -I redesign/tools/verify.py redesign/original/index.html redesign/site-b/index.html` (script in session scratchpad; copy kept at `redesign/tools/verify.py`).
