@@ -91,4 +91,95 @@
       obs.observe(el);
     });
   }
+
+  /* 7. Interactive charts: hover, tap or focus a bar to read its value; click a legend item to hide a series.
+        Values come from the page's own calculator (window.mhCalc) and from each chart's aria-label,
+        so nothing is invented. */
+  var tip = document.createElement('div');
+  tip.className = 'mh-tip'; tip.setAttribute('role', 'tooltip'); tip.hidden = true;
+  document.body.appendChild(tip);
+  function tipShow(title, rows, x, y) {
+    tip.textContent = '';
+    if (title) { var b = document.createElement('b'); b.textContent = title; tip.appendChild(b); }
+    rows.forEach(function (r) {
+      var line = document.createElement('span');
+      if (r[2]) { var sw = document.createElement('i'); sw.style.background = r[2]; line.appendChild(sw); }
+      var l = document.createElement('em'); l.textContent = r[0]; line.appendChild(l);
+      var v = document.createElement('strong'); v.textContent = r[1]; line.appendChild(v);
+      tip.appendChild(line);
+    });
+    tip.hidden = false;
+    var w = tip.offsetWidth, h = tip.offsetHeight, pad = 8;
+    var left = Math.min(Math.max(x, w / 2 + pad), innerWidth - w / 2 - pad);
+    var top = y - h - 12; if (top < pad) top = y + 18;
+    tip.style.left = left + 'px'; tip.style.top = top + 'px';
+    requestAnimationFrame(function () { tip.classList.add('is-show'); });
+  }
+  function tipHide() { tip.classList.remove('is-show'); tip.hidden = true; }
+  addEventListener('scroll', tipHide, { passive: true }); addEventListener('resize', tipHide);
+  document.addEventListener('pointerdown', function (e) { if (!e.target.closest('svg')) tipHide(); });
+  function inr(v) { var n = Math.floor(Math.abs(v) + 0.5); return (v < 0 && n ? '-' : '') + '₹' + n.toLocaleString('en-IN'); }
+  function centerTop(el) { var b = el.getBoundingClientRect(); return [b.left + b.width / 2, b.top]; }
+
+  /* 7a. Story charts */
+  document.querySelectorAll('svg.schart').forEach(function (svg) {
+    var items = (svg.getAttribute('aria-label') || '').split('; ').map(function (p) {
+      var parts = p.split(': '); var v = parts.pop(); return [parts.pop() || '', v];
+    });
+    var bars = svg.querySelectorAll('rect.chbar, rect.cbar');
+    if (bars.length !== items.length) return;
+    bars.forEach(function (r, i) {
+      r.setAttribute('tabindex', '0'); r.setAttribute('role', 'img'); r.setAttribute('aria-label', items[i][0] + ': ' + items[i][1]);
+      function on() { svg.classList.add('is-hover'); r.classList.add('is-on'); var c = centerTop(r); tipShow(items[i][0], [['', items[i][1]]], c[0], c[1] - (r.classList.contains('cbar') ? 26 : 0)); }
+      function off() { svg.classList.remove('is-hover'); r.classList.remove('is-on'); tipHide(); }
+      r.addEventListener('pointerenter', on); r.addEventListener('pointerleave', off);
+      r.addEventListener('focus', on); r.addEventListener('blur', off);
+      r.addEventListener('click', function (e) { e.stopPropagation(); if (tip.hidden) on(); else off(); });
+    });
+  });
+
+  /* 7b. The calculator's chart in the rail: one hit zone per year, rebuilt after every recalculation */
+  var chart = document.getElementById('chart');
+  if (chart && window.mhCalc) {
+    var legend = Array.prototype.map.call(chart.parentNode.querySelectorAll('.legend > span'), function (s) { return s.textContent.trim(); });
+    var colors = ['var(--chart-3)', 'var(--chart-1)'];
+    var yearHead = (function () { var th = document.querySelector('#ytab thead th'); return th ? th.textContent.trim() : 'Year'; })();
+    function wire(r) {
+      var old = chart.querySelector('.mh-hits'); if (old) old.remove();
+      var bars = r.bars || []; if (!bars.length) return;
+      var vb = chart.viewBox.baseVal, x0 = 8, slot = (vb.width - 8 - x0) / bars.length;
+      var rects = chart.querySelectorAll(':scope > rect');
+      var g = document.createElementNS('http://www.w3.org/2000/svg', 'g'); g.setAttribute('class', 'mh-hits');
+      bars.forEach(function (b, k) {
+        var h = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+        h.setAttribute('x', (x0 + k * slot).toFixed(1)); h.setAttribute('y', 0); h.setAttribute('width', slot.toFixed(1)); h.setAttribute('height', vb.height);
+        h.setAttribute('tabindex', '0'); h.setAttribute('role', 'img');
+        h.setAttribute('aria-label', yearHead + ' ' + b[0] + ': ' + legend[0] + ' ' + inr(b[1]) + ', ' + legend[1] + ' ' + inr(b[2]));
+        function on() {
+          chart.classList.add('is-hover');
+          [rects[2 * k], rects[2 * k + 1]].forEach(function (x) { if (x) x.classList.add('is-on'); });
+          var tall = rects[2 * k + 1] || rects[2 * k] || h, c = centerTop(tall);
+          tipShow(yearHead + ' ' + b[0], [[legend[0], inr(b[1]), colors[0]], [legend[1], inr(b[2]), colors[1]]], c[0], c[1]);
+        }
+        function off() { chart.classList.remove('is-hover'); chart.querySelectorAll('.is-on').forEach(function (x) { x.classList.remove('is-on'); }); tipHide(); }
+        h.addEventListener('pointerenter', on); h.addEventListener('pointerleave', off);
+        h.addEventListener('focus', on); h.addEventListener('blur', off);
+        h.addEventListener('click', function (e) { e.stopPropagation(); if (tip.hidden) on(); else off(); });
+        g.appendChild(h);
+      });
+      chart.appendChild(g);
+    }
+    try { wire(window.mhCalc({})); } catch (e) {}
+    document.addEventListener('mh-calc', function (e) { wire(e.detail); });
+    /* legend items toggle their series */
+    chart.parentNode.querySelectorAll('.legend > span').forEach(function (sp, i) {
+      sp.setAttribute('role', 'button'); sp.setAttribute('tabindex', '0'); sp.setAttribute('aria-pressed', 'true');
+      function toggle() {
+        var hidden = chart.classList.toggle(i ? 'hide-b' : 'hide-a');
+        sp.setAttribute('aria-pressed', hidden ? 'false' : 'true');
+      }
+      sp.addEventListener('click', toggle);
+      sp.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+    });
+  }
 })();

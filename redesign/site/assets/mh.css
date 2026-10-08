@@ -423,3 +423,27 @@ h3.after{margin:var(--s6) 0 var(--s2)}
 .mh-anim .reveal{opacity:0;transform:translateY(16px);transition:opacity var(--d-slow) var(--ease),transform var(--d-slow) var(--ease);transition-delay:calc(var(--i,0) * 60ms)}
 .mh-anim .reveal.is-in{opacity:1;transform:none}
 .mh-anim .reveal.is-in.step::before{animation:mh-pop var(--d-med) var(--ease) both}
+
+/* Interactive charts ------------------------------------------------------- */
+.mh-tip{position:fixed;z-index:60;pointer-events:none;background:var(--navy);color:#fff;border-radius:10px;padding:8px 12px;font-size:13px;line-height:1.45;box-shadow:var(--shadow-lift);max-width:min(280px,calc(100vw - 32px));transform:translate(-50%,0) scale(.96);opacity:0;transition:opacity var(--d-fast),transform var(--d-fast)}
+.mh-tip.is-show{opacity:1;transform:translate(-50%,0) scale(1)}
+.mh-tip b{display:block;font-family:var(--display);font-weight:800;font-size:14px;color:var(--orange-soft);margin-bottom:2px}
+.mh-tip span{display:flex;align-items:center;gap:var(--s3);white-space:nowrap}
+.mh-tip em{font-style:normal;color:var(--on-navy-soft);flex:1}
+.mh-tip strong{font-variant-numeric:tabular-nums;font-weight:700}
+.mh-tip i{display:inline-block;width:10px;height:10px;border-radius:2px;flex:none}
+.schart rect.chbar,.schart rect.cbar,.chart>rect{transition:opacity var(--d-fast),fill var(--d-fast);cursor:pointer}
+.schart.is-hover rect:not(.is-on){opacity:.3}
+.schart rect.is-on{fill:var(--orange)}
+.schart rect.is-on.proj{fill:var(--honey);stroke:var(--orange)}
+.schart rect:focus{outline:none}
+.schart rect:focus-visible{stroke:var(--orange);stroke-width:2}
+.chart.is-hover>rect:not(.is-on){opacity:.3}
+.chart>rect.is-on{stroke:var(--orange);stroke-width:1.5}
+.chart .mh-hits rect{fill:transparent;cursor:pointer;outline:none}
+.chart .mh-hits rect:focus-visible{fill:rgba(27,38,102,.08)}
+.chart.hide-a>rect:nth-of-type(odd),.chart.hide-b>rect:nth-of-type(even){opacity:.08}
+.legend>span[role="button"]{cursor:pointer;user-select:none;display:inline-flex;align-items:center;min-height:32px;padding:0 var(--s2);margin:0 calc(-1 * var(--s2));border-radius:var(--r-pill);transition:background var(--d-fast),opacity var(--d-fast)}
+.legend>span[role="button"]:hover{background:var(--fill)}
+.legend>span[role="button"]:focus-visible{box-shadow:0 0 0 3px var(--band),0 0 0 6px var(--orange);outline:none}
+.legend>span[aria-pressed="false"]{opacity:.5;text-decoration:line-through}

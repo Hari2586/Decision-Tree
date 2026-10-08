@@ -6,7 +6,7 @@ Direction: **B, "Clear Glass"** (chosen 8 Oct 2026). Pages rebuilt so far: home,
 |---|---|
 | `site/` | The redesigned site. Deploy this folder. Relative links match the original URL structure. |
 | `site/assets/mh.css` | The one stylesheet for every page (design tokens, components, animations). |
-| `site/assets/mh.js` | Progressive interactions: reading progress bar, scroll reveal, slider track fill, figure "tick" on change, hiding the sticky result bar while the calculator is on screen, count-up on the home fact tiles. Pages are complete without it. |
+| `site/assets/mh.js` | Progressive interactions: reading progress bar, scroll reveal, slider track fill, figure "tick" on change, hiding the sticky result bar while the calculator is on screen, count-up on the home fact tiles, interactive charts (tooltips on hover, tap or focus; legend toggles). Pages are complete without it. |
 | `site/index.html` | Home. |
 | `site/solutions/index.html` | Solutions hub. |
 | `site/solutions/<slug>/index.html` | Solution pages. Their calculator scripts are the originals, untouched. |

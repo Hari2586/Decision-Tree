@@ -71,3 +71,10 @@ Fixes applied in this batch: breadcrumb links raised to 44px; "Illustration" and
 Body identity: for the hub and the three solution pages the body markup is byte-identical to the original apart from the body tag's class and the demo-notice move (asserted by `tools/build.py`). Calculator scripts, form fields, ids and data attributes are therefore unchanged and the calculators work as before.
 
 Interactions and animation added, all progressive and reduced-motion aware: reading progress bar; staggered scroll reveal for cards, steps, FAQs and documents; filled slider tracks; a colour tick on any figure that recalculates; the headline figure count-up and chart draw-in from the original scripts, restyled; a floating result bar on phones that hides while the calculator is on screen; hover lifts and animated chevrons; the matching goal-table row highlighted with an orange edge and a popping badge.
+
+### Interactive charts (added 8 Oct 2026)
+
+- **Calculator chart in the rail.** One invisible hit zone per year. Hover, tap or keyboard-focus a year to see a tooltip with the year and both series, named from the chart's own legend and valued from the page's own calculator (`window.mhCalc`). The hovered year's bars keep full colour with an orange outline while the others fade. Zones rebuild after every recalculation. Each legend item is a toggle button that hides or shows its series.
+- **Story charts.** Each bar is focusable with an accessible name taken from the chart's existing aria-label (label and value). Hover, tap or focus turns the bar orange, fades the rest and shows the label and value in a tooltip. All 13 charts across the three pages were checked: aria items and bars line up one to one.
+- Tooltips are built with DOM text nodes, never HTML strings, and hide on scroll, resize, or a tap outside the chart. No visible page text was added; the tooltips compose existing legend labels, table headers and the figures already shown in the year-by-year table.
+- Re-audit after the change: 0 axe violations on all three pages, no JavaScript errors, content match 100%.
