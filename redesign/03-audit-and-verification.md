@@ -49,3 +49,25 @@ Method: both files parsed with Python's html.parser; style, script and SVG geome
 Result: 100% match. Compliance text (demo notice, lede sentence, footer identity line, both risk warnings, JSON-LD description) is verbatim and rendered at 13px or larger with AA contrast.
 
 Verification script: run `python3 -I redesign/tools/verify.py redesign/original/index.html redesign/site/index.html` (script in session scratchpad; copy kept at `redesign/tools/verify.py`).
+
+---
+
+## Batch 2: Solutions hub and three solution pages (8 Oct 2026)
+
+Method as above, plus a scripted read-through at phone and desktop widths with wheel scrolling so the scroll-reveal animations are exercised, and JavaScript error capture.
+
+| Page | Overflow | Targets under 44px | axe violations | JS errors | Content match |
+|---|---|---|---|---|---|
+| Home (moved to shared assets) | None | 0 | 0 | 0 | 100% (96 fragments, 53 hrefs) |
+| Solutions hub | None | 0 | 0 | 0 | 100% (52 fragments) |
+| Child Education | None | 0, excluding inline citation markers | 0 | 0 | 100% (337 fragments) |
+| Emergency Fund | None | 0, excluding inline citation markers | 0 | 0 | 100% (370 fragments) |
+| EMI Management | None | 0, excluding inline citation markers | 0 | 0 | 100% (395 fragments) |
+
+Citation markers such as [1] are inline links inside sentences. WCAG 2.2 target size exempts in-text links; their tap area was still enlarged from about 12 by 13px to 22 by 29px with padding.
+
+Fixes applied in this batch: breadcrumb links raised to 44px; "Illustration" and "Matches Your Numbers" badges recoloured to 5.3:1 on their tint; demo notice moved inside the header landmark on every page (layout move, text unchanged); segmented buttons fill their row when they wrap on phones.
+
+Body identity: for the hub and the three solution pages the body markup is byte-identical to the original apart from the body tag's class and the demo-notice move (asserted by `tools/build.py`). Calculator scripts, form fields, ids and data attributes are therefore unchanged and the calculators work as before.
+
+Interactions and animation added, all progressive and reduced-motion aware: reading progress bar; staggered scroll reveal for cards, steps, FAQs and documents; filled slider tracks; a colour tick on any figure that recalculates; the headline figure count-up and chart draw-in from the original scripts, restyled; a floating result bar on phones that hides while the calculator is on screen; hover lifts and animated chevrons; the matching goal-table row highlighted with an orange edge and a popping badge.
