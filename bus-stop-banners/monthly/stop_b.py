@@ -80,6 +80,70 @@ ICON = {
         f'stroke-linecap="round"/>'),
 }
 
+
+# ---------------------------------------------------------------- egg & basket drawings (April)
+def _egg(cx, cy, r, fill="#fff", stroke=N, sw=3):
+    t, b = cy - 1.32 * r, cy + 0.95 * r
+    return (f'<path d="M{cx:.1f} {t:.1f} C{cx + 0.98 * r:.1f} {t:.1f} {cx + 1.08 * r:.1f} {b:.1f} {cx:.1f} {b:.1f} '
+            f'C{cx - 1.08 * r:.1f} {b:.1f} {cx - 0.98 * r:.1f} {t:.1f} {cx:.1f} {t:.1f}Z" fill="{fill}" stroke="{stroke}" '
+            f'stroke-width="{sw}" stroke-linejoin="round"/>')
+
+
+def _basket(x, y, w, h, body=N, rim=O, handle=True):
+    ins = 0.13 * w
+    out = []
+    if handle:
+        out.append(f'<path d="M{x + 0.16 * w:.1f} {y:.1f} C{x + 0.16 * w:.1f} {y - 0.75 * w:.1f} {x + 0.84 * w:.1f} {y - 0.75 * w:.1f} '
+                   f'{x + 0.84 * w:.1f} {y:.1f}" fill="none" stroke="{body}" stroke-width="{max(4, w * 0.06):.1f}" '
+                   f'stroke-linecap="round"/>')
+    return out, (
+        f'<path d="M{x:.1f} {y:.1f}H{x + w:.1f}L{x + w - ins:.1f} {y + h:.1f}H{x + ins:.1f}Z" fill="{body}"/>'
+        + "".join(f'<path d="M{x + ins * k / 4:.1f} {y + h * k / 4:.1f}H{x + w - ins * k / 4:.1f}" stroke="rgba(255,255,255,.28)" '
+                  f'stroke-width="2"/>' for k in (1, 2, 3))
+        + "".join(f'<path d="M{x + w * k / 6:.1f} {y:.1f}L{x + ins + (w - 2 * ins) * k / 6:.1f} {y + h:.1f}" '
+                  f'stroke="rgba(255,255,255,.22)" stroke-width="2"/>' for k in range(1, 6))
+        + f'<rect x="{x - 5:.1f}" y="{y - 6:.1f}" width="{w + 10:.1f}" height="12" rx="6" fill="{rim}"/>')
+
+
+def _eggs_in_basket(x, y, w, h, eggs, r, body=N, rim=O, egg_fill="#fff", egg_stroke=N):
+    behind, front = _basket(x, y, w, h, body, rim)
+    return "".join(behind) + "".join(_egg(ex, ey, r, egg_fill, egg_stroke) for ex, ey in eggs) + front
+
+
+def _eggs3(a, b):
+    """Three baskets, eggs shared out, labelled Equity / Debt / Gold."""
+    parts = []
+    for i, (lab, n) in enumerate((("Equity", 3), ("Debt", 2), ("Gold", 1))):
+        x = 8 + i * 112
+        cx = x + 46
+        pos = {3: [(cx - 22, 118), (cx + 22, 118), (cx, 104)], 2: [(cx - 14, 116), (cx + 14, 116)], 1: [(cx, 114)]}[n]
+        parts.append(_eggs_in_basket(x, 128, 92, 66, pos, 15, body=b, rim=a))
+        parts.append(f'<text x="{cx}" y="236" text-anchor="middle" font-family="DM Sans, sans-serif" font-weight="800" '
+                     f'font-size="22" fill="{b}">{lab}</text>')
+    return svg("".join(parts), "0 0 330 250")
+
+
+def _basket_full(a, b):
+    """One basket with every egg piled into it."""
+    eggs = [(30, 66), (50, 66), (70, 66), (90, 66), (40, 50), (60, 50), (80, 50), (50, 34), (70, 34), (60, 18)]
+    return svg(_eggs_in_basket(14, 74, 92, 40, eggs, 10, body=b, rim=a), "0 0 120 120")
+
+
+ICON["eggs3"] = _eggs3
+ICON["basket_full"] = lambda a, b: _basket_full("#fff", N)
+ICON["ic_equity"] = lambda a, b: svg(
+    f'<path d="M14 100V20M14 100h92" stroke="{b}" stroke-width="7" stroke-linecap="round"/>'
+    f'<path d="M24 86 48 62l18 14 34-40" fill="none" stroke="{a}" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>'
+    f'<path d="M84 34h18v18" fill="none" stroke="{a}" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>')
+ICON["ic_debt"] = lambda a, b: svg(
+    f'<path d="M60 10 18 26v30c0 28 18 46 42 54 24-8 42-26 42-54V26z" fill="{b}"/>'
+    f'<path d="M40 60l14 14 28-30" fill="none" stroke="{a}" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>')
+ICON["ic_gold"] = lambda a, b: svg(
+    f'<path d="M16 104l10-30h30l10 30z" fill="{a}"/><path d="M58 104l10-30h30l10 30z" fill="{a}"/>'
+    f'<path d="M37 70l10-30h30l10 30z" fill="{b}"/>'
+    f'<path d="M30 80h20M72 80h20M51 46h20" stroke="rgba(255,255,255,.55)" stroke-width="4" stroke-linecap="round"/>')
+
+
 # ---------------------------------------------------------------- topics
 VAC_NOTE = ("*Illustration: &#8377;3 lakh goal in 3 years through a monthly SIP at an assumed 8% p.a. return. Not guaranteed. "
             "This assumption of returns is not indicative of future returns.")
@@ -116,7 +180,7 @@ TOPICS = {
         s_big="&#8377;50 लाख*", s_h="तक हर वित्त वर्ष, कैपिटल गेन बॉन्ड में टैक्स-छूट वाला निवेश।*",
         b_h1='कैपिटल गेन बॉन्ड: <span class="o">4 ज़रूरी बातें।*</span>',
         b_items=[("6 महीने", "बिक्री के 6 महीने के अंदर निवेश"), ("&#8377;50 लाख तक", "हर वित्त वर्ष में"),
-                 ("5 साल", "लॉक-इन अवधि"), ("सरकारी कंपनियाँ", "बॉन्ड जारी करने वाली संस्थाएँ")]),
+                 ("5 साल", "लॉक-इन अवधि"), ("PSU कंपनियाँ", "बॉन्ड जारी करने वाली संस्थाएँ")]),
     "03-mar": dict(
         name="Women", msg="Hi! Bus stop ad: Mahilaon ke liye investment planning.", note="",
         icon="woman", front=("B", "orange"), side=("A", "white"), back=("compare", "navy"),
@@ -128,20 +192,21 @@ TOPICS = {
                 ("बचत + निवेश", ["हर लक्ष्य के लिए प्लान", "SIP से नियमित निवेश", "अपने नाम पर संपत्ति"]))),
     "04-apr": dict(
         name="Asset Allocation", msg="Hi! Bus stop ad: Asset allocation samajhna hai.", note="",
-        icon="baskets", front=("D", "cream"), side=("A", "orange"), back=("tiles", "white"), s_icon="pie",
+        icon="eggs3", front=("D", "cream"), side=("A", "orange"), back=("tiles", "white"), s_icon="basket_full", vis=(330, 250),
         kick="नया वित्त वर्ष, नई शुरुआत", h1="सारे अंडे एक ही टोकरी में?", h2="पैसा भी बाँटकर रखिए।",
-        sub="इक्विटी, डेट और गोल्ड: उम्र और लक्ष्य के हिसाब से सही मिश्रण।",
+        sub="Equity, Debt and Gold: उम्र और लक्ष्य के हिसाब से सही मिश्रण।",
         s_h="एक टोकरी। सारे अंडे।", s_sub="और सारा जोखिम भी एक ही जगह।",
         b_h1='सही मिश्रण, <span class="o">सही संतुलन।</span>',
-        b_items=[("इक्विटी", "लंबी अवधि में ग्रोथ की संभावना"), ("डेट", "स्थिरता और नियमित आय"),
-                 ("गोल्ड", "मुश्किल वक़्त में संतुलन")],
+        b_items=[("Equity", "लंबी अवधि में ग्रोथ की संभावना"), ("Debt", "स्थिरता और नियमित आय"),
+                 ("Gold", "मुश्किल वक़्त में संतुलन")],
+        b_icons=["ic_equity", "ic_debt", "ic_gold"],
         b_sub="सही मिश्रण आपकी उम्र, लक्ष्य और जोखिम उठाने की क्षमता पर निर्भर करता है।"),
     "05-may": dict(
         name="Vacation Planning", msg="Hi! Bus stop ad: Vacation ke liye planning karni hai.", note=VAC_NOTE,
         icon="suitcase", front=("A", "orange"), side=("B", "cream"), back=("steps", "navy"),
         kick="छुट्टियों का मौसम", h1="अगली छुट्टी EMI पर नहीं,", h2="SIP से।",
         sub="3 साल बाद &#8377;3 लाख का फ़ैमिली ट्रिप? हर महीने &asymp; &#8377;7,400 से शुरुआत।*",
-        s_big="&asymp; &#8377;7,400*", s_h="हर महीने, 3 साल तक। फिर &#8377;3 लाख का फ़ैमिली ट्रिप।*",
+        s_big="&asymp; &#8377;7,400*", s_h='<span class="ln">हर महीने, 3 साल तक।</span><span class="ln">फिर &#8377;3 लाख का फ़ैमिली ट्रिप।*</span>',
         b_h1='घूमने का सपना, <span class="o">पहले से प्लान।</span>',
         b_items=[("मंज़िल चुनें", "कहाँ और कब जाना है"), ("बजट तय करें", "आज के हिसाब से खर्च"),
                  ("SIP शुरू करें", "हर महीने थोड़ा-थोड़ा")]),
@@ -159,27 +224,27 @@ TOPICS = {
         name="NCD", msg="Hi! Bus stop ad: NCD ke baare mein jaankari chahiye.", note=NCD_NOTE,
         icon="cert", front=("C", "cream"), side=("A", "navy"), back=("tiles", "white"),
         stat="NCD", stat_l="Non-Convertible Debentures",
-        kick="तय आय चाहिए?", h1="तय ब्याज। तय अवधि।", h2="रेटेड कंपनियों से।*",
+        kick="तय आय चाहिए?", h1="कंपनी को उधार दीजिए,", h2="बदले में ब्याज पाइए।*",
         sub="NCD के बारे में पूरी जानकारी: ब्याज, रेटिंग और अवधि।",
         s_h="नियमित आय का एक और विकल्प।", s_sub="NCD की पूरी जानकारी, एक कॉल में।*",
         b_h1='NCD में निवेश से पहले <span class="o">3 बातें देखें।*</span>',
         b_items=[("क्रेडिट रेटिंग", "कंपनी की साख"), ("कूपन और भुगतान", "ब्याज कितना और कब"),
-                 ("अवधि और लिस्टिंग", "कब तक और कहाँ ट्रेड")],
-        b_sub="हम आपको अलग-अलग इश्यू की तुलना समझाएँगे।"),
+                 ("अवधि और लिस्टिंग", "कितने साल का, और लिस्टेड है या नहीं")],
+        b_sub="हम आपको अलग-अलग NCD की तुलना समझाएँगे।"),
     "08-aug": dict(
         name="India Growth Story", msg="Hi! Bus stop ad: India growth story mein invest karna hai.", note="",
         icon="rise", front=("A", "white"), side=("A", "orange"), back=("steps", "ink"),
         kick="भारत आगे बढ़ रहा है।", h1="क्या आपका पैसा भी", h2="भारत के साथ बढ़ रहा है?",
-        sub="म्यूचुअल फंड के ज़रिए भारत की कंपनियों की ग्रोथ में हिस्सेदार बनिए।",
+        sub="Mutual Fund के ज़रिए भारत की कंपनियों की ग्रोथ में हिस्सेदार बनिए।",
         s_h="भारत बढ़ रहा है।", s_sub="आप भी साथ बढ़िए।",
         b_h1='भारत की ग्रोथ स्टोरी में <span class="o">आपकी हिस्सेदारी।</span>',
-        b_items=[("बचत", "हर महीने एक तय रकम"), ("SIP", "म्यूचुअल फंड के ज़रिए"),
+        b_items=[("बचत", "हर महीने एक तय रकम"), ("SIP", "Mutual Fund के ज़रिए"),
                  ("हिस्सेदारी", "भारत की कंपनियों की ग्रोथ में")]),
     "09-sep": dict(
         name="SWP", msg="Hi! Bus stop ad: SWP se monthly income chahiye.", note=SWP_NOTE,
         icon="tap", front=("D", "cream"), side=("C", "navy"), back=("compare", "white"),
         kick="रिटायरमेंट के बाद", h1="सैलरी रुक गई?", h2="हर महीने की आय जारी रखें।",
-        sub="SWP: म्यूचुअल फंड से हर महीने एक तय रकम निकालें।*",
+        sub="SWP: Mutual Fund से हर महीने एक तय रकम निकालें।*",
         s_h="SWP क्या देता है?", s_list=[("&#10003;", "हर महीने तय रकम*"), ("&#10003;", "बाकी पैसा निवेश में"),
                                           ("&#10003;", "ज़रूरत के हिसाब से बदलाव")], s_sub="",
         b_h1='रिटायरमेंट के बाद भी <span class="o">हर महीने &lsquo;सैलरी&rsquo;।</span>',
@@ -206,12 +271,12 @@ TOPICS = {
         b_items=[("लक्ष्य तय करें", "कब और कितना"), ("महँगाई जोड़ें", "आज का खर्च, कल की क़ीमत*"),
                  ("SIP शुरू करें", "हर महीने थोड़ा-थोड़ा")]),
     "12-dec": dict(
-        name="Financial Planning", msg="Hi! Bus stop ad: Mujhe financial plan chahiye.", note="",
+        name="Financial Planning", msg="Hi! Bus stop ad: Apne goals ke liye baat karni hai.", note="",
         icon="pin", front=("D", "ink"), side=("A", "cream"), back=("grid", "orange"),
         kick="साल ख़त्म होने को है", h1="बिना GPS सफ़र?", h2="बिना प्लान निवेश?",
-        sub="आपके लक्ष्यों तक पहुँचने का रास्ता: एक फ़ाइनेंशियल प्लान।",
+        sub="आपके हर लक्ष्य तक पहुँचने का सही रास्ता।",
         s_h="मंज़िल पता है?", s_sub="रास्ता हम दिखाएँगे।",
-        b_h1='आपका फ़ाइनेंशियल प्लान <span class="o">किन बातों का ध्यान रखता है?</span>',
+        b_h1='मंज़िल तक पहुँचने के लिए <span class="o">इन 4 बातों का ध्यान रखें।</span>',
         b_items=[("लक्ष्य", "घर, पढ़ाई, शादी, रिटायरमेंट"), ("बीमा", "परिवार की सुरक्षा"),
                  ("निवेश", "सही मिश्रण, सही समय"), ("टैक्स", "हर साल समझदारी से बचत")]),
 }
@@ -241,7 +306,9 @@ def front(t):
         css = base + ".vis { left:70px; top:30px; width:240px; height:240px; } .copy { position:absolute; left:380px; right:60px; top:22px; } .row { left:380px; right:60px; }"
         html = f'<div class="vis">{icon(t, ia, ib)}</div><div class="copy">{copy}</div>{row}'
     elif kind == "D":  # visual right
-        css = base + ".vis { right:70px; top:34px; width:230px; height:230px; } .copy { position:absolute; left:60px; right:380px; top:22px; } .row { left:60px; right:380px; }"
+        vw, vh = t.get("vis", (230, 230))
+        css = base + (f".vis {{ right:60px; top:{max(16, (300 - vh) // 2)}px; width:{vw}px; height:{vh}px; }} "
+                      f".copy {{ position:absolute; left:60px; right:{vw + 110}px; top:22px; }} .row {{ left:60px; right:{vw + 110}px; }}")
         html = f'<div class="copy">{copy}</div><div class="vis">{icon(t, ia, ib)}</div>{row}'
     elif kind == "C":  # big stat left
         css = base + f"""
@@ -280,7 +347,8 @@ def side(t):
                    icon="var(--navy)" if pal == "orange" else "var(--orange)")
     css = f"""
 .lk {{ position:absolute; left:24px; top:18px; }}
-.vis {{ position:absolute; right:22px; top:58px; width:92px; height:92px; }}
+.vis {{ position:absolute; right:20px; top:56px; width:{108 if t.get("s_icon") == "basket_full" else 92}px; height:{108 if t.get("s_icon") == "basket_full" else 92}px; }}
+.ln {{ display:block; white-space:nowrap; }}
 .sh {{ position:absolute; left:24px; right:24px; top:66px; color:{ink}; font-size:33px; }}
 .ss {{ position:absolute; left:24px; right:24px; color:{acc}; font-size:21px; font-weight:700; }}
 """
@@ -339,9 +407,13 @@ def back(t):
 .ar {{ color:{acc}; font-size:26px; font-weight:800; }}"""
         html += f'<div class="row3">{cards}</div>'
     elif kind == "tiles":
-        cards = "".join(f'<div class="card tl"><div class="a d">{a}</div><div class="b">{b}</div></div>' for a, b in t["b_items"])
+        ics = t.get("b_icons") or [None] * len(t["b_items"])
+        cards = "".join(f'<div class="card tl">{f"<div class=ti>{ICON[ic](O, N)}</div>" if ic else ""}'
+                        f'<div class="a d">{a}</div><div class="b">{b}</div></div>' for (a, b), ic in zip(t["b_items"], ics))
         css += """.row3 { position:absolute; left:44px; right:330px; top:148px; display:flex; gap:14px; }
-.tl { flex:1; padding:12px 18px; border-top:6px solid var(--navy); }
+.tl { flex:1; padding:12px 18px; border-top:6px solid var(--navy); position:relative; }
+.tl .ti { position:absolute; right:14px; top:14px; width:46px; height:46px; }
+.tl .ti + .a { padding-right:56px; }
 .tl:last-child { border-top-color:var(--orange); } .tl .a { font-size:28px; white-space:nowrap; }
 .tl:last-child .a { color:var(--orange); }"""
         html += f'<div class="row3">{cards}</div>'
