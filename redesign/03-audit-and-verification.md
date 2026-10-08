@@ -94,3 +94,11 @@ These are application pages whose markup is largely drawn by their own scripts (
 Fixes applied at runtime by `assets/mh.js`, with no visible change: the main content wrapper gets the main landmark where a page has none; the identity band, page head and section nav become named landmarks using the page's own h1; page-level disclaimer footers are wrapped as named regions so the site footer stays the only contentinfo; compare checkboxes drawn by the scripts get an accessible name from their row's scheme name; scrollable tables, ledgers and chart panels are keyboard focusable with a visible focus ring. Fixes in CSS: loss figures darkened to 5.9:1 on white and AA on the highlighted row; the active performance tab now has white text on its navy pill (the page CSS had overridden it); the info button beside Instant Redemption enlarged to 32px; pills, collection chips and filter buttons reach 44px on touch devices.
 
 Pre-existing markup items not fixed because the body is locked (listed as suggestions): the lumpsum returns table has an empty first header cell; the calculator headings are h4 directly under h2 on the scheme page, and the filter group headings are h4 under h1 on Explore. Small targets that remain are inline scheme-name links inside table rows and cards, which WCAG exempts as in-text links, and 36px period pills inside the pill groups on mouse devices (44px on touch).
+
+---
+
+## Revision: Ledger-style buttons and smaller radii (8 Oct 2026)
+
+Per your direction, Clear Glass keeps its layout, colour and type, but buttons now follow Direction A: flat and rectangular with 4px corners, orange fill with white text for the primary action, white with a navy outline for the secondary (filling navy on hover), and a plain navy text link for the tertiary. Corner radii were reduced throughout: controls 4px, chips, inputs and segmented groups 6px, cards 8px, panels 10px. No pill shapes remain; only status dots and slider thumbs are circular. Shadows were softened to match.
+
+Re-audit after the revision on all eight pages: no overflow, 0 axe violations on six pages and only the three pre-existing markup items on the scheme and Explore pages, no JavaScript errors, content match 100% everywhere. The "Edit Your Numbers" button in the phone result bar was raised to 44px.

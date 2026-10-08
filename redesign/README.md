@@ -1,6 +1,6 @@
 # MoneyHoney website redesign
 
-Direction: **B, "Clear Glass"** (chosen 8 Oct 2026). Pages rebuilt so far: home, Solutions hub, Child Education, Emergency Fund, EMI Management, Scheme Details, Explore Mutual Funds, MF/SIF Screener.
+Direction: **B, "Clear Glass"** (chosen 8 Oct 2026), revised the same day with Direction A's flat rectangular buttons and smaller corner radii. Pages rebuilt so far: home, Solutions hub, Child Education, Emergency Fund, EMI Management, Scheme Details, Explore Mutual Funds, MF/SIF Screener.
 
 | Path | What it is |
 |---|---|
