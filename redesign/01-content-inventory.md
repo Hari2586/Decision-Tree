@@ -1,5 +1,7 @@
 # MoneyHoney redesign: Phase 1 content inventory
 
+Status: Phases 1 to 5 complete for the home page. Chosen design direction: B, "Clear Glass". Final page at `redesign/site/index.html`.
+
 Source: uploaded `index.html` (home page). Captured 8 Oct 2026.
 Scope note: only the home page was supplied. It links to 45 sub-pages (solutions, mutual funds, SIF, FDs, bonds, calculators, about, contact, etc.) whose HTML was not attached. Those pages are listed under "Linked pages not supplied" and are NOT inventoried.
 
