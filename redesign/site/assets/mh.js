@@ -182,4 +182,45 @@
       sp.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
     });
   }
+
+  /* 8. Landmarks, names and keyboard reach for generated pages. Nothing visible changes:
+        ARIA roles and names are taken from text already on the page, and scrollable
+        panels become focusable so keyboard users can scroll them. */
+  (function () {
+    var body = document.body, h1 = document.querySelector('h1'), n = 0;
+    function idOf(el) { if (!el.id) el.id = 'mh-lm-' + (++n); return el.id; }
+    if (!document.querySelector('main, [role="main"]')) {
+      var main = Array.prototype.find.call(body.children, function (el) { return el.matches('div.wrap') && el.querySelector('section'); });
+      if (main) main.setAttribute('role', 'main');
+    }
+    Array.prototype.slice.call(body.children).forEach(function (el) {
+      if (el.matches('header, nav, main, aside, footer.site-foot, script, style, [role], [hidden], [aria-hidden="true"], .mh-progress, .mh-tip') || !el.textContent.trim()) return;
+      if (el.querySelector('main, aside, [role="main"]')) return;               /* already holds the main or a sidebar landmark */
+      if (getComputedStyle(el).display === 'none') return;
+      if (el.matches('.secnav')) {                                                /* section links: a navigation named after the page */
+        el.setAttribute('role', 'navigation'); if (h1) el.setAttribute('aria-labelledby', idOf(h1)); return;
+      }
+      var label = el.querySelector('h1, h2, h3, h4, b, .t'); if (!label) return;
+      if (el.tagName === 'FOOTER') {                                              /* a page footer cannot be a region itself: wrap it */
+        var box = document.createElement('div'); box.setAttribute('role', 'region'); box.setAttribute('aria-labelledby', idOf(label));
+        el.parentNode.insertBefore(box, el); box.appendChild(el); el.setAttribute('role', 'group'); return;
+      }
+      el.setAttribute('role', 'region'); el.setAttribute('aria-labelledby', idOf(label));
+    });
+    function enhance(root) {
+      /* compare checkboxes drawn by the screener and explorer get the row's scheme name as their label */
+      root.querySelectorAll('input[type=checkbox]:not([aria-label]):not([id])').forEach(function (box) {
+        if (box.closest('label')) return;
+        var row = box.closest('tr, .card, .nfo-card'), nm = row && row.querySelector('.nm, a, td'), cmp = document.querySelector('.cmpbar b');
+        if (nm) box.setAttribute('aria-label', (cmp ? cmp.textContent.trim() + ' ' : '') + nm.textContent.trim());
+      });
+      /* panels that scroll sideways or inside themselves are reachable with the keyboard */
+      root.querySelectorAll('.scrollx, .chart-wrap, .table-wrap, .ledger-scroll, .gw, .sx, .vlist').forEach(function (el) {
+        if (!el.hasAttribute('tabindex')) el.setAttribute('tabindex', '0');
+      });
+    }
+    enhance(document);
+    var app = document.getElementById('app') || document.getElementById('list');
+    if (app && 'MutationObserver' in window) new MutationObserver(function () { enhance(app); }).observe(app, { childList: true, subtree: true });
+  })();
 })();

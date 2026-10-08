@@ -78,3 +78,19 @@ Interactions and animation added, all progressive and reduced-motion aware: read
 - **Story charts.** Each bar is focusable with an accessible name taken from the chart's existing aria-label (label and value). Hover, tap or focus turns the bar orange, fades the rest and shows the label and value in a tooltip. All 13 charts across the three pages were checked: aria items and bars line up one to one.
 - Tooltips are built with DOM text nodes, never HTML strings, and hide on scroll, resize, or a tap outside the chart. No visible page text was added; the tooltips compose existing legend labels, table headers and the figures already shown in the year-by-year table.
 - Re-audit after the change: 0 axe violations on all three pages, no JavaScript errors, content match 100%.
+
+---
+
+## Batch 3: Scheme Details, Explore Mutual Funds, MF/SIF Screener (8 Oct 2026)
+
+These are application pages whose markup is largely drawn by their own scripts (filters, result cards, a 476-column grid, interactive NAV and return charts). Their bodies and scripts are kept byte for byte. Their own page CSS is kept too, and now resolves through a compatibility layer in `assets/mh.css` that maps every original design token to the Clear Glass palette, type and radii. On top of that, body-class-scoped overrides restyle the identity band, NAV panel, fact tiles, section nav, tabs, period pills, calculator output, filter rail, result cards, compare bar, screener toolbar, grid header and boot screen.
+
+| Page | Body size | Overflow | axe violations after fixes | JS errors | Content match |
+|---|---|---|---|---|---|
+| Scheme Details (360 ONE Flexicap Fund) | 312 KB | None | 2, both pre-existing markup (see below) | 0 | 100% |
+| Explore Mutual Funds | 867 KB | None | 1, pre-existing markup | 0 | 100% |
+| MF/SIF Screener | 774 KB | None | 0 | 0 | 100% |
+
+Fixes applied at runtime by `assets/mh.js`, with no visible change: the main content wrapper gets the main landmark where a page has none; the identity band, page head and section nav become named landmarks using the page's own h1; page-level disclaimer footers are wrapped as named regions so the site footer stays the only contentinfo; compare checkboxes drawn by the scripts get an accessible name from their row's scheme name; scrollable tables, ledgers and chart panels are keyboard focusable with a visible focus ring. Fixes in CSS: loss figures darkened to 5.9:1 on white and AA on the highlighted row; the active performance tab now has white text on its navy pill (the page CSS had overridden it); the info button beside Instant Redemption enlarged to 32px; pills, collection chips and filter buttons reach 44px on touch devices.
+
+Pre-existing markup items not fixed because the body is locked (listed as suggestions): the lumpsum returns table has an empty first header cell; the calculator headings are h4 directly under h2 on the scheme page, and the filter group headings are h4 under h1 on Explore. Small targets that remain are inline scheme-name links inside table rows and cards, which WCAG exempts as in-text links, and 36px period pills inside the pill groups on mouse devices (44px on touch).

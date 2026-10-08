@@ -1,6 +1,6 @@
 # MoneyHoney website redesign
 
-Direction: **B, "Clear Glass"** (chosen 8 Oct 2026). Pages rebuilt so far: home, Solutions hub, Child Education, Emergency Fund, EMI Management.
+Direction: **B, "Clear Glass"** (chosen 8 Oct 2026). Pages rebuilt so far: home, Solutions hub, Child Education, Emergency Fund, EMI Management, Scheme Details, Explore Mutual Funds, MF/SIF Screener.
 
 | Path | What it is |
 |---|---|
@@ -10,6 +10,7 @@ Direction: **B, "Clear Glass"** (chosen 8 Oct 2026). Pages rebuilt so far: home,
 | `site/index.html` | Home. |
 | `site/solutions/index.html` | Solutions hub. |
 | `site/solutions/<slug>/index.html` | Solution pages. Their calculator scripts are the originals, untouched. |
+| `site/mutual-funds/scheme/`, `explore/`, `screener/` | Application pages. Built with `--keep-page-css`: their own CSS stays and resolves through the token compatibility layer in `mh.css`. |
 | `original/` | The supplied pages, kept for verification, plus the sitemap index. |
 | `alternatives/direction-a-ledger/` | Direction A home page, archived. |
 | `inventory/*.md` | Phase 1 inventory per page, generated from the originals: every text fragment, link, label and meta tag in order, compliance rows marked. |
@@ -27,7 +28,7 @@ python3 redesign/tools/build.py <original.html> redesign/site/<path>/index.html 
 python3 redesign/tools/verify.py <original.html> redesign/site/<path>/index.html
 ```
 
-Asset prefix is `""` at the root, `../` one level down, `../../` two levels down. Body class is `page-home`, `page-hub` or `page-solution`.
+Asset prefix is `""` at the root, `../` one level down, `../../` two levels down. Body class is `page-home`, `page-hub`, `page-solution`, `page-scheme`, `page-explore` or `page-screener`. Add `--keep-page-css` for pages that carry their own CSS after the design-system marker (scheme, explore, screener, calculators); the generator's token names keep working through the compatibility block at the end of `mh.css`.
 
 ## Content lock
 
