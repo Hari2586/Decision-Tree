@@ -764,4 +764,4 @@ dl.kv dt{font-size:14px;color:var(--meta)} dl.kv dd{margin:0;font-size:14px;font
 /* Stress test: the calculator is not sticky, so on wide screens the result bar stays useful; it sits as a compact
    bar aligned right instead of spanning the column, and keeps hiding while the calculator itself is on screen */
 @media (min-width:1024px){.variant-stress .gapbar{display:flex;width:max-content;max-width:100%;margin-left:auto;top:var(--s3)}}
-@media (min-width:420px){.variant-paths .res-grid,.variant-paths .res-grid.strip{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:360px){.variant-paths .res-grid,.variant-paths .res-grid.strip{grid-template-columns:repeat(2,minmax(0,1fr))}}
