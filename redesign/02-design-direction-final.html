@@ -1,0 +1,337 @@
+<title>MoneyHoney Design System</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&family=Figtree:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a one-column style guide. Each section shows the real component as built, then the rule behind it, so a developer can copy the pattern. */
+:root{
+  --bg:#f6f7fb; --fg:#161a33; --muted:#5d637c; --line:#dde1ee; --panel:#ffffff; --panel-2:#eef0f8;
+  --navy:#1B2666; --navy-2:#2A3A8F; --orange:#E8511A; --orange-ink:#C4410E; --orange-deep:#B03A0B; --orange-soft:#FFB28F;
+  --honey:#FDEDE5; --wash:#F1F3FC; --band:#F5F6FC; --fill:#EEF0FA; --rule:#E1E4F0; --rule-2:#C9CFEA; --meta:#5D637C;
+  --display:"Manrope",system-ui,sans-serif; --sans:"Figtree",system-ui,sans-serif; --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){ --bg:#121527; --fg:#e8eaf4; --muted:#a3a9c4; --line:#2b3050; --panel:#1a1e36; --panel-2:#22274a; color-scheme:dark } }
+:root[data-theme="dark"]{ --bg:#121527; --fg:#e8eaf4; --muted:#a3a9c4; --line:#2b3050; --panel:#1a1e36; --panel-2:#22274a; color-scheme:dark }
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 var(--sans);padding-block:0 56px}
+.wrap{max-width:1040px;margin:0 auto;padding-inline:16px}
+header.top{padding-block:40px 24px;border-bottom:1px solid var(--line)}
+.eyebrow{font:500 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+header.top h1{font:800 clamp(28px,4vw,42px)/1.1 var(--display);letter-spacing:-.02em;margin:10px 0 10px;text-wrap:balance}
+header.top p{margin:0;color:var(--muted);max-width:70ch}
+.toc{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.toc a{font-size:13px;font-weight:600;color:var(--navy);text-decoration:none;border:1px solid var(--line);background:var(--panel);padding:8px 12px;border-radius:4px}
+.toc a:hover{border-color:var(--navy)}
+section.sec{padding-block:36px;border-bottom:1px solid var(--line)}
+section.sec h2{font:800 24px/1.2 var(--display);letter-spacing:-.015em;margin:0 0 6px}
+section.sec>p.lead{margin:0 0 20px;color:var(--muted);max-width:70ch}
+.grid{display:grid;gap:16px}
+.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:repeat(3,1fr)}
+@media (max-width:760px){.g2,.g3{grid-template-columns:1fr}}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:20px;min-width:0}
+.panel h3{font:700 14px/1.3 var(--sans);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:0 0 14px}
+.rule{font-size:14px;color:var(--muted);margin:14px 0 0;padding-top:12px;border-top:1px dashed var(--line)}
+.rule b{color:var(--fg)}
+code,.tok{font-family:var(--mono);font-size:12.5px}
+/* swatches */
+.sw{display:grid;grid-template-columns:repeat(auto-fill,minmax(112px,1fr));gap:10px}
+.sw div{height:96px;border-radius:6px;padding:10px;display:flex;flex-direction:column;justify-content:space-between;font-size:11.5px;line-height:1.3;border:1px solid rgba(0,0,0,.08)}
+.sw b{font-family:var(--mono);font-weight:500;letter-spacing:.02em}
+/* type */
+.type p{margin:0 0 12px}.type .lbl{font-size:12px;color:var(--muted);display:block;margin-bottom:2px}
+/* a white stage that mimics the live site, so component samples read as they ship */
+.stage{background:#fff;color:#141A3B;border:1px solid var(--line);border-radius:8px;padding:20px;font-family:var(--sans)}
+.stage .band{background:var(--band);border-radius:8px;padding:16px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 20px;border:1px solid transparent;border-radius:4px;font:600 15px/1 var(--sans);text-decoration:none;cursor:pointer;white-space:nowrap}
+.btn-primary{background:var(--orange-ink);color:#fff;border-color:var(--orange-ink)}.btn-primary:hover{background:var(--orange-deep)}
+.btn-secondary{background:#fff;color:var(--navy);border-color:var(--navy)}.btn-secondary:hover{background:var(--navy);color:#fff}
+.btn-ghost{background:transparent;color:var(--navy);text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--rule-2)}.btn-ghost:hover{background:var(--fill)}
+.btn-sm{min-height:40px;padding:0 16px;font-size:14px}
+.row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.chip{display:inline-flex;align-items:center;min-height:40px;padding:0 14px;border:1px solid var(--rule);border-radius:6px;color:var(--navy);font-weight:600;font-size:14px;background:#fff}
+.chip.on{background:var(--navy);border-color:var(--navy);color:#fff}
+.seg{display:inline-flex;gap:4px;padding:4px;background:var(--fill);border-radius:6px}
+.seg span{min-height:40px;display:inline-flex;align-items:center;padding:0 14px;border-radius:4px;font-weight:600;font-size:14px;color:var(--navy)}
+.seg span.on{background:var(--navy);color:#fff}
+.tag{display:inline-flex;align-items:center;height:24px;padding:0 8px;border-radius:4px;font-size:12px;font-weight:600;background:var(--fill);color:#3B4160}
+.tag.cat{background:var(--honey);color:var(--orange-deep)}
+.status{display:inline-flex;align-items:center;gap:6px;height:26px;padding:0 12px;border:1px solid #FDA29B;border-radius:6px;background:#FEF2F2;color:#B91C1C;font-size:12px;font-weight:600}
+.status::before{content:"";width:8px;height:8px;border-radius:50%;background:#f70d1a}
+.card{background:#fff;border:1px solid var(--rule);border-radius:8px;padding:16px;box-shadow:0 1px 2px rgba(20,26,59,.04),0 4px 14px -8px rgba(20,26,59,.10)}
+.card .ic{width:44px;height:44px;border-radius:6px;background:var(--honey);display:grid;place-items:center;margin-bottom:12px}
+.card .ic i{display:block;width:22px;height:22px;background:var(--orange);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 17l6-6 4 4 8-8'/%3E%3Cpath d='M14 7h7v7'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 17l6-6 4 4 8-8'/%3E%3Cpath d='M14 7h7v7'/%3E%3C/svg%3E") center/contain no-repeat}
+.card b{display:block;font:700 17px/1.3 var(--display);color:var(--navy);letter-spacing:-.01em}
+.card span{display:block;font-size:14px;color:var(--meta);margin-top:6px}
+.stat{background:#fff;border:1px solid var(--rule);border-radius:8px;padding:12px 16px}
+.stat small{display:block;font-size:12.5px;color:var(--meta);font-weight:500}
+.stat strong{display:block;font:800 22px/1.2 var(--display);color:var(--navy);letter-spacing:-.01em;font-variant-numeric:tabular-nums}
+.headline{background:linear-gradient(135deg,var(--navy),var(--navy-2));color:#fff;border-radius:10px;padding:22px;position:relative;overflow:hidden}
+.headline::before{content:"";position:absolute;right:-60px;top:-60px;width:200px;height:200px;border-radius:50%;background:radial-gradient(closest-side,rgba(232,81,26,.45),rgba(232,81,26,0))}
+.headline .fig{font:800 56px/1 var(--display);letter-spacing:-.03em;color:var(--orange-soft);position:relative}
+.headline p{margin:10px 0 0;position:relative;color:#E8EAF4;font-size:15px;max-width:48ch}
+.tbl{width:100%;border-collapse:collapse;font-size:14px}
+.tbl th{text-align:left;font-size:11.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--meta);background:var(--band);padding:10px 12px;border-bottom:1px solid var(--rule)}
+.tbl td{padding:10px 12px;border-bottom:1px solid var(--rule)}
+.tbl tr.lit td{background:var(--wash)}.tbl tr.lit td:first-child{box-shadow:inset 3px 0 0 var(--orange)}
+.tbl .num{font-variant-numeric:tabular-nums}
+.warn{font-size:15px;line-height:1.55;padding:12px 16px;background:var(--band);border:1px solid var(--rule);border-left:3px solid var(--orange);border-radius:6px;max-width:66ch}
+.id{font-size:14px;font-weight:600;color:var(--navy);margin:0 0 12px}
+.radii{display:flex;flex-wrap:wrap;gap:16px;align-items:flex-end}
+.radii div{width:92px;height:64px;background:var(--fill);border:1px solid var(--rule-2);display:grid;place-items:center;font:500 12px var(--mono);color:var(--navy)}
+ul.list{margin:0;padding-left:18px}ul.list li{margin-bottom:8px}
+.avoid{color:var(--muted)}
+pre{background:#0F163F;color:#E8EAF4;border-radius:8px;padding:16px;overflow:auto;font:12.5px/1.55 var(--mono);margin:0}
+.check{list-style:none;margin:0;padding:0}
+.check li{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-bottom:1px solid var(--line)}
+.check li::before{content:"";flex:none;width:18px;height:18px;margin-top:3px;border-radius:4px;background:var(--navy);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 13l4 4L19 7'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 13l4 4L19 7'/%3E%3C/svg%3E") center/contain no-repeat}
+.files{width:100%;border-collapse:collapse;font-size:14px}.files td{padding:8px 0;border-bottom:1px solid var(--line);vertical-align:top}.files td:first-child{font-family:var(--mono);font-size:12.5px;white-space:nowrap;padding-right:16px;color:var(--navy)}
+a:focus-visible{outline:3px solid var(--orange);outline-offset:2px}
+</style>
+
+<div class="wrap">
+<header class="top">
+  <span class="eyebrow">Final design direction · 8 Oct 2026</span>
+  <h1>Clear Glass, with Ledger buttons</h1>
+  <p>The MoneyHoney site as built: Direction B's layout, colour and type, Direction A's flat rectangular buttons, and small corner radii throughout. Every rule below is what <code>assets/mh.css</code> does today, across the home page, Solutions hub, three solution pages, Scheme Details, Explore and the Screener.</p>
+  <nav class="toc" aria-label="Sections">
+    <a href="#mood">Mood</a><a href="#colour">Colour</a><a href="#type">Type</a><a href="#buttons">Buttons</a><a href="#radii">Radii</a><a href="#components">Components</a><a href="#motion">Motion and interaction</a><a href="#compliance">Compliance</a><a href="#avoid">What we avoid</a><a href="#handoff">Developer handoff</a>
+  </nav>
+</header>
+
+<section class="sec" id="mood">
+  <h2>Mood</h2>
+  <p class="lead">A friendly bank branch with the lights on: warm, approachable, nothing intimidating, but every control is square-shouldered and plain so the site still reads as a regulated institution.</p>
+  <div class="row" style="gap:10px">
+    <span class="chip">calm</span><span class="chip">credible</span><span class="chip">goal-first</span><span class="chip">phone-first</span><span class="chip">flat controls</span><span class="chip">one orange moment</span>
+  </div>
+</section>
+
+<section class="sec" id="colour">
+  <h2>Colour</h2>
+  <p class="lead">Navy does the work. Orange is a small, consistent mark: the primary action, icon tiles, the headline figure and the callout edge. The page is always white; tints live inside bands and cards.</p>
+  <div class="sw">
+    <div style="background:#1B2666;color:#fff"><span>Navy · headings, nav, outlines</span><b>#1B2666</b></div>
+    <div style="background:#2A3A8F;color:#fff"><span>Navy 2 · gradient end, hover</span><b>#2A3A8F</b></div>
+    <div style="background:#E8511A;color:#fff"><span>Orange · icon marks, figure, edges</span><b>#E8511A</b></div>
+    <div style="background:#C4410E;color:#fff"><span>Orange ink · button fill (5.1:1)</span><b>#C4410E</b></div>
+    <div style="background:#B03A0B;color:#fff"><span>Orange deep · hover, badge text</span><b>#B03A0B</b></div>
+    <div style="background:#FFB28F;color:#141A3B"><span>Orange soft · figure on navy (7.9:1)</span><b>#FFB28F</b></div>
+    <div style="background:#FDEDE5;color:#141A3B"><span>Honey · icon tiles, badges</span><b>#FDEDE5</b></div>
+    <div style="background:#F1F3FC;color:#141A3B"><span>Wash · hero, matched row</span><b>#F1F3FC</b></div>
+    <div style="background:#F5F6FC;color:#141A3B"><span>Band · section bands, panels</span><b>#F5F6FC</b></div>
+    <div style="background:#EEF0FA;color:#141A3B"><span>Fill · segmented, nav chips</span><b>#EEF0FA</b></div>
+    <div style="background:#E1E4F0;color:#141A3B"><span>Rule · borders</span><b>#E1E4F0</b></div>
+    <div style="background:#141A3B;color:#fff"><span>Text (16.9:1)</span><b>#141A3B</b></div>
+    <div style="background:#5D637C;color:#fff"><span>Meta (5.9:1 on white)</span><b>#5D637C</b></div>
+    <div style="background:#067647;color:#fff"><span>Gain · figures only</span><b>#067647</b></div>
+    <div style="background:#B91C1C;color:#fff"><span>Loss · figures only (5.9:1)</span><b>#B91C1C</b></div>
+    <div style="background:#FFFAEB;color:#B54708;border-color:#FEDF89"><span>Demo notice · warning</span><b>#FFFAEB</b></div>
+  </div>
+  <p class="rule"><b>Rule.</b> Text colours are AA on their backgrounds at body size. Pure brand orange #E8511A is 3.7:1 on white, so it is never used for text smaller than 19px bold; buttons use the ink shade. Riskometer colours follow SEBI's six levels unchanged, as dots only.</p>
+</section>
+
+<section class="sec" id="type">
+  <h2>Type</h2>
+  <p class="lead">Two faces from Google Fonts with system fallbacks. Figures use tabular numerals everywhere.</p>
+  <div class="grid g2">
+    <div class="panel type">
+      <h3>Headings · Manrope 800, tight tracking</h3>
+      <span class="lbl">h1 · clamp(30px, 3.4vw + 17px, 46px)</span>
+      <p style="font:800 34px/1.1 var(--display);letter-spacing:-.02em">Mutual Funds, SIFs, Screens and Calculators</p>
+      <span class="lbl">h2 · clamp(22px, 1.2vw + 17px, 28px)</span>
+      <p style="font:800 24px/1.2 var(--display);letter-spacing:-.015em">Find a Solution</p>
+      <span class="lbl">Card title · Manrope 700, 17px</span>
+      <p style="font:700 17px/1.3 var(--display);letter-spacing:-.01em">Specialised Investment Funds</p>
+      <span class="lbl">Figure · Manrope 800, tabular</span>
+      <p style="font:800 28px/1.1 var(--display);letter-spacing:-.02em;font-variant-numeric:tabular-nums">₹8,31,571 · 1,774 · 31 Aug 2026</p>
+    </div>
+    <div class="panel type">
+      <h3>Body · Figtree 400 / 500 / 600 / 700</h3>
+      <span class="lbl">Lede · 17px, 1.6</span>
+      <p style="font:400 17px/1.6 var(--sans)">Start from the problem you want to solve. Facts on every open mutual fund scheme in India, organised by fund house, SEBI category, theme and index.</p>
+      <span class="lbl">Body · 16px, 1.55 · Meta · 14px</span>
+      <p style="font:400 16px/1.55 var(--sans)">MoneyHoney is an AMFI-registered mutual fund and SIF distributor; nothing here is a recommendation.</p>
+      <p style="font:400 14px/1.5 var(--sans);color:var(--muted)">Source: NSS Comprehensive Modular Survey, Education 2025, MoSPI.</p>
+      <span class="lbl">Labels · 12px, uppercase, .04 to .06em tracking</span>
+      <p style="font:700 12px/1 var(--sans);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)">Time to the goal · Categories · Why</p>
+    </div>
+  </div>
+  <p class="rule"><b>Rule.</b> Running text stays near 66 characters wide. Headings use <code>text-wrap: balance</code>. No italics for emphasis; weight and colour carry hierarchy.</p>
+</section>
+
+<section class="sec" id="buttons">
+  <h2>Buttons</h2>
+  <p class="lead">Taken from Direction A: flat, rectangular, 4px corners, no glow. Three levels, always with the page's existing button text.</p>
+  <div class="stage">
+    <div class="row">
+      <a class="btn btn-primary" href="#buttons">Start Investing</a>
+      <a class="btn btn-secondary" href="#buttons">See Funds That Fit</a>
+      <a class="btn btn-ghost" href="#buttons">Speak to Us</a>
+      <a class="btn btn-secondary btn-sm" href="#buttons">Edit Your Numbers</a>
+    </div>
+    <div class="row" style="margin-top:16px">
+      <a class="btn btn-primary" href="#buttons">Start SIP</a>
+      <a class="btn btn-secondary" href="#buttons">Invest Lumpsum</a>
+      <a class="btn btn-secondary btn-sm" href="#buttons">Compare Now</a>
+      <a class="btn btn-ghost btn-sm" href="#buttons">See All NFOs</a>
+    </div>
+  </div>
+  <div class="grid g3" style="margin-top:16px">
+    <div class="panel"><h3>Primary</h3><p style="margin:0;font-size:14px">Orange ink #C4410E fill, white 15px/600 text, 44px tall, 20px side padding. Hover darkens to #B03A0B. One per screen region.</p></div>
+    <div class="panel"><h3>Secondary</h3><p style="margin:0;font-size:14px">White fill, 1px navy outline, navy text. Hover fills navy with white text. Used for the alternative action beside a primary.</p></div>
+    <div class="panel"><h3>Tertiary</h3><p style="margin:0;font-size:14px">Plain navy text with a light underline, fills #EEF0FA on hover. Small size is 40px tall with 14px text.</p></div>
+  </div>
+</section>
+
+<section class="sec" id="radii">
+  <h2>Corner radii</h2>
+  <p class="lead">Kept small on purpose. No pill shapes anywhere; only status dots and slider thumbs are round.</p>
+  <div class="stage">
+    <div class="radii">
+      <div style="border-radius:4px">4px</div>
+      <div style="border-radius:6px">6px</div>
+      <div style="border-radius:8px">8px</div>
+      <div style="border-radius:10px">10px</div>
+    </div>
+    <table class="tbl" style="margin-top:16px">
+      <thead><tr><th>Radius</th><th>Token</th><th>Used for</th></tr></thead>
+      <tbody>
+        <tr><td class="num">4px</td><td><code>--r-btn</code></td><td>Buttons, badges, tags, breadcrumb and footer links, tabs, section nav, legend toggles</td></tr>
+        <tr><td class="num">6px</td><td><code>--r-sm</code>, <code>--r-pill</code></td><td>Chips, inputs, search, selects, segmented groups, nav items on phones, icon tiles, tooltips</td></tr>
+        <tr><td class="num">8px</td><td><code>--r-md</code></td><td>Cards, tables, result panels, the sticky result bar</td></tr>
+        <tr><td class="num">10px</td><td><code>--r-lg</code></td><td>Headline panel, calculator rail, NAV card, Next Step block</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="sec" id="components">
+  <h2>Components</h2>
+  <p class="lead">As they ship, with real content from the pages.</p>
+  <div class="grid g2">
+    <div class="stage">
+      <div class="headline"><div class="fig">8.7 times</div><p>In 2025, families spent ₹25,002 a year per child at a non-government school, 8.7 times the ₹2,863 at a government school.</p></div>
+      <p class="rule" style="color:#5D637C"><b style="color:#141A3B">Headline panel.</b> Navy gradient, honey glow in one corner, figure counts up once when seen.</p>
+    </div>
+    <div class="stage">
+      <div class="grid g2" style="gap:12px">
+        <div class="card"><div class="ic"><i></i></div><b>Mutual Funds</b><span>1,774 schemes by category and fund house</span></div>
+        <div class="card"><div class="ic"><i></i></div><b>Equity Funds</b><span>11 categories, 614 schemes</span></div>
+      </div>
+      <p class="rule" style="color:#5D637C"><b style="color:#141A3B">Product card.</b> White, 8px, soft shadow, honey icon tile with an orange line icon drawn in CSS. Lifts 3px on hover.</p>
+    </div>
+    <div class="stage">
+      <div class="row"><span class="chip on">SIP</span><span class="chip">Retirement</span><span class="chip">Child Education</span><span class="chip">Emergency Fund</span></div>
+      <div class="row" style="margin-top:14px"><span class="seg"><span class="on">Equity</span><span>Hybrid</span><span>Debt</span></span></div>
+      <div class="row" style="margin-top:14px"><span class="tag">Equity</span><span class="tag cat">Flexi Cap Fund</span><span class="status">Very High Risk</span></div>
+      <p class="rule" style="color:#5D637C"><b style="color:#141A3B">Chips, segmented pickers, tags, status.</b> 6px chips fill navy when active; segmented groups sit on #EEF0FA with a navy 4px active segment.</p>
+    </div>
+    <div class="stage">
+      <div class="band">
+        <div class="grid g2" style="gap:8px">
+          <div class="stat"><small>Cost When Needed</small><strong>₹8,31,571</strong></div>
+          <div class="stat"><small>Monthly SIP Needed</small><strong>₹1,648</strong></div>
+        </div>
+      </div>
+      <p class="rule" style="color:#5D637C"><b style="color:#141A3B">Result tiles.</b> White on a band panel. A figure that recalculates flashes orange for half a second.</p>
+    </div>
+    <div class="stage" style="grid-column:1/-1">
+      <table class="tbl">
+        <thead><tr><th>Time to the Goal</th><th>Categories</th><th>Why</th></tr></thead>
+        <tbody>
+          <tr><td>3 to 5 Years</td><td>Conservative Hybrid, Equity Savings</td><td>Some equity for growth, cushioned by debt.</td></tr>
+          <tr class="lit"><td>5 Years or More <span class="tag cat" style="margin-left:6px">Matches Your Numbers</span></td><td>Flexi Cap, Large Cap, Large &amp; Mid Cap, Multi Cap, Index, Aggressive Hybrid</td><td>Time to ride out market falls.</td></tr>
+        </tbody>
+      </table>
+      <p class="rule" style="color:#5D637C"><b style="color:#141A3B">Tables.</b> Uppercase 11.5px headers on a band, 1px rules, hover tint. The matched row takes the wash tint and a 3px orange edge. On phones under 768px tables stack into labelled rows.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="motion">
+  <h2>Motion and interaction</h2>
+  <p class="lead">Everything is progressive: the page is complete with no script, and all motion switches off under <code>prefers-reduced-motion</code>.</p>
+  <ul class="list">
+    <li><b>Reading progress bar</b>, 3px orange, along the top edge.</li>
+    <li><b>Scroll reveal</b> on cards, steps, FAQs and documents, staggered 60ms per item, from a visible resting state.</li>
+    <li><b>Interactive charts.</b> Hover, tap or focus a bar for a navy tooltip with its label and value; the bar turns orange and the rest fade. The calculator chart gets a hit zone per year and legend toggles.</li>
+    <li><b>Sliders</b> with a navy filled track and a thumb that grows on hover. <b>Segmented pickers</b> slide their navy highlight.</li>
+    <li><b>Figure tick.</b> Any number that recalculates flashes orange ink for 550ms.</li>
+    <li><b>Floating result bar</b> on phones that hides itself while the calculator is on screen.</li>
+    <li><b>Hover lifts</b> of 2 to 3px on cards; chevrons slide 3px; FAQ folds rotate their chevron and fade their answer in.</li>
+  </ul>
+</section>
+
+<section class="sec" id="compliance">
+  <h2>Compliance footer</h2>
+  <p class="lead">On every page, at body size, verbatim.</p>
+  <div class="stage">
+    <p class="id">Money Honey Financial Services Private Limited · AMFI Registered Mutual Fund Distributor &amp; SIF Distributor · ARN-000000 · Registered 1 Jan 2015, valid till 31 Dec 2027</p>
+    <div class="warn">Mutual Fund investments are subject to market risks, read all scheme related documents carefully.</div>
+    <div class="warn" style="margin-top:12px">Investments in Specialized Investment Fund involves relatively higher risk including potential loss of capital, liquidity risk and market volatility. Please read all investment strategy related documents carefully before making the investment decision.</div>
+  </div>
+  <p class="rule"><b>Rule.</b> Warnings sit in band-tinted boxes with an orange left edge, never grey small print. The demo notice stays at the top of every page inside the header landmark.</p>
+</section>
+
+<section class="sec" id="avoid">
+  <h2>What we avoid</h2>
+  <ul class="list avoid">
+    <li>Pill buttons, glows and gradients on controls. Controls are flat with 4px corners.</li>
+    <li>Trading-app energy: green and red tickers, charts in the hero, countdown urgency. Gain and loss colours appear on figures only.</li>
+    <li>Purple or blue gradients, floating 3D coins, stock photos of happy families.</li>
+    <li>Emoji as icons. Every mark is a CSS-drawn line icon in brand colours.</li>
+    <li>Orange text below 19px bold. Orange on more than one action per screen region.</li>
+    <li>Any change to copy. Icons, chevrons and tooltips add no visible words.</li>
+  </ul>
+</section>
+
+<section class="sec" id="handoff">
+  <h2>Developer handoff</h2>
+  <p class="lead">Every page links the same stylesheet and script. Generated pages keep their own CSS, which resolves through the compatibility block at the end of <code>mh.css</code>.</p>
+  <div class="grid g2">
+    <div class="panel">
+      <h3>Fonts</h3>
+<pre>&lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;
+&lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;
+&lt;link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&amp;family=Figtree:wght@400;500;600;700&amp;display=swap"&gt;
+&lt;link rel="stylesheet" href="assets/mh.css"&gt;
+&lt;script defer src="assets/mh.js"&gt;&lt;/script&gt;</pre>
+    </div>
+    <div class="panel">
+      <h3>Core tokens</h3>
+<pre>:root{
+  --navy:#1B2666; --navy-2:#2A3A8F; --ink:#0F163F;
+  --orange:#E8511A; --orange-ink:#C4410E;
+  --orange-deep:#B03A0B; --orange-soft:#FFB28F;
+  --honey:#FDEDE5; --wash:#F1F3FC; --band:#F5F6FC;
+  --fill:#EEF0FA; --paper:#FFFFFF;
+  --rule:#E1E4F0; --rule-2:#C9CFEA;
+  --text:#141A3B; --meta:#5D637C;
+  --display:"Manrope",system-ui,sans-serif;
+  --sans:"Figtree",system-ui,sans-serif;
+  --r-btn:4px; --r-sm:6px; --r-pill:6px;
+  --r-md:8px; --r-lg:10px;
+}</pre>
+    </div>
+  </div>
+  <div class="panel" style="margin-top:16px">
+    <h3>Files</h3>
+    <table class="files">
+      <tr><td>site/assets/mh.css</td><td>The design system: tokens, components, page overrides, motion, and the compatibility layer that maps the generator's original token names.</td></tr>
+      <tr><td>site/assets/mh.js</td><td>Progress bar, scroll reveal, slider fill, figure tick, result bar, chart tooltips and legend toggles, landmark and label fixes for generated pages.</td></tr>
+      <tr><td>tools/build.py</td><td>Rebuilds a page: body kept byte for byte, head swapped for the shared assets. Add <code>--keep-page-css</code> for generated pages.</td></tr>
+      <tr><td>tools/verify.py</td><td>Content lock check: title, meta, JSON-LD, aria-labels, every href, the full visible text stream.</td></tr>
+      <tr><td>03-audit-and-verification.md</td><td>Accessibility audit and verification results for every page built so far.</td></tr>
+    </table>
+  </div>
+  <div class="panel" style="margin-top:16px">
+    <h3>Ready for implementation</h3>
+    <ul class="check">
+      <li>Colours defined as tokens with hex values and roles; all text pairs AA.</li>
+      <li>Fonts selected with the Google Fonts link above and system fallbacks.</li>
+      <li>Buttons, radii, chips, cards, tables and compliance footer documented and built.</li>
+      <li>Motion documented, progressive, and disabled under reduced motion.</li>
+      <li>Anti-patterns listed. Content lock enforced by the verify script at 100% on all eight pages.</li>
+      <li>Approved: Direction B with Direction A buttons and small radii, 8 Oct 2026.</li>
+    </ul>
+  </div>
+</section>
+</div>

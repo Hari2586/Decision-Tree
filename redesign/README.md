@@ -15,7 +15,8 @@ Direction: **B, "Clear Glass"** (chosen 8 Oct 2026), revised the same day with D
 | `alternatives/direction-a-ledger/` | Direction A home page, archived. |
 | `inventory/*.md` | Phase 1 inventory per page, generated from the originals: every text fragment, link, label and meta tag in order, compliance rows marked. |
 | `01-content-inventory.md` | Hand-written home page inventory with the compliance register. |
-| `02-design-directions.html` | Phase 2 moodboard with both directions. |
+| `02-design-directions.html` | Phase 2 moodboard with both directions (historical). |
+| `02-design-direction-final.html` | The final design direction and style guide as built: colour, type, buttons, radii, components, motion, compliance, developer handoff. |
 | `03-audit-and-verification.md` | Phase 4 accessibility audit and Phase 5 content verification. |
 | `tools/build.py` | Builds a page: keeps the body byte for byte (only the body tag gains a class and the demo notice moves inside the header landmark), swaps the head's embedded CSS for the shared assets. |
 | `tools/verify.py` | Content verification: title, meta, JSON-LD, aria-labels, every href in order, the full visible text stream. |
