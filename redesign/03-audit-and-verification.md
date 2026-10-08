@@ -102,3 +102,17 @@ Pre-existing markup items not fixed because the body is locked (listed as sugges
 Per your direction, Clear Glass keeps its layout, colour and type, but buttons now follow Direction A: flat and rectangular with 4px corners, orange fill with white text for the primary action, white with a navy outline for the secondary (filling navy on hover), and a plain navy text link for the tertiary. Corner radii were reduced throughout: controls 4px, chips, inputs and segmented groups 6px, cards 8px, panels 10px. No pill shapes remain; only status dots and slider thumbs are circular. Shadows were softened to match.
 
 Re-audit after the revision on all eight pages: no overflow, 0 axe violations on six pages and only the three pre-existing markup items on the scheme and Explore pages, no JavaScript errors, content match 100% everywhere. The "Edit Your Numbers" button in the phone result bar was raised to 44px.
+
+---
+
+## Revision: three structures for the solution pages (8 Oct 2026)
+
+The three solution pages shared one skeleton. They now carry a variant class each, set at build time, and the stylesheet gives each a distinct structure while the markup, text and section order stay identical:
+
+| Page | Variant | Structure |
+|---|---|---|
+| Child Education | `variant-timeline` | Sticky calculator right, evidence as a vertical timeline with alternating chart tints |
+| Emergency Fund | `variant-stress` | Full-width deep-navy headline band with the figure at 112px, calculator full width with results beside inputs, evidence as a 2x2 card grid, FAQ in two columns, navy Next Step, result bar kept on desktop |
+| EMI Management | `variant-paths` | Calculator sticky on the left, honey and wash split headline, evidence as a horizontal snap carousel (keyboard focusable), closing steps as numbered cards, product cards marked orange and navy |
+
+Checks after the change: no overflow at 390 or 1280px, 0 axe violations on all three, no JavaScript errors, content match 100% on all three. Reading order is unchanged because no element was reordered; the differences are CSS layout only.

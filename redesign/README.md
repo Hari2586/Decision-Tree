@@ -29,7 +29,7 @@ python3 redesign/tools/build.py <original.html> redesign/site/<path>/index.html 
 python3 redesign/tools/verify.py <original.html> redesign/site/<path>/index.html
 ```
 
-Asset prefix is `""` at the root, `../` one level down, `../../` two levels down. Body class is `page-home`, `page-hub`, `page-solution`, `page-scheme`, `page-explore` or `page-screener`. Add `--keep-page-css` for pages that carry their own CSS after the design-system marker (scheme, explore, screener, calculators); the generator's token names keep working through the compatibility block at the end of `mh.css`.
+Asset prefix is `""` at the root, `../` one level down, `../../` two levels down. Body class is `page-home`, `page-hub`, `page-solution` (plus one of `variant-timeline`, `variant-stress`, `variant-paths`), `page-scheme`, `page-explore` or `page-screener`. Add `--keep-page-css` for pages that carry their own CSS after the design-system marker (scheme, explore, screener, calculators); the generator's token names keep working through the compatibility block at the end of `mh.css`.
 
 ## Content lock
 

@@ -215,7 +215,7 @@
         if (nm) box.setAttribute('aria-label', (cmp ? cmp.textContent.trim() + ' ' : '') + nm.textContent.trim());
       });
       /* panels that scroll sideways or inside themselves are reachable with the keyboard */
-      root.querySelectorAll('.scrollx, .chart-wrap, .table-wrap, .ledger-scroll, .gw, .sx, .vlist').forEach(function (el) {
+      root.querySelectorAll('.scrollx, .chart-wrap, .table-wrap, .ledger-scroll, .gw, .sx, .vlist, .variant-paths .steps').forEach(function (el) {
         if (!el.hasAttribute('tabindex')) el.setAttribute('tabindex', '0');
       });
     }

@@ -92,7 +92,7 @@ a:focus-visible{outline:3px solid var(--orange);outline-offset:2px}
   <h1>Clear Glass, with Ledger buttons</h1>
   <p>The MoneyHoney site as built: Direction B's layout, colour and type, Direction A's flat rectangular buttons, and small corner radii throughout. Every rule below is what <code>assets/mh.css</code> does today, across the home page, Solutions hub, three solution pages, Scheme Details, Explore and the Screener.</p>
   <nav class="toc" aria-label="Sections">
-    <a href="#mood">Mood</a><a href="#colour">Colour</a><a href="#type">Type</a><a href="#buttons">Buttons</a><a href="#radii">Radii</a><a href="#components">Components</a><a href="#motion">Motion and interaction</a><a href="#compliance">Compliance</a><a href="#avoid">What we avoid</a><a href="#handoff">Developer handoff</a>
+    <a href="#mood">Mood</a><a href="#colour">Colour</a><a href="#type">Type</a><a href="#buttons">Buttons</a><a href="#radii">Radii</a><a href="#components">Components</a><a href="#variants">Solution pages</a><a href="#motion">Motion and interaction</a><a href="#compliance">Compliance</a><a href="#avoid">What we avoid</a><a href="#handoff">Developer handoff</a>
   </nav>
 </header>
 
@@ -244,6 +244,30 @@ a:focus-visible{outline:3px solid var(--orange);outline-offset:2px}
       <p class="rule" style="color:#5D637C"><b style="color:#141A3B">Tables.</b> Uppercase 11.5px headers on a band, 1px rules, hover tint. The matched row takes the wash tint and a 3px orange edge. On phones under 768px tables stack into labelled rows.</p>
     </div>
   </div>
+</section>
+
+
+<section class="sec" id="variants">
+  <h2>Solution pages: one system, three structures</h2>
+  <p class="lead">Every solution page carries the same blocks in the same order: question, headline figure, calculator, evidence, closing steps, fund categories, questions, documents, next step, sources. The structure that holds them changes with the problem, so two pages never feel like the same page twice.</p>
+  <div class="grid g3">
+    <div class="panel">
+      <h3>Timeline · Child Education</h3>
+      <p style="margin:0 0 10px;font-size:14px">A goal far in the future. Navy gradient headline, calculator pinned on the <b>right</b>, evidence as a vertical timeline with orange waypoints and alternating chart tints.</p>
+      <p style="margin:0;font-size:13px;color:var(--muted)"><code>body.page-solution.variant-timeline</code></p>
+    </div>
+    <div class="panel">
+      <h3>Stress test · Emergency Fund</h3>
+      <p style="margin:0 0 10px;font-size:14px">Urgency, read at a glance. Deep-navy band with the figure at 112px beside its sentence, calculator <b>full width</b> with results beside the inputs, evidence as a 2x2 grid of cards, questions in two columns, a navy Next Step block.</p>
+      <p style="margin:0;font-size:13px;color:var(--muted)"><code>body.page-solution.variant-stress</code></p>
+    </div>
+    <div class="panel">
+      <h3>Two paths · EMI Management</h3>
+      <p style="margin:0 0 10px;font-size:14px">A comparison. Honey and wash split headline, calculator pinned on the <b>left</b>, evidence as a swipeable row of cards with snap points, closing steps as numbered cards alternating honey and band, the two product cards marked orange and navy.</p>
+      <p style="margin:0;font-size:13px;color:var(--muted)"><code>body.page-solution.variant-paths</code></p>
+    </div>
+  </div>
+  <p class="rule"><b>Rule.</b> A variant is a body class and CSS only. Markup, text and section order are identical across the three, so the content lock, the calculators and the verification script are untouched. New solution pages pick the variant whose problem shape matches: far-off goals take the timeline, urgent gaps take the stress test, either-or decisions take two paths.</p>
 </section>
 
 <section class="sec" id="motion">

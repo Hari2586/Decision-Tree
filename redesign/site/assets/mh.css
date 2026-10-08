@@ -661,3 +661,107 @@ dl.kv dt{font-size:14px;color:var(--meta)} dl.kv dd{margin:0;font-size:14px;font
 @media (pointer:coarse){.page-screener .fn{width:32px;height:32px}.page-screener .fn .ico{width:14px;height:14px}.page-explore .coll,.page-scheme .pills button,.page-scheme .plan-switch button{min-height:44px}}
 .page-scheme [role="main"] footer{margin-top:var(--s10)}
 .scrollx:focus-visible,.chart-wrap:focus-visible,.table-wrap:focus-visible,.ledger-scroll:focus-visible,.gw:focus-visible,.sx:focus-visible{box-shadow:var(--focus);border-radius:var(--r-md)}
+
+/* ==========================================================================
+   Solution page variants. Same content and section order, three structures.
+   .variant-timeline  Child Education: sticky calculator on the right, the
+                      evidence as a vertical timeline (a goal far in the future).
+   .variant-stress    Emergency Fund: everything full width like a stress test,
+                      calculator and inputs side by side, evidence as a 2x2 grid,
+                      questions in two columns.
+   .variant-paths     EMI Management: calculator on the LEFT, a split-colour
+                      headline for the two paths, evidence as a swipeable row of
+                      cards, closing steps as numbered cards.
+   ========================================================================== */
+
+/* Timeline: alternate the chart cards' tint so a long scroll has rhythm */
+.variant-timeline .step:nth-child(even) .step-fig{background:var(--band)}
+.variant-timeline .headline{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-2) 100%)}
+
+/* Stress test ---------------------------------------------------------------- */
+.variant-stress .headline{background:linear-gradient(120deg,var(--ink) 0%,var(--navy) 70%,var(--navy-2) 100%)}
+.variant-stress .headline::before{width:420px;height:420px;right:-120px;top:-160px;background:radial-gradient(closest-side,rgba(232,81,26,.55),rgba(232,81,26,0))}
+@media (min-width:760px){
+  .variant-stress .headline{display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:var(--s10);row-gap:var(--s3);align-items:center;padding:var(--s8) var(--s10)}
+  .variant-stress .hl-fig{grid-row:1/4;margin:0;font-size:clamp(64px,9vw,112px);line-height:.95;align-self:center}
+  .variant-stress .hl-text,.variant-stress .hl-src,.variant-stress .hl-means{grid-column:2;max-width:none}
+  .variant-stress .hl-text{margin:0;font-size:20px}
+  .variant-stress .hl-src{margin:0}
+  .variant-stress .hl-means{margin:0}
+}
+@media (min-width:1024px){
+  .variant-stress .vb{display:flex;flex-direction:column;gap:var(--s6)}
+  .variant-stress .vb-rail{position:static;max-height:none;overflow:visible}
+  .variant-stress .vb-main{margin-top:0}
+}
+@media (min-width:900px){
+  .variant-stress .vb-rail{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:var(--s3) var(--s8);align-items:start;padding:var(--s6)}
+  .variant-stress .vb-rail>h2,.variant-stress .vb-rail>.note{grid-column:1/-1}
+  .variant-stress .vb-rail>h2{font-size:26px;margin:0}
+  .variant-stress .vb-rail>.note{margin-bottom:var(--s2)}
+  .variant-stress .vb-rail>.res{grid-column:1;margin-top:0}
+  .variant-stress .vb-rail>details.fold:first-of-type{grid-column:2;border-top:0;margin-top:0;padding-top:0}
+  .variant-stress .vb-rail>details.fold:first-of-type>summary{pointer-events:none}
+  .variant-stress .vb-rail>details.fold:first-of-type>summary::before,.variant-stress .vb-rail>details.fold:first-of-type>summary::after{display:none}
+  .variant-stress .vb-rail>details.fold:not(:first-of-type){grid-column:1/-1}
+  .variant-stress .res-grid,.variant-stress .res-grid.strip{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .variant-stress .calcform .field{margin-bottom:var(--s4)}
+}
+.variant-stress .res .stat__value{overflow-wrap:normal;font-size:20px}
+.variant-stress .steps{padding:0;margin-top:var(--s5);display:grid;grid-template-columns:1fr;gap:var(--s4)}
+@media (min-width:760px){.variant-stress .steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.variant-stress .steps::before{display:none}
+.variant-stress .step{margin:0;padding:var(--s5);background:var(--paper);border:1px solid var(--rule);border-radius:var(--r-md);box-shadow:var(--shadow);display:flex;flex-direction:column;transition:transform var(--d-med) var(--ease),box-shadow var(--d-med) var(--ease)}
+.variant-stress .step:hover{transform:translateY(-2px);box-shadow:var(--shadow-lift)}
+.variant-stress .step::before{display:none}
+.variant-stress .step h3{padding-left:var(--s3);border-left:3px solid var(--orange)}
+.variant-stress .step p{max-width:none}
+.variant-stress .step-fig{margin-top:auto;padding:var(--s4) 0 0;border:0;border-top:1px solid var(--rule);border-radius:0;box-shadow:none;background:transparent;max-width:none}
+.variant-stress .story-end{grid-column:1/-1}
+@media (min-width:900px){
+  .variant-stress .faq{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 var(--s4);align-items:start}
+  .variant-stress .faq>h2{grid-column:1/-1}
+}
+.variant-stress .nextstep{background:var(--navy);color:var(--on-navy)}
+.variant-stress .nextstep h2,.variant-stress .nextstep p{color:var(--on-navy)}
+.variant-stress .nextstep .btn-secondary{background:transparent;color:#fff;border-color:rgba(255,255,255,.6)}
+.variant-stress .nextstep .btn-secondary:hover{background:#fff;color:var(--navy)}
+.variant-stress .nextstep .btn-ghost{color:#fff;text-decoration-color:rgba(255,255,255,.5)}
+.variant-stress .nextstep .btn-ghost:hover{background:rgba(255,255,255,.12)}
+
+/* Two paths ------------------------------------------------------------------ */
+.variant-paths .headline{background:linear-gradient(104deg,var(--honey) 0 58%,var(--wash) 58% 100%);color:var(--text);border:1px solid #F3DACB}
+.variant-paths .headline::before{background:radial-gradient(closest-side,rgba(27,38,102,.14),rgba(27,38,102,0))}
+.variant-paths .hl-fig{color:var(--navy)}
+.variant-paths .hl-text{color:var(--text)}
+.variant-paths .hl-src{color:var(--meta)}
+.variant-paths .hl-means{color:#3B4160}
+.variant-paths .headline a{color:var(--navy);text-decoration-color:var(--rule-2)}
+.variant-paths .headline a:focus-visible{box-shadow:var(--focus)}
+@media (min-width:1024px){
+  .variant-paths .vb{grid-template-columns:440px minmax(0,1fr);grid-template-areas:"rail head" "rail main"}
+}
+.variant-paths .steps{display:flex;gap:var(--s4);overflow-x:auto;scroll-snap-type:x mandatory;padding:var(--s1) var(--gutter) var(--s4);margin:var(--s5) calc(-1 * var(--gutter)) 0;list-style:none;scrollbar-width:thin;scrollbar-color:var(--rule-2) transparent;-webkit-overflow-scrolling:touch}
+.variant-paths .steps::before{display:none}
+.variant-paths .steps:focus-visible{box-shadow:var(--focus);border-radius:var(--r-md)}
+.variant-paths .step{flex:0 0 min(360px,84vw);scroll-snap-align:start;margin:0;padding:var(--s5);background:var(--paper);border:1px solid var(--rule);border-radius:var(--r-md);box-shadow:var(--shadow);display:flex;flex-direction:column;min-width:0}
+.variant-paths .step::before{display:none}
+.variant-paths .step h3{padding-left:var(--s3);border-left:3px solid var(--orange)}
+.variant-paths .step p{max-width:none}
+.variant-paths .step-fig{margin-top:auto;padding:var(--s4) 0 0;border:0;border-top:1px solid var(--rule);border-radius:0;box-shadow:none;background:transparent;max-width:none}
+.variant-paths .story-end{margin-top:var(--s2)}
+.variant-paths .close-steps{display:grid;grid-template-columns:1fr;gap:var(--s3);padding:0;margin:0;list-style:none;counter-reset:step}
+@media (min-width:760px){.variant-paths .close-steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.variant-paths .close-steps li{counter-increment:step;position:relative;margin:0;max-width:none;padding:var(--s5) var(--s5) var(--s5) 60px;background:var(--band);border-radius:var(--r-md)}
+.variant-paths .close-steps li::before{content:counter(step);position:absolute;left:var(--s4);top:var(--s4);width:30px;height:30px;border-radius:var(--r-btn);background:var(--navy);color:#fff;font:800 14px/30px var(--display);text-align:center}
+.variant-paths .close-steps li:nth-child(odd){background:var(--honey)}
+.variant-paths .close-steps li:nth-child(odd)::before{background:var(--orange-ink)}
+.variant-paths .pcards{grid-template-columns:1fr}
+@media (min-width:760px){.variant-paths .pcards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.variant-paths .pcard:first-child{border-top:3px solid var(--orange-ink)}
+.variant-paths .pcard:nth-child(2){border-top:3px solid var(--navy)}
+
+/* Stress test: the calculator is not sticky, so on wide screens the result bar stays useful; it sits as a compact
+   bar aligned right instead of spanning the column, and keeps hiding while the calculator itself is on screen */
+@media (min-width:1024px){.variant-stress .gapbar{display:flex;width:max-content;max-width:100%;margin-left:auto;top:var(--s3)}}
+@media (min-width:420px){.variant-paths .res-grid,.variant-paths .res-grid.strip{grid-template-columns:repeat(2,minmax(0,1fr))}}
