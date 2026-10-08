@@ -1,0 +1,346 @@
+<title>MoneyHoney Design Directions</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@500;700;800&family=Figtree:wght@400;500;600&display=swap">
+<style>
+/* Layout: a two-column proposal board. Each direction is a vertical strip with swatches, type, rendered UI samples, and rationale, so the two can be compared side by side on desktop and read in sequence on a phone. */
+:root{
+  --bg:#f6f7fb; --fg:#161a33; --muted:#5d637c; --line:#dde1ee; --panel:#ffffff; --panel-2:#eef0f8;
+  --navy:#1B2666; --orange:#E8511A;
+  --radius:10px;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){ --bg:#121527; --fg:#e8eaf4; --muted:#a3a9c4; --line:#2b3050; --panel:#1a1e36; --panel-2:#22274a; color-scheme:dark } }
+:root[data-theme="dark"]{ --bg:#121527; --fg:#e8eaf4; --muted:#a3a9c4; --line:#2b3050; --panel:#1a1e36; --panel-2:#22274a; color-scheme:dark }
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 "IBM Plex Sans",system-ui,sans-serif;padding-block:0 48px}
+.wrap{max-width:1180px;margin:0 auto;padding-inline:16px}
+header.top{padding-block:36px 20px;border-bottom:1px solid var(--line)}
+header.top h1{font:600 clamp(26px,4vw,38px)/1.15 "Source Serif 4",Georgia,serif;margin:0 0 8px;text-wrap:balance}
+header.top p{margin:0;color:var(--muted);max-width:68ch}
+.eyebrow{font:500 12px/1 "IBM Plex Mono",monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.brandrow{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+.chip{display:inline-flex;align-items:center;gap:8px;padding:6px 10px 6px 6px;border:1px solid var(--line);border-radius:999px;background:var(--panel);font-size:13px}
+.chip i{width:18px;height:18px;border-radius:50%;display:inline-block}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:28px}
+@media (max-width:860px){.grid2{grid-template-columns:1fr}}
+.dir{background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden;min-width:0}
+.dir__head{padding:22px 22px 16px;border-bottom:1px solid var(--line)}
+.dir__head .eyebrow{margin-bottom:8px;display:block}
+.dir__head h2{margin:0 0 6px;font-size:28px;line-height:1.15}
+.dir--a .dir__head h2{font-family:"Source Serif 4",Georgia,serif;font-weight:600}
+.dir--b .dir__head h2{font-family:"Manrope",system-ui,sans-serif;font-weight:800;letter-spacing:-.01em}
+.mood{margin:0;color:var(--muted);font-style:italic}
+.dir--b .mood{font-style:normal}
+.sec{padding:18px 22px;border-bottom:1px solid var(--line)}
+.sec:last-child{border-bottom:0}
+.sec h3{margin:0 0 12px;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600;font-family:"IBM Plex Sans",system-ui,sans-serif}
+.sw{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:10px}
+.sw div{height:92px;border-radius:8px;padding:8px;display:flex;flex-direction:column;justify-content:space-between;font-size:11px;line-height:1.25;border:1px solid rgba(0,0,0,.08)}
+.sw b{font-family:"IBM Plex Mono",monospace;font-weight:500;letter-spacing:.02em}
+.type p{margin:0 0 10px}
+.type .lbl{font-size:12px;color:var(--muted);display:block;margin-bottom:2px}
+ul.why{margin:0;padding-left:18px}
+ul.why li{margin-bottom:8px}
+.avoid{margin:0;padding-left:18px;color:var(--muted)}
+.ui{background:var(--panel-2);border-radius:10px;padding:14px;display:grid;gap:14px}
+.ui .note{font-size:12px;color:var(--muted);margin:0}
+
+/* --- Direction A rendered samples: The Ledger --- */
+.a{font-family:"IBM Plex Sans",system-ui,sans-serif;color:#141a3b}
+.a-page{background:#fff;border:1px solid #d9dced;border-radius:6px;overflow:hidden}
+.a-nav{background:#1B2666;color:#fff;display:flex;align-items:center;gap:14px;padding:10px 14px;font-size:12px}
+.a-nav .logo{font:600 15px/1 "Source Serif 4",serif;letter-spacing:.01em}
+.a-nav span{opacity:.85}
+.a-hero{padding:18px 14px 14px;border-bottom:1px solid #e3e6f1}
+.a-hero .k{font:500 11px/1 "IBM Plex Mono",monospace;letter-spacing:.08em;color:#5d637c;text-transform:uppercase}
+.a-hero h4{margin:8px 0 6px;font:600 22px/1.2 "Source Serif 4",serif;color:#1B2666;text-wrap:balance}
+.a-hero p{margin:0;font-size:13px;line-height:1.5;color:#3b4160;max-width:60ch}
+.a-facts{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid #e3e6f1}
+.a-facts div{padding:10px 12px;border-right:1px solid #e3e6f1}
+.a-facts div:last-child{border-right:0}
+.a-facts small{display:block;font-size:10px;color:#5d637c;text-transform:uppercase;letter-spacing:.06em}
+.a-facts strong{font:600 18px/1.2 "Source Serif 4",serif;color:#1B2666;font-variant-numeric:tabular-nums}
+.a-cmp{padding:12px 14px}
+.a-cmp .k{font:500 11px/1 "IBM Plex Mono",monospace;letter-spacing:.08em;color:#5d637c;text-transform:uppercase;display:block;margin-bottom:8px}
+.a-row{display:grid;grid-template-columns:1fr;gap:0}
+.a-row a{display:grid;grid-template-columns:150px 1fr auto;gap:10px;align-items:baseline;padding:9px 0;border-top:1px solid #e3e6f1;text-decoration:none;color:inherit;font-size:13px}
+.a-row a:last-child{border-bottom:1px solid #e3e6f1}
+.a-row a b{color:#1B2666;font-weight:600}
+.a-row a span{color:#5d637c;font-size:12px}
+.a-row a em{font-style:normal;color:#E8511A;font-weight:600;font-size:12px}
+.a-cta{display:flex;gap:10px;padding:12px 14px;align-items:center;flex-wrap:wrap}
+.a-btn{display:inline-block;padding:9px 14px;border-radius:4px;font-size:13px;font-weight:600;text-decoration:none}
+.a-btn.p{background:#E8511A;color:#fff}
+.a-btn.s{background:#fff;color:#1B2666;border:1px solid #1B2666}
+.a-foot{background:#1B2666;color:#fff;padding:12px 14px;font-size:11.5px;line-height:1.5}
+.a-foot p{margin:0 0 6px}
+.a-foot .id{font-family:"IBM Plex Mono",monospace;font-size:10.5px;opacity:.9}
+.a-foot .warn{font-weight:500}
+@media (max-width:520px){.a-facts{grid-template-columns:repeat(2,1fr)}.a-facts div:nth-child(2){border-right:0}.a-row a{grid-template-columns:1fr;gap:2px}}
+
+/* --- Direction B rendered samples: Clear Glass --- */
+.b{font-family:"Figtree",system-ui,sans-serif;color:#141a3b}
+.b-page{background:#fff;border:1px solid #d9dced;border-radius:14px;overflow:hidden}
+.b-nav{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;border-bottom:1px solid #eceef7;background:#fff}
+.b-nav .logo{font:800 16px/1 "Manrope",sans-serif;color:#1B2666;letter-spacing:-.01em}
+.b-nav .logo i{color:#E8511A;font-style:normal}
+.b-nav .btn{background:#1B2666;color:#fff;border-radius:999px;padding:7px 12px;font-size:12px;font-weight:600}
+.b-hero{background:linear-gradient(180deg,#F1F3FC 0%,#fff 100%);padding:18px 14px 14px}
+.b-hero h4{margin:0 0 6px;font:800 24px/1.15 "Manrope",sans-serif;color:#1B2666;letter-spacing:-.015em;text-wrap:balance}
+.b-hero p{margin:0 0 12px;font-size:13px;line-height:1.5;color:#3b4160;max-width:58ch}
+.b-pills{display:flex;gap:6px;flex-wrap:wrap}
+.b-pills span{background:#fff;border:1px solid #d9dcee;border-radius:999px;padding:6px 11px;font-size:12px;font-weight:500;color:#1B2666}
+.b-pills span.on{background:#1B2666;color:#fff;border-color:#1B2666}
+.b-facts{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:12px 14px}
+.b-facts div{background:#F5F6FC;border-radius:10px;padding:10px}
+.b-facts small{display:block;font-size:10.5px;color:#5d637c;font-weight:500}
+.b-facts strong{font:800 18px/1.2 "Manrope",sans-serif;color:#1B2666;font-variant-numeric:tabular-nums}
+.b-cmp{padding:4px 14px 14px}
+.b-cmp .k{font-size:11px;font-weight:600;color:#5d637c;letter-spacing:.04em;text-transform:uppercase;display:block;margin-bottom:8px}
+.b-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.b-card{border:1px solid #e3e6f1;border-radius:12px;padding:12px;display:grid;gap:6px;text-decoration:none;color:inherit;background:#fff;min-width:0}
+.b-card i{width:28px;height:28px;border-radius:8px;background:#FDEDE5;display:grid;place-items:center;color:#E8511A;font-style:normal;font-weight:800;font-size:12px}
+.b-card b{color:#1B2666;font-size:13px;font-weight:700;font-family:"Manrope",sans-serif}
+.b-card span{font-size:11.5px;color:#5d637c;line-height:1.4}
+.b-cta{display:flex;gap:10px;padding:0 14px 14px;align-items:center;flex-wrap:wrap}
+.b-btn{display:inline-block;padding:11px 16px;border-radius:999px;font-size:13px;font-weight:700;text-decoration:none}
+.b-btn.p{background:#E8511A;color:#fff}
+.b-btn.s{background:#EEF0FA;color:#1B2666}
+.b-foot{background:#F5F6FC;border-top:1px solid #e3e6f1;padding:12px 14px;font-size:11.5px;line-height:1.5;color:#3b4160}
+.b-foot p{margin:0 0 6px}
+.b-foot .id{color:#1B2666;font-weight:600}
+.b-foot .warn{background:#fff;border:1px solid #e3e6f1;border-left:3px solid #E8511A;border-radius:8px;padding:8px 10px}
+@media (max-width:520px){.b-facts{grid-template-columns:repeat(2,1fr)}.b-cards{grid-template-columns:1fr}}
+
+.shared{margin-top:28px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px}
+.shared h2{margin:0 0 12px;font:600 22px/1.2 "Source Serif 4",Georgia,serif}
+.shared .cols{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+@media (max-width:760px){.shared .cols{grid-template-columns:1fr}}
+.shared ul{margin:0;padding-left:18px}
+.shared li{margin-bottom:6px}
+.src{font-size:14px;color:var(--muted)}
+.pick{margin-top:28px;padding:18px 22px;border-radius:14px;background:var(--navy);color:#fff}
+.pick h2{margin:0 0 6px;font:600 20px/1.2 "Source Serif 4",Georgia,serif}
+.pick p{margin:0;opacity:.9}
+.pick b{color:#ffb28f}
+a:focus-visible,span:focus-visible{outline:3px solid #E8511A;outline-offset:2px}
+@media (prefers-reduced-motion:no-preference){.dir{transition:transform .2s}}
+</style>
+
+<div class="wrap">
+<header class="top">
+  <span class="eyebrow">Phase 2 · Design direction · v1</span>
+  <h1>Two directions for the MoneyHoney site</h1>
+  <p>Both are built around your brand navy and orange, keep the logo untouched, keep every word of content, and keep the compliance footer on every page. They differ in voice: one reads like a regulated institution's reference book, the other like a friendly modern money app.</p>
+  <div class="brandrow">
+    <span class="chip"><i style="background:#1B2666"></i>Brand navy #1B2666</span>
+    <span class="chip"><i style="background:#E8511A"></i>Brand orange #E8511A</span>
+    <span class="chip"><i style="background:#16205B"></i>Logo navy #16205B (unchanged)</span>
+    <span class="chip"><i style="background:#FF4A00"></i>Logo orange #FF4A00 (unchanged)</span>
+  </div>
+</header>
+
+<div class="grid2">
+
+<!-- ================= DIRECTION A ================= -->
+<section class="dir dir--a" aria-labelledby="dirA">
+  <div class="dir__head">
+    <span class="eyebrow">Direction A</span>
+    <h2 id="dirA">The Ledger</h2>
+    <p class="mood">A well-kept passbook: calm, exact, and with nothing to hide.</p>
+  </div>
+
+  <div class="sec">
+    <h3>Palette</h3>
+    <div class="sw">
+      <div style="background:#1B2666;color:#fff"><span>Primary · headers, headings, footer</span><b>#1B2666</b></div>
+      <div style="background:#0F163F;color:#fff"><span>Ink · pressed states, deep text on tints</span><b>#0F163F</b></div>
+      <div style="background:#E8511A;color:#fff"><span>Accent · one CTA per screen, active marker</span><b>#E8511A</b></div>
+      <div style="background:#FFFFFF;color:#141a3b"><span>Page · always white</span><b>#FFFFFF</b></div>
+      <div style="background:#F3F5FA;color:#141a3b"><span>Tint · table stripes, quiet panels</span><b>#F3F5FA</b></div>
+      <div style="background:#D9DCED;color:#141a3b"><span>Rule · hairlines and borders</span><b>#D9DCED</b></div>
+      <div style="background:#141A3B;color:#fff"><span>Text · body</span><b>#141A3B</b></div>
+      <div style="background:#5D637C;color:#fff"><span>Text · meta, labels (AA on white)</span><b>#5D637C</b></div>
+    </div>
+  </div>
+
+  <div class="sec type">
+    <h3>Type pairing</h3>
+    <span class="lbl">Headings · Source Serif 4, 600</span>
+    <p style="font:600 26px/1.2 'Source Serif 4',Georgia,serif;color:var(--fg)">Mutual Funds, SIFs, Screens and Calculators</p>
+    <span class="lbl">Body · IBM Plex Sans, 400 / 500 / 600</span>
+    <p style="font:400 16px/1.55 'IBM Plex Sans',system-ui,sans-serif">Start from the problem you want to solve. Facts on every open mutual fund scheme in India, organised by fund house, SEBI category, theme and index.</p>
+    <span class="lbl">Figures and registration numbers · IBM Plex Mono, 500, tabular</span>
+    <p style="font:500 15px/1.4 'IBM Plex Mono',monospace;font-variant-numeric:tabular-nums">1,774 schemes · 48 fund houses · ARN-000000</p>
+  </div>
+
+  <div class="sec">
+    <h3>Layout style and rendered sample</h3>
+    <div class="ui">
+      <div class="a a-page">
+        <div class="a-nav"><span class="logo">MoneyHoney</span><span>Solutions</span><span>Mutual Funds</span><span>SIF</span><span>Fixed Deposits</span><span>Bonds &amp; NCDs</span></div>
+        <div class="a-hero">
+          <span class="k">AMFI Registered Mutual Fund Distributor &amp; SIF Distributor · ARN-000000</span>
+          <h4>Mutual Funds, SIFs, Screens and Calculators</h4>
+          <p>Facts on every open mutual fund scheme in India, organised by fund house, SEBI category, theme and index. MoneyHoney is an AMFI-registered mutual fund and SIF distributor; nothing here is a recommendation.</p>
+        </div>
+        <div class="a-facts">
+          <div><small>Mutual Fund Schemes</small><strong>1,774</strong></div>
+          <div><small>Fund Houses</small><strong>48</strong></div>
+          <div><small>SEBI Categories</small><strong>39</strong></div>
+          <div><small>Data As On</small><strong>31 Aug 2026</strong></div>
+        </div>
+        <div class="a-cmp">
+          <span class="k">Start Here</span>
+          <div class="a-row">
+            <a href="#"><b>Mutual Funds</b><span>1,774 schemes by category and fund house</span><em>→</em></a>
+            <a href="#"><b>Fixed Deposits</b><span>Company and bank FDs we offer, with rates and terms for your investor type.</span><em>→</em></a>
+            <a href="#"><b>RBI Bonds</b><span>Government of India bonds, interest every six months</span><em>→</em></a>
+          </div>
+        </div>
+        <div class="a-cta"><a class="a-btn p" href="#">See All Solutions</a><a class="a-btn s" href="#">Explore Funds</a></div>
+        <div class="a-foot">
+          <p class="id">Money Honey Financial Services Private Limited · AMFI Registered Mutual Fund Distributor &amp; SIF Distributor · ARN-000000 · Registered 1 Jan 2015, valid till 31 Dec 2027</p>
+          <p class="warn">Mutual Fund investments are subject to market risks, read all scheme related documents carefully.</p>
+        </div>
+      </div>
+      <p class="note">Index-style rows instead of card grids. Products compare in aligned columns: name, what it is, go. Navy header and navy compliance footer bracket every page. Orange appears once, on the primary action.</p>
+    </div>
+  </div>
+
+  <div class="sec">
+    <h3>Why it suits a financial-trust audience</h3>
+    <ul class="why">
+      <li><b>Looks like a regulated institution, not a startup.</b> Serif headings, hairline rules and tabular figures are the visual language of annual reports and bank statements. First-time investors read that as "established and accountable".</li>
+      <li><b>Low ink, low anxiety.</b> A white page with navy type and almost no colour fill keeps the eye on words and numbers. Nothing flashes or sells.</li>
+      <li><b>Compliance is part of the design, not an afterthought.</b> The ARN sits in the hero eyebrow and the footer is a solid navy band, so the regulatory text is the most visible block on the page rather than grey small print.</li>
+      <li><b>Scales to dense data.</b> Your sub-pages hold 1,774 schemes and screens; row-and-column layouts handle long lists better than cards.</li>
+    </ul>
+  </div>
+
+  <div class="sec">
+    <h3>What we avoid</h3>
+    <ul class="avoid">
+      <li>Gradients, glassmorphism, big illustrations, stock photos of happy families.</li>
+      <li>Orange on more than one element per screen.</li>
+      <li>Cream or beige backgrounds (the serif-plus-cream look reads as a template).</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= DIRECTION B ================= -->
+<section class="dir dir--b" aria-labelledby="dirB">
+  <div class="dir__head">
+    <span class="eyebrow">Direction B</span>
+    <h2 id="dirB">Clear Glass</h2>
+    <p class="mood">A friendly bank branch with the lights on: warm, rounded, and nothing intimidating.</p>
+  </div>
+
+  <div class="sec">
+    <h3>Palette</h3>
+    <div class="sw">
+      <div style="background:#1B2666;color:#fff"><span>Primary · headings, nav button, chips</span><b>#1B2666</b></div>
+      <div style="background:#E8511A;color:#fff"><span>Accent · CTA, icon marks, highlight bar</span><b>#E8511A</b></div>
+      <div style="background:#FDEDE5;color:#141a3b"><span>Honey tint · icon tiles, soft callouts</span><b>#FDEDE5</b></div>
+      <div style="background:#F1F3FC;color:#141a3b"><span>Navy tint · hero wash, section bands</span><b>#F1F3FC</b></div>
+      <div style="background:#EEF0FA;color:#1B2666"><span>Secondary button fill</span><b>#EEF0FA</b></div>
+      <div style="background:#FFFFFF;color:#141a3b"><span>Page and cards</span><b>#FFFFFF</b></div>
+      <div style="background:#1E7F4F;color:#fff"><span>Positive · gains only, never decoration</span><b>#1E7F4F</b></div>
+      <div style="background:#5D637C;color:#fff"><span>Text · meta (AA on white)</span><b>#5D637C</b></div>
+    </div>
+  </div>
+
+  <div class="sec type">
+    <h3>Type pairing</h3>
+    <span class="lbl">Headings · Manrope, 700 / 800, tight tracking</span>
+    <p style="font:800 26px/1.15 'Manrope',system-ui,sans-serif;letter-spacing:-.015em;color:var(--fg)">Mutual Funds, SIFs, Screens and Calculators</p>
+    <span class="lbl">Body · Figtree, 400 / 500 / 600</span>
+    <p style="font:400 16px/1.55 'Figtree',system-ui,sans-serif">Start from the problem you want to solve. Facts on every open mutual fund scheme in India, organised by fund house, SEBI category, theme and index.</p>
+    <span class="lbl">Figures · Manrope 800, tabular numerals</span>
+    <p style="font:800 20px/1.3 'Manrope',system-ui,sans-serif;font-variant-numeric:tabular-nums;color:var(--fg)">1,774 · 48 · 39 · 31 Aug 2026</p>
+  </div>
+
+  <div class="sec">
+    <h3>Layout style and rendered sample</h3>
+    <div class="ui">
+      <div class="b b-page">
+        <div class="b-nav"><span class="logo">Money<i>Honey</i></span><span class="btn">Calculators</span></div>
+        <div class="b-hero">
+          <h4>Mutual Funds, SIFs, Screens and Calculators</h4>
+          <p>Facts on every open mutual fund scheme in India, organised by fund house, SEBI category, theme and index. MoneyHoney is an AMFI-registered mutual fund and SIF distributor; nothing here is a recommendation.</p>
+          <div class="b-pills"><span class="on">SIP</span><span>Retirement</span><span>Child Education</span><span>Emergency Fund</span><span>NRI Investing</span></div>
+        </div>
+        <div class="b-facts">
+          <div><small>Mutual Fund Schemes</small><strong>1,774</strong></div>
+          <div><small>Fund Houses</small><strong>48</strong></div>
+          <div><small>SEBI Categories</small><strong>39</strong></div>
+          <div><small>Data As On</small><strong>31 Aug 2026</strong></div>
+        </div>
+        <div class="b-cmp">
+          <span class="k">Start Here</span>
+          <div class="b-cards">
+            <a class="b-card" href="#"><i>MF</i><b>Mutual Funds</b><span>1,774 schemes by category and fund house</span></a>
+            <a class="b-card" href="#"><i>FD</i><b>Fixed Deposits</b><span>Company and bank FDs we offer, with rates and terms for your investor type.</span></a>
+            <a class="b-card" href="#"><i>₹</i><b>RBI Bonds</b><span>Government of India bonds, interest every six months</span></a>
+          </div>
+        </div>
+        <div class="b-cta"><a class="b-btn p" href="#">See All Solutions</a><a class="b-btn s" href="#">Explore Funds</a></div>
+        <div class="b-foot">
+          <p class="id">Money Honey Financial Services Private Limited · AMFI Registered Mutual Fund Distributor &amp; SIF Distributor · ARN-000000 · Registered 1 Jan 2015, valid till 31 Dec 2027</p>
+          <p class="warn">Mutual Fund investments are subject to market risks, read all scheme related documents carefully.</p>
+        </div>
+      </div>
+      <p class="note">Goal chips up top so a first-timer picks a problem, not a product. Products sit in equal cards with a two-letter mark, so MF, FD and Bonds compare at a glance. Soft navy bands separate sections. Risk warnings get a boxed callout with an orange edge.</p>
+    </div>
+  </div>
+
+  <div class="sec">
+    <h3>Why it suits a financial-trust audience</h3>
+    <ul class="why">
+      <li><b>Familiar to phone-first India.</b> Rounded cards, pill chips and a thumb-sized primary button match the UPI and investing apps your visitors already use, so the site feels safe to tap.</li>
+      <li><b>Goal-first wayfinding lowers the barrier.</b> "SIP", "Retirement", "Emergency Fund" chips meet first-time investors where they are, before they have to learn what a fund category is.</li>
+      <li><b>Warmth without hype.</b> Orange is used as a small, consistent mark (icon tiles, one CTA, a callout edge), which signals a human brand while navy keeps the authority.</li>
+      <li><b>Compliance stays legible.</b> Warnings sit in a bordered callout at body size, not grey footnotes, so they read as care rather than legal cover.</li>
+    </ul>
+  </div>
+
+  <div class="sec">
+    <h3>What we avoid</h3>
+    <ul class="avoid">
+      <li>Trading-app energy: green and red tickers, charts in the hero, countdown urgency.</li>
+      <li>Purple or blue gradients and floating 3D coins.</li>
+      <li>Emoji as icons; every mark is a typographic tile in brand colours.</li>
+    </ul>
+  </div>
+</section>
+
+</div>
+
+<section class="shared">
+  <h2>What both directions share</h2>
+  <div class="cols">
+    <div>
+      <ul>
+        <li><b>Content lock.</b> Every headline, label, number, link and disclaimer stays word for word. Sections may be re-ordered on the page; nothing inside a section is re-ordered.</li>
+        <li><b>Logo untouched.</b> The existing SVG (navy #16205B, orange #FF4A00) is reused as is. The UI palette uses your brief's #1B2666 and #E8511A; the two oranges sit side by side without clashing.</li>
+        <li><b>Compliance footer on every page</b>, at body size, with the ARN line, the mutual fund risk warning and the SIF risk warning.</li>
+        <li><b>Mobile-first.</b> 16px gutters, 44px tap targets, one-column stacks under 600px, no horizontal scroll.</li>
+        <li><b>WCAG AA.</b> All text colours above are 4.5:1 on their backgrounds; orange is used on white only at 18px+ bold or as a fill behind white text.</li>
+      </ul>
+    </div>
+    <div class="src">
+      <p style="margin:0 0 8px"><b>Reference points</b></p>
+      <ul>
+        <li>Zerodha and Varsity: text-first, ledger-like clarity for Indian investors (feeds A).</li>
+        <li>Vanguard: institutional calm, serif headings, restraint (feeds A).</li>
+        <li>Groww and Kuvera: goal chips, rounded cards, first-timer onboarding (feeds B).</li>
+        <li>Wise: bold type on white, one accent, plain language (feeds B).</li>
+        <li>Your existing design-system notes: "navy does the work", orange "at most one moment per screen", page always white (both).</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="pick">
+  <h2>Your call</h2>
+  <p>Reply with <b>A</b> (The Ledger) or <b>B</b> (Clear Glass), or ask for a blend (for example, A's typography with B's goal chips). The build in Phase 3 follows the pick exactly.</p>
+</section>
+</div>
