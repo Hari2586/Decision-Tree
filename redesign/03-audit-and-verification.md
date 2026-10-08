@@ -116,3 +116,11 @@ The three solution pages shared one skeleton. They now carry a variant class eac
 | EMI Management | `variant-paths` | Calculator sticky on the left, honey and wash split headline, evidence as a horizontal snap carousel (keyboard focusable), closing steps as numbered cards, product cards marked orange and navy |
 
 Checks after the change: no overflow at 390 or 1280px, 0 axe violations on all three, no JavaScript errors, content match 100% on all three. Reading order is unchanged because no element was reordered; the differences are CSS layout only.
+
+---
+
+## Revision: solution icons (8 Oct 2026)
+
+Eleven line icons, one per solution, added as CSS backgrounds keyed to each link's destination: honey tiles on the Solutions hub cards and Related Solutions cards, 18px marks on the home page chips, and a faint watermark in each solution page's headline panel (the body carries a `sol-<slug>` class for that). Headings carry no icons. No markup or text changed; icons are decorative and invisible to screen readers.
+
+Re-check: no overflow at 390 or 1280px, 0 axe violations on the home page, hub and three solution pages, no JavaScript errors, content match 100% on all five.
