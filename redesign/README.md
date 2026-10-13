@@ -18,6 +18,8 @@ Direction: **B, "Clear Glass"** (chosen 8 Oct 2026), revised the same day with D
 | `02-design-directions.html` | Phase 2 moodboard with both directions (historical). |
 | `02-design-direction-final.html` | The final design direction and style guide as built: colour, type, buttons, radii, components, motion, compliance, developer handoff. |
 | `03-audit-and-verification.md` | Phase 4 accessibility audit and Phase 5 content verification. |
+| `04-home-page-versions.html` | Research summary and three alternative home page versions (Night Desk, Bento Board, Split Editorial) for comparison. |
+| `versions/` | The three home page versions, each self-contained, content verified at 100%. Built by `tools/versions.py`. |
 | `tools/build.py` | Builds a page: keeps the body byte for byte (only the body tag gains a class and the demo notice moves inside the header landmark), swaps the head's embedded CSS for the shared assets. |
 | `tools/verify.py` | Content verification: title, meta, JSON-LD, aria-labels, every href in order, the full visible text stream. |
 | `tools/inventory.py` | Generates the per-page inventory tables. |

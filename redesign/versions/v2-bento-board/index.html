@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MoneyHoney: Mutual Funds, SIFs, Screens and Calculators</title>
+<meta name="description" content="Facts on 1,774 mutual fund schemes from 48 fund houses, plus SIF strategies, calculators and rule-based fund screens, as on 31 Aug 2026.">
+<link rel="canonical" href="https://example.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MoneyHoney">
+<meta property="og:locale" content="en_IN">
+<meta property="og:title" content="MoneyHoney: Mutual Funds, SIFs, Screens and Calculators">
+<meta property="og:description" content="Facts on 1,774 mutual fund schemes from 48 fund houses, plus SIF strategies, calculators and rule-based fund screens, as on 31 Aug 2026.">
+<meta property="og:url" content="https://example.com/">
+<meta property="og:image" content="https://example.com/assets/og/home.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="MoneyHoney: Mutual Funds, SIFs and Calculators">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebPage", "name": "Mutual Funds, SIFs, Screens and Calculators", "url": "https://example.com/", "dateModified": "2026-10-05", "isPartOf": {"@id": "https://example.com/#website"}, "publisher": {"@id": "https://example.com/#organization"}}, {"@type": "WebSite", "@id": "https://example.com/#website", "name": "MoneyHoney", "url": "https://example.com/", "publisher": {"@id": "https://example.com/#organization"}}, {"@type": "Organization", "@id": "https://example.com/#organization", "name": "MoneyHoney", "url": "https://example.com/", "description": "AMFI Registered Mutual Fund Distributor & SIF Distributor, ARN-000000"}]}</script>
+
+<meta name="theme-color" content="#1B2666">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&family=Figtree:wght@400;500;600;700&display=swap">
+<style>
+
+:root{--navy:#1B2666;--navy-2:#2A3A8F;--ink:#0F163F;--orange:#E8511A;--orange-ink:#C4410E;--orange-deep:#B03A0B;--orange-soft:#FFB28F;--honey:#FDEDE5;--wash:#F1F3FC;--band:#F5F6FC;--fill:#EEF0FA;--paper:#fff;--rule:#E1E4F0;--rule-2:#C9CFEA;--text:#141A3B;--meta:#5D637C;--on-navy-soft:#C9CFEA;--warn-bg:#FFFAEB;--warn-text:#B54708;--warn-rule:#FEDF89;
+--display:"Manrope",system-ui,sans-serif;--sans:"Figtree",system-ui,sans-serif;--s1:4px;--s2:8px;--s3:12px;--s4:16px;--s5:20px;--s6:24px;--s8:32px;--s10:40px;--s12:48px;--s16:64px;--gutter:16px;--max:1120px;--r-btn:4px;--r-sm:6px;--r-md:8px;--r-lg:10px;--shadow:0 1px 2px rgba(20,26,59,.04),0 4px 14px -8px rgba(20,26,59,.10);--shadow-lift:0 10px 24px -12px rgba(27,38,102,.28);--ease:cubic-bezier(.22,1,.36,1);--d-fast:160ms;--d-med:320ms;--d-slow:640ms;--focus:0 0 0 3px var(--paper),0 0 0 5px var(--orange)}
+@media (min-width:600px){:root{--gutter:24px}}@media (min-width:960px){:root{--gutter:32px}}
+*,*::before,*::after{box-sizing:border-box}html{scroll-behavior:smooth}@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--paper);color:var(--text);font:400 16px/1.55 var(--sans);-webkit-font-smoothing:antialiased}
+.container{width:100%;max-width:var(--max);margin-inline:auto;padding-inline:var(--gutter)}
+a{color:var(--navy);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;text-decoration-color:var(--rule-2)}a:hover{text-decoration-color:currentColor}
+:focus{outline:none}:focus-visible{box-shadow:var(--focus);border-radius:var(--r-btn)}
+h1,h2{margin:0;font-family:var(--display);font-weight:800;color:var(--navy);text-wrap:balance;letter-spacing:-.02em}h1{font-size:clamp(30px,3.4vw + 17px,48px);line-height:1.06}h2{font-size:clamp(22px,1.2vw + 17px,28px);line-height:1.2;letter-spacing:-.015em}p{margin:0}
+.demo-strip{background:var(--warn-bg);color:var(--warn-text);border-bottom:1px solid var(--warn-rule);font-size:14px;line-height:1.5;padding-block:var(--s2)}.demo-strip b{font-weight:700}
+.mh-header{background:var(--paper);border-bottom:1px solid var(--rule)}.mh-header__inner{display:flex;flex-wrap:wrap;align-items:center;gap:0 var(--s6);min-height:60px}
+.mh-logo{display:inline-flex;align-items:center;min-height:44px;padding-block:var(--s2);text-decoration:none;border-radius:var(--r-sm)}.mh-logo svg{display:block;height:22px;width:auto}
+.mh-header__nav{order:3;width:100%;display:flex;gap:var(--s2);overflow-x:auto;scrollbar-width:none;margin-inline:calc(-1 * var(--gutter));padding:var(--s1) var(--gutter) var(--s3);mask-image:linear-gradient(90deg,transparent,#000 var(--gutter),#000 calc(100% - 32px),transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 var(--gutter),#000 calc(100% - 32px),transparent)}
+.mh-header__nav::-webkit-scrollbar{display:none}
+.mh-header__nav a{flex:0 0 auto;display:inline-flex;align-items:center;min-height:44px;padding:0 var(--s4);border-radius:var(--r-sm);background:var(--fill);color:var(--navy);font-size:14px;font-weight:600;text-decoration:none;white-space:nowrap;transition:background var(--d-fast),color var(--d-fast)}.mh-header__nav a:hover{background:var(--navy);color:#fff}
+@media (min-width:960px){.mh-header__inner{min-height:64px}.mh-header__nav{margin-inline:0;padding:0 0 var(--s3);mask-image:none;-webkit-mask-image:none;overflow:visible;flex-wrap:wrap;gap:var(--s1)}.mh-header__nav a{background:transparent;padding:0 var(--s3)}.mh-header__nav a:hover{background:var(--fill);color:var(--navy)}}
+.btn-a{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 var(--s6);background:var(--orange-ink);color:#fff;font-size:16px;font-weight:600;text-decoration:none;border-radius:var(--r-btn);transition:background var(--d-fast)}.btn-a:hover{background:var(--orange-deep)}
+.sol-intro p span{display:block;margin-bottom:var(--s3);font-size:17px}
+.card__icon{width:20px;height:20px;color:var(--meta);flex:none}
+.site-foot{margin-top:var(--s12);background:var(--paper);border-top:1px solid var(--rule);padding-block:var(--s8) var(--s10)}.site-foot__links{display:flex;flex-wrap:wrap;gap:var(--s1) var(--s2);margin-bottom:var(--s6)}.site-foot__links a{display:inline-flex;align-items:center;min-height:44px;padding:0 var(--s3);border-radius:var(--r-btn);color:var(--navy);font-weight:600;font-size:14px;text-decoration:none}.site-foot__links a:hover{background:var(--fill)}
+.site-foot__id{font-size:14px;line-height:1.6;color:var(--navy);font-weight:600;max-width:80ch;margin-bottom:var(--s5)}.site-foot__warn{font-size:16px;line-height:1.55;color:var(--text);max-width:66ch;padding:var(--s3) var(--s4);background:var(--band);border:1px solid var(--rule);border-left:3px solid var(--orange);border-radius:var(--r-sm)}.site-foot__warn+.site-foot__warn{margin-top:var(--s3)}
+.mh-progress{position:fixed;top:0;left:0;height:3px;width:100%;transform-origin:0 50%;transform:scaleX(var(--p,0));background:var(--orange);z-index:50;pointer-events:none}
+.mh-anim .reveal{opacity:0;transform:translateY(16px);transition:opacity var(--d-slow) var(--ease),transform var(--d-slow) var(--ease);transition-delay:calc(var(--i,0) * 60ms)}.mh-anim .reveal.is-in{opacity:1;transform:none}
+.spark{display:block;width:100%;height:auto}
+
+/* V2 · Bento Board. Everything lives in an asymmetric tile grid on white: the headline tile, four fact tiles, a tall solutions tile, and a product bento where the first card is the hero of its group. */
+.bento{display:grid;gap:var(--s3);grid-template-columns:repeat(2,minmax(0,1fr));padding-block:var(--s6) 0}
+@media (min-width:760px){.bento{grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--s4)}}
+.tile{background:var(--paper);border:1px solid var(--rule);border-radius:var(--r-lg);padding:var(--s5);min-width:0;box-shadow:var(--shadow)}
+.tile--head{grid-column:1/-1;background:linear-gradient(135deg,var(--wash),#fff 60%);padding:var(--s8) var(--s6)}
+@media (min-width:760px){.tile--head{grid-column:span 4}}
+.tile--head h1{max-width:16ch}.tile--head .lede{margin-top:var(--s4);font-size:17px;line-height:1.6;max-width:60ch}
+.facts{display:contents;margin:0}
+.facts .stat{display:flex;flex-direction:column;gap:var(--s1);background:var(--paper);border:1px solid var(--rule);border-radius:var(--r-lg);padding:var(--s5);box-shadow:var(--shadow);min-height:132px;transition:transform var(--d-med) var(--ease),box-shadow var(--d-med) var(--ease)}
+.facts .stat:hover{transform:translateY(-2px);box-shadow:var(--shadow-lift)}
+.facts .stat:nth-child(1){background:var(--navy);border-color:var(--navy)}.facts .stat:nth-child(1) .stat__label{color:var(--on-navy-soft)}.facts .stat:nth-child(1) .stat__value{color:var(--orange-soft)}
+.facts .stat:nth-child(4){background:var(--honey);border-color:var(--honey)}
+.facts .stat__label{font-size:13px;color:var(--meta);font-weight:500}.facts .stat__value{font:800 30px/1.1 var(--display);color:var(--navy);letter-spacing:-.02em;margin-top:auto;white-space:nowrap}
+@media (max-width:759px){.facts .stat__value{font-size:24px}.facts .stat:nth-child(4){grid-column:1/-1}}
+.tile--sol{grid-column:1/-1;background:var(--band)}
+@media (min-width:760px){.tile--sol{grid-column:span 4;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.6fr);gap:var(--s8);align-items:start}}
+.tile--sol h2{margin-bottom:var(--s3)}.sol-intro{display:flex;flex-wrap:wrap;gap:var(--s3)}.sol-intro p span{font-size:17px}
+.sol-links{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:var(--s2)}
+.sol-links a{display:flex;align-items:center;gap:var(--s3);min-height:52px;padding:0 var(--s4) 0 var(--s3);background:var(--paper);border:1px solid var(--rule);border-radius:var(--r-sm);color:var(--navy);font-weight:600;font-size:15px;text-decoration:none;transition:border-color var(--d-fast),transform var(--d-fast),box-shadow var(--d-med)}
+.sol-links a::before{content:"";width:32px;height:32px;border-radius:var(--r-btn);background:var(--sicon) center/18px no-repeat var(--honey);flex:none}
+.sol-links a:hover{border-color:var(--navy);transform:translateY(-1px);box-shadow:var(--shadow)}
+.section{padding-block:var(--s10)}@media (min-width:960px){.section{padding-block:var(--s12)}}
+.section h2{margin-bottom:var(--s5)}
+.ledger{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr;gap:var(--s3)}
+@media (min-width:600px){.ledger{grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s4)}}
+@media (min-width:960px){.ledger{grid-template-columns:repeat(4,minmax(0,1fr))}.ledger--start li:first-child{grid-column:span 2;grid-row:span 2}.ledger--start li:nth-child(2){grid-column:span 2}.ledger--asset li:first-child{grid-column:span 2}}
+a.card{position:relative;display:flex;flex-direction:column;gap:var(--s2);height:100%;padding:var(--s5);background:var(--paper);border:1px solid var(--rule);border-radius:var(--r-lg);text-decoration:none;color:var(--text);box-shadow:var(--shadow);transition:border-color var(--d-fast),transform var(--d-med) var(--ease),box-shadow var(--d-med) var(--ease)}
+a.card:hover{border-color:var(--navy);transform:translateY(-3px);box-shadow:var(--shadow-lift)}
+a.card::before{content:"";width:44px;height:44px;border-radius:var(--r-sm);background:var(--honey);margin-bottom:var(--s2)}
+a.card::after{content:"";position:absolute;left:calc(var(--s5) + 11px);top:calc(var(--s5) + 11px);width:22px;height:22px;background:var(--orange);-webkit-mask:var(--icon) center/contain no-repeat;mask:var(--icon) center/contain no-repeat}
+.ledger--start li:first-child a.card{background:linear-gradient(160deg,var(--navy),var(--navy-2));border-color:var(--navy);color:#fff}
+.ledger--start li:first-child a.card::before{background:rgba(255,255,255,.12);width:56px;height:56px}.ledger--start li:first-child a.card::after{width:28px;height:28px;left:calc(var(--s5) + 14px);top:calc(var(--s5) + 14px);background:var(--orange-soft)}.ledger--start li:first-child .card__title{margin-top:auto}
+.ledger--start li:first-child .card__title{color:#fff;font-size:26px}.ledger--start li:first-child .card__meta{color:var(--on-navy-soft);font-size:16px}.ledger--start li:first-child .card__icon{color:#fff}
+.ledger--start li:nth-child(2) a.card{background:var(--wash)}
+.card__title{font:700 17px/1.3 var(--display);color:var(--navy);letter-spacing:-.01em}.card__meta{font-size:14px;line-height:1.45;color:var(--meta)}.card__icon{position:absolute;right:var(--s4);top:var(--s5)}
+.section--themes{background:var(--band)}
+
+a.card{--icon:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='3' width='7' height='7' rx='1.5'/%3E%3Crect x='14' y='3' width='7' height='7' rx='1.5'/%3E%3Crect x='3' y='14' width='7' height='7' rx='1.5'/%3E%3Crect x='14' y='14' width='7' height='7' rx='1.5'/%3E%3C/svg%3E")}
+a.card[href="mutual-funds/index.html"],a.card[href^="mutual-funds/asset/"]{--icon:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 17l6-6 4 4 8-8'/%3E%3Cpath d='M14 7h7v7'/%3E%3C/svg%3E")}
+a.card[href="mutual-funds/explore/index.html"]{--icon:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 5h18l-7 8v6l-4-2v-4z'/%3E%3C/svg%3E")}
+a.card[href="mutual-funds/screens/index.html"]{--icon:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 6h16M4 12h16M4 18h10'/%3E%3C/svg%3E")}
+a.card[href="calculators/index.html"]{--icon:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='5' y='3' width='14' height='18' rx='2'/%3E%3Cpath d='M8 7h8M8 12h3M13 12h3M8 16h3M13 16h3'/%3E%3C/svg%3E")}
+a.card[href="mutual-funds/nfo/index.html"]{--icon:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5L18 18M6 18l2.5-2.5M15.5 8.5L18 6'/%3E%3C/svg%3E")}
+a.card[href="mutual-funds/dividend-history/index.html"]{--icon:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='9' cy='9' r='6'/%3E%3Cpath d='M15.5 8.5A6 6 0 1 1 8.5 15.5'/%3E%3C/svg%3E")}
+a.card[href="sif/index.html"]{--icon:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='7' width='18' height='13' rx='2'/%3E%3Cpath d='M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18'/%3E%3C/svg%3E")}
+a.card[href="bonds/ncd/index.html"]{--icon:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 3h9l4 4v14H6z'/%3E%3Cpath d='M15 3v4h4M9 12h6M9 16h6'/%3E%3C/svg%3E")}
+a.card[href="bonds/capital-gain-bonds/index.html"]{--icon:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 11l9-7 9 7'/%3E%3Cpath d='M5 10v10h14V10'/%3E%3C/svg%3E")}
+a.card[href="bonds/rbi-bonds/index.html"]{--icon:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 9l9-5 9 5H3z'/%3E%3Cpath d='M5 9v8M10 9v8M14 9v8M19 9v8M3 20h18'/%3E%3C/svg%3E")}
+a.card[href="fixed-deposits/index.html"]{--icon:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='4' y='10' width='16' height='11' rx='2'/%3E%3Cpath d='M8 10V7a4 4 0 0 1 8 0v3'/%3E%3C/svg%3E")}
+a.card[href^="mutual-funds/theme/"]{--icon:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 3a9 9 0 1 0 9 9h-9z'/%3E%3Cpath d='M15 3.5A9 9 0 0 1 20.5 9H15z'/%3E%3C/svg%3E")}
+a.card[href="mutual-funds/index-funds/index.html"],a.card[href="mutual-funds/debt-index/index.html"]{--icon:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 19V5M4 19h16'/%3E%3Cpath d='M8 15v-4M12 15V8M16 15v-2'/%3E%3C/svg%3E")}
+a.card[href="mutual-funds/target-maturity/index.html"]{--icon:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='5' width='18' height='16' rx='2'/%3E%3Cpath d='M3 10h18M8 3v4M16 3v4'/%3E%3C/svg%3E")}
+a.card[href="mutual-funds/international/index.html"]{--icon:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Cpath d='M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18'/%3E%3C/svg%3E")}
+a.card[href="mutual-funds/gold-silver/index.html"]{--icon:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 17h7l-1.5-6h-4z'/%3E%3Cpath d='M13 17h7l-1.5-6h-4z'/%3E%3Cpath d='M8.5 11h7L14 5h-4z'/%3E%3C/svg%3E")}
+a.card[href="mutual-funds/fund-of-funds/index.html"]{--icon:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='8' cy='12' r='5'/%3E%3Ccircle cx='16' cy='12' r='5'/%3E%3C/svg%3E")}
+[href$="sip/index.html"],.sol-sip{--sicon:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23E8511A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M17 2l4 4-4 4'/%3E%3Cpath d='M3 11V9a4 4 0 0 1 4-4h14'/%3E%3Cpath d='M7 22l-4-4 4-4'/%3E%3Cpath d='M21 13v2a4 4 0 0 1-4 4H3'/%3E%3C/svg%3E")}
+[href$="retirement/index.html"],.sol-retirement{--sicon:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23E8511A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 3v2M4.2 6.2l1.4 1.4M19.8 6.2l-1.4 1.4M2 17h20M6 17a6 6 0 0 1 12 0M3 21h18'/%3E%3C/svg%3E")}
+[href$="child-education/index.html"],.sol-child-education{--sicon:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23E8511A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2 9l10-5 10 5-10 5z'/%3E%3Cpath d='M6 11.5V16c0 1.7 2.7 3 6 3s6-1.3 6-3v-4.5M22 9v6'/%3E%3C/svg%3E")}
+[href$="women/index.html"],.sol-women{--sicon:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23E8511A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='17' r='4'/%3E%3Cpath d='M12 13V7'/%3E%3Cpath d='M12 9c0-2.2 1.8-4 4-4 0 2.2-1.8 4-4 4z'/%3E%3Cpath d='M12 11c0-2.2-1.8-4-4-4 0 2.2 1.8 4 4 4z'/%3E%3C/svg%3E")}
+[href$="nri/index.html"],.sol-nri{--sicon:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23E8511A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Cpath d='M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18'/%3E%3C/svg%3E")}
+[href$="trusts/index.html"],.sol-trusts{--sicon:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23E8511A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 3l8 3v6c0 5-3.5 8.5-8 9-4.5-.5-8-4-8-9V6z'/%3E%3Cpath d='M9 12l2 2 4-4'/%3E%3C/svg%3E")}
+[href$="wealth/index.html"],.sol-wealth{--sicon:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23E8511A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 17l6-6 4 4 8-8'/%3E%3Cpath d='M14 7h7v7'/%3E%3C/svg%3E")}
+[href$="vacation/index.html"],.sol-vacation{--sicon:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23E8511A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 2L11 13'/%3E%3Cpath d='M22 2l-7 20-4-9-9-4z'/%3E%3C/svg%3E")}
+[href$="marriage/index.html"],.sol-marriage{--sicon:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23E8511A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='9' cy='14' r='5'/%3E%3Ccircle cx='15' cy='14' r='5'/%3E%3Cpath d='M12 5l-2 3h4z'/%3E%3C/svg%3E")}
+[href$="emi-management/index.html"],.sol-emi-management{--sicon:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23E8511A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 3v18M8 21h8M4 7h16'/%3E%3Cpath d='M6 7l-3 7a3 3 0 0 0 6 0zM18 7l-3 7a3 3 0 0 0 6 0z'/%3E%3C/svg%3E")}
+[href$="emergency-fund/index.html"],.sol-emergency-fund{--sicon:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23E8511A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Ccircle cx='12' cy='12' r='4'/%3E%3Cpath d='M4.9 4.9l4.3 4.3M14.8 14.8l4.3 4.3M4.9 19.1l4.3-4.3M14.8 9.2l4.3-4.3'/%3E%3C/svg%3E")}
+</style>
+</head>
+<body class="page-home v-bento">
+<header class="mh-header">
+  <div class="demo-strip" role="note"><div class="container"><b>Demo.</b> Demo site for review. The registration details (ARN, CIN), commission rates, the sample IDCW Explorer and Screener analytics are placeholders or illustrations. This is not a live distributor website and not for investment decisions.</div></div>
+  <div class="container mh-header__inner">
+    <a class="mh-logo" href="./index.html" aria-label="MoneyHoney home">
+      <svg width="139" height="20" role="img" aria-label="MoneyHoney" viewBox="0 0 139 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 10C1 15.2842 5.12632 19.6211 10.3474 20C10.3474 18.4632 9.46316 17.0316 8.07368 16.3579C5.67368 15.2211 4.01053 12.8 4.01053 9.97895C4.01053 7.51579 5.27368 5.36842 7.18947 4.08421V7.64211C7.18947 9.36842 8.6 10.7789 10.3474 10.7789V0C5.12632 0.4 1 4.73684 1 10Z" fill="#FF4A00"/>
+<path d="M21.2318 10C21.2318 15.2842 17.1054 19.6211 11.8844 20C11.8844 18.4632 12.7686 17.0316 14.1581 16.3579C16.5581 15.2211 18.2212 12.8 18.2212 9.97895C18.2212 7.51579 16.9581 5.36842 15.0212 4.08421V7.64211C15.0212 9.36842 13.6107 10.7789 11.8633 10.7789V0C17.0844 0.4 21.2107 4.73684 21.2107 10H21.2318Z" fill="#FF4A00"/>
+<path d="M13.4418 14.0201C13.4418 15.3043 12.4103 16.3359 11.126 16.3359C9.84184 16.3359 8.81026 15.3043 8.81026 14.0201C8.81026 12.7359 9.84184 11.7043 11.126 11.7043C12.4103 11.7043 13.4418 12.7359 13.4418 14.0201Z" fill="#16205B"/>
+<path d="M27.6319 3.41083H29.5477C30.1582 3.41083 30.7056 3.72662 31.0214 4.23188L33.6951 8.52662L36.3687 4.23188C36.6845 3.72662 37.253 3.41083 37.8424 3.41083H39.7582V15.474H38.5161C37.7372 15.474 37.1056 14.8424 37.1056 14.0635V7.6003L33.6951 12.7582H33.6319L30.2424 7.66346V14.0845C30.2424 14.8635 29.6108 15.495 28.8319 15.495H27.6319V3.43188V3.41083Z" fill="#16205B"/>
+<path d="M49.0839 10.905V10.8629C49.0839 9.49451 48.0944 8.31556 46.6418 8.31556C45.1892 8.31556 44.2207 9.47345 44.2207 10.8419V10.884C44.2207 12.2524 45.2102 13.4313 46.6628 13.4313C48.1155 13.4313 49.0839 12.2735 49.0839 10.905ZM41.6102 10.905V10.8629C41.6102 8.21029 43.7576 6.06293 46.6628 6.06293C49.5681 6.06293 51.6734 8.18924 51.6734 10.8419V10.884C51.6734 13.5366 49.526 15.684 46.6207 15.684C43.7155 15.684 41.6102 13.5577 41.6102 10.905Z" fill="#16205B"/>
+<path d="M53.2529 6.25173H55.0003C55.5055 6.25173 55.9055 6.65173 55.9055 7.13594V7.557C56.5161 6.77805 57.295 6.08331 58.6213 6.08331C60.6213 6.08331 61.7792 7.38858 61.7792 9.51489V15.4938H60.3897C59.695 15.4938 59.1476 14.9465 59.1476 14.2517V10.3359C59.1476 9.09384 58.5582 8.46226 57.5476 8.46226C56.5371 8.46226 55.9055 9.09384 55.9055 10.3359V14.2517C55.9055 14.9254 55.3371 15.4938 54.6634 15.4938H53.274V6.25173H53.2529Z" fill="#16205B"/>
+<path d="M69.8203 10.1471C69.673 8.96819 68.9782 8.18924 67.8624 8.18924C66.7467 8.18924 66.0519 8.96819 65.8414 10.1471H69.8203ZM63.273 10.905V10.8629C63.273 8.23135 65.1677 6.06293 67.8624 6.06293C70.9782 6.06293 72.3888 8.46293 72.3888 11.0735C72.3888 11.284 72.3888 11.5156 72.3467 11.7682H65.8624C66.1151 12.9471 66.9572 13.5787 68.1361 13.5787C68.8309 13.5787 69.3782 13.4103 69.9256 13.0103C70.2203 12.7998 70.6203 12.8419 70.873 13.0735L71.8835 13.9577C71.0203 15.0313 69.7572 15.684 68.073 15.684C65.273 15.684 63.2098 13.7471 63.2098 10.905H63.273Z" fill="#16205B"/>
+<path d="M80.8733 6.2522H82.4312L78.8523 15.7048C78.1365 17.5785 77.3786 18.2943 75.7996 18.2943C74.8523 18.2943 74.1365 18.0627 73.4628 17.6627L74.2417 16.0206C74.3049 15.8943 74.4523 15.8311 74.5786 15.8943C74.8733 16.0417 75.2102 16.1259 75.4628 16.1259C75.9049 16.1259 76.1575 15.9785 76.3891 15.5154L72.747 6.2522H74.2839C75.0417 6.2522 75.6944 6.73641 75.926 7.43114L77.6523 12.5469L79.3154 7.36799C79.526 6.6943 80.1575 6.2522 80.8523 6.2522H80.8733Z" fill="#16205B"/>
+<path d="M84.4945 3.41083H85.6735C86.4945 3.41083 87.1682 4.06346 87.1682 4.88451V8.18977H92.0945V4.88451C92.0945 4.06346 92.7682 3.41083 93.5893 3.41083H94.7682V15.474H93.6314C92.7682 15.474 92.0945 14.7792 92.0945 13.9371V10.6319H87.1682V13.9371C87.1682 14.7792 86.4735 15.474 85.6314 15.474H84.4945V3.41083Z" fill="#FF4A00"/>
+<path d="M104.073 10.905V10.8629C104.073 9.49451 103.083 8.31556 101.631 8.31556C100.178 8.31556 99.2098 9.47345 99.2098 10.8419V10.884C99.2098 12.2524 100.199 13.4313 101.652 13.4313C103.105 13.4313 104.073 12.2735 104.073 10.905ZM96.6203 10.905V10.8629C96.6203 8.21029 98.7677 6.06293 101.673 6.06293C104.578 6.06293 106.683 8.18924 106.683 10.8419V10.884C106.683 13.5366 104.536 15.684 101.631 15.684C98.7256 15.684 96.6203 13.5577 96.6203 10.905Z" fill="#FF4A00"/>
+<path d="M135.863 6.2522H137.421L133.842 15.7048C133.126 17.5785 132.368 18.2943 130.789 18.2943C129.842 18.2943 129.126 18.0627 128.452 17.6627L129.231 16.0206C129.294 15.8943 129.442 15.8311 129.589 15.8943C129.884 16.0417 130.199 16.1259 130.473 16.1259C130.915 16.1259 131.168 15.9785 131.399 15.5154L127.757 6.2522H129.294C130.052 6.2522 130.705 6.73641 130.936 7.43114L132.663 12.5469L134.326 7.36799C134.536 6.6943 135.168 6.2522 135.863 6.2522Z" fill="#FF4A00"/>
+<path d="M108.243 6.25173H109.99C110.495 6.25173 110.895 6.65173 110.895 7.13594V7.557C111.506 6.77805 112.285 6.08331 113.611 6.08331C115.611 6.08331 116.769 7.38858 116.769 9.51489V15.4938H115.379C114.685 15.4938 114.137 14.9465 114.137 14.2517V10.3359C114.137 9.09384 113.548 8.46226 112.537 8.46226C111.527 8.46226 110.895 9.09384 110.895 10.3359V14.2517C110.895 14.9254 110.327 15.4938 109.653 15.4938H108.264V6.25173H108.243Z" fill="#FF4A00"/>
+<path d="M124.895 10.1471C124.747 8.96819 124.053 8.18924 122.937 8.18924C121.821 8.18924 121.126 8.96819 120.916 10.1471H124.895ZM118.326 10.905V10.8629C118.326 8.23135 120.221 6.06293 122.916 6.06293C126.032 6.06293 127.442 8.46293 127.442 11.0735C127.442 11.284 127.442 11.5156 127.4 11.7682H120.916C121.168 12.9471 122.01 13.5787 123.189 13.5787C123.884 13.5787 124.432 13.4103 124.979 13.0103C125.274 12.7998 125.674 12.8419 125.926 13.0735L126.937 13.9577C126.074 15.0313 124.81 15.684 123.126 15.684C120.326 15.684 118.263 13.7471 118.263 10.905H118.326Z" fill="#FF4A00"/>
+</svg>
+    </a>
+    <nav class="mh-header__nav" aria-label="Main">
+      <a href="solutions/index.html">Solutions</a>
+      <a href="mutual-funds/index.html">Mutual Funds</a>
+      <a href="sif/index.html">SIF</a>
+      <a href="fixed-deposits/index.html">Fixed Deposits</a>
+      <a href="bonds/index.html">Bonds &amp; NCDs</a>
+      <a href="mutual-funds/explore/index.html">Explore Funds</a>
+      <a href="mutual-funds/screens/index.html">Fund Screens</a>
+      <a href="calculators/index.html">Calculators</a>
+      <a href="mutual-funds/nfo/index.html">NFOs &amp; Dividends</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section aria-labelledby="page-title"><div class="container bento">
+    <div class="tile tile--head"><h1 id="page-title">Mutual Funds, SIFs, Screens and Calculators</h1><p class="lede">Facts on every open mutual fund scheme in India, organised by fund house, SEBI category, theme and index, with Specialised Investment Fund (SIF) strategies, calculators and rule-based fund screens. MoneyHoney is an AMFI-registered mutual fund and SIF distributor; nothing here is a recommendation.</p></div>
+    <dl class="facts"><div class="stat"><dt class="stat__label">Mutual Fund Schemes</dt><dd class="stat__value">1,774</dd></div><div class="stat"><dt class="stat__label">Fund Houses</dt><dd class="stat__value">48</dd></div><div class="stat"><dt class="stat__label">SEBI Categories</dt><dd class="stat__value">39</dd></div><div class="stat"><dt class="stat__label">Data As On</dt><dd class="stat__value">31 Aug 2026</dd></div></dl>
+    <div class="tile tile--sol" aria-labelledby="h-solutions">
+      <div><h2 id="h-solutions">Find a Solution</h2><div class="sol-intro"><p><span>Start from the problem you want to solve.</span> <a class="btn-a" href="solutions/index.html">See All Solutions</a></p></div></div>
+      <ul class="sol-links"><li><a href="solutions/sip/index.html">SIP</a></li><li><a href="solutions/retirement/index.html">Retirement</a></li><li><a href="solutions/child-education/index.html">Child Education</a></li><li><a href="solutions/women/index.html">Women and Money</a></li><li><a href="solutions/nri/index.html">NRI Investing</a></li><li><a href="solutions/trusts/index.html">Trusts</a></li><li><a href="solutions/wealth/index.html">Building Wealth</a></li><li><a href="solutions/vacation/index.html">Vacation Planning</a></li><li><a href="solutions/marriage/index.html">Marriage Planning</a></li><li><a href="solutions/emi-management/index.html">EMI Management</a></li><li><a href="solutions/emergency-fund/index.html">Emergency Fund</a></li></ul>
+    </div>
+  </div></section>
+  <section class="section" aria-labelledby="h-start"><div class="container"><h2 id="h-start">Start Here</h2><ul class="ledger ledger--start"><li><a class="card" href="mutual-funds/index.html"><span class="card__title">Mutual Funds</span><span class="card__meta">1,774 schemes by category and fund house</span><svg class="card__icon" aria-hidden="true" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4l6 6-6 6"/></svg></a></li><li><a class="card" href="mutual-funds/explore/index.html"><span class="card__title">Explore Funds</span><span class="card__meta">Filter every scheme by category, cost and risk</span><svg class="card__icon" aria-hidden="true" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4l6 6-6 6"/></svg></a></li><li><a class="card" href="mutual-funds/screens/index.html"><span class="card__title">Fund Screens</span><span class="card__meta">Rule-based lists such as index funds under 0.50% cost</span><svg class="card__icon" aria-hidden="true" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4l6 6-6 6"/></svg></a></li><li><a class="card" href="calculators/index.html"><span class="card__title">Calculators</span><span class="card__meta">SIP, lumpsum, SWP, goal and tax calculators</span><svg class="card__icon" aria-hidden="true" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4l6 6-6 6"/></svg></a></li><li><a class="card" href="mutual-funds/nfo/index.html"><span class="card__title">New Fund Offers</span><span class="card__meta">Open, upcoming and recently closed NFOs</span><svg class="card__icon" aria-hidden="true" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4l6 6-6 6"/></svg></a></li><li><a class="card" href="mutual-funds/dividend-history/index.html"><span class="card__title">Dividend History (IDCW)</span><span class="card__meta">Past IDCW record dates and amounts per unit, scheme by scheme</span><svg class="card__icon" aria-hidden="true" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4l6 6-6 6"/></svg></a></li><li><a class="card" href="sif/index.html"><span class="card__title">Specialised Investment Funds</span><span class="card__meta">SIF strategies for investments of ₹10,00,000 or more</span><svg class="card__icon" aria-hidden="true" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4l6 6-6 6"/></svg></a></li><li><a class="card" href="bonds/ncd/index.html"><span class="card__title">NCD IPOs</span><span class="card__meta">Sample NCD public issues: series, ratings and how to apply</span><svg class="card__icon" aria-hidden="true" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4l6 6-6 6"/></svg></a></li><li><a class="card" href="bonds/capital-gain-bonds/index.html"><span class="card__title">Capital Gain Bonds</span><span class="card__meta">Save tax on a property gain: REC, PFC and IRFC series</span><svg class="card__icon" aria-hidden="true" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4l6 6-6 6"/></svg></a></li><li><a class="card" href="bonds/rbi-bonds/index.html"><span class="card__title">RBI Bonds</span><span class="card__meta">Government of India bonds, interest every six months</span><svg class="card__icon" aria-hidden="true" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4l6 6-6 6"/></svg></a></li><li><a class="card" href="fixed-deposits/index.html"><span class="card__title">Fixed Deposits</span><span class="card__meta">Company and bank FDs we offer, with rates and terms for your investor type.</span><svg class="card__icon" aria-hidden="true" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4l6 6-6 6"/></svg></a></li></ul></div></section>
+  <section class="section" aria-labelledby="h-asset"><div class="container"><h2 id="h-asset">Mutual Funds by Asset Class</h2><ul class="ledger ledger--asset"><li><a class="card" href="mutual-funds/asset/equity/index.html"><span class="card__title">Equity Funds</span><span class="card__meta">11 categories, 614 schemes</span><svg class="card__icon" aria-hidden="true" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4l6 6-6 6"/></svg></a></li><li><a class="card" href="mutual-funds/asset/debt/index.html"><span class="card__title">Debt Funds</span><span class="card__meta">16 categories, 434 schemes</span><svg class="card__icon" aria-hidden="true" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4l6 6-6 6"/></svg></a></li><li><a class="card" href="mutual-funds/asset/hybrid/index.html"><span class="card__title">Hybrid Funds</span><span class="card__meta">6 categories, 179 schemes</span><svg class="card__icon" aria-hidden="true" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4l6 6-6 6"/></svg></a></li><li><a class="card" href="mutual-funds/asset/index-and-other/index.html"><span class="card__title">Index Funds and Other Schemes</span><span class="card__meta">4 categories, 506 schemes</span><svg class="card__icon" aria-hidden="true" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4l6 6-6 6"/></svg></a></li><li><a class="card" href="mutual-funds/asset/solution-oriented/index.html"><span class="card__title">Solution Oriented Funds</span><span class="card__meta">2 categories, 41 schemes</span><svg class="card__icon" aria-hidden="true" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4l6 6-6 6"/></svg></a></li></ul></div></section>
+  <section class="section section--themes" aria-labelledby="h-themes"><div class="container"><h2 id="h-themes">Themes, Indices and More</h2><ul class="ledger"><li><a class="card" href="mutual-funds/theme/index.html"><span class="card__title">Sector and Theme Funds</span><span class="card__meta">Sector and Theme Funds: Active and Index</span><svg class="card__icon" aria-hidden="true" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4l6 6-6 6"/></svg></a></li><li><a class="card" href="mutual-funds/theme/factor/index.html"><span class="card__title">Factor Funds</span><span class="card__meta">Factor Funds: Momentum, Quality and Value</span><svg class="card__icon" aria-hidden="true" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4l6 6-6 6"/></svg></a></li><li><a class="card" href="mutual-funds/index-funds/index.html"><span class="card__title">Index Funds and ETFs</span><span class="card__meta">Equity Index Funds and ETFs by Index</span><svg class="card__icon" aria-hidden="true" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4l6 6-6 6"/></svg></a></li><li><a class="card" href="mutual-funds/target-maturity/index.html"><span class="card__title">Target Maturity Funds</span><span class="card__meta">Target Maturity Funds by Maturity Year</span><svg class="card__icon" aria-hidden="true" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4l6 6-6 6"/></svg></a></li><li><a class="card" href="mutual-funds/debt-index/index.html"><span class="card__title">Open-Ended Debt Index Funds</span><span class="card__meta">Open-Ended Debt Index Funds and ETFs</span><svg class="card__icon" aria-hidden="true" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4l6 6-6 6"/></svg></a></li><li><a class="card" href="mutual-funds/international/index.html"><span class="card__title">International Funds</span><span class="card__meta">International Funds by Region</span><svg class="card__icon" aria-hidden="true" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4l6 6-6 6"/></svg></a></li><li><a class="card" href="mutual-funds/gold-silver/index.html"><span class="card__title">Gold and Silver</span><span class="card__meta">Gold and Silver ETFs and FoFs by Metal</span><svg class="card__icon" aria-hidden="true" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4l6 6-6 6"/></svg></a></li><li><a class="card" href="mutual-funds/fund-of-funds/index.html"><span class="card__title">Funds of Funds</span><span class="card__meta">Funds of Funds by Type</span><svg class="card__icon" aria-hidden="true" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4l6 6-6 6"/></svg></a></li></ul></div></section>
+</main>
+<footer class="site-foot" data-nosnippet>
+  <div class="container">
+    <nav class="site-foot__links" aria-label="Footer">
+      <a href="about/index.html">About</a>
+      <a href="contact/index.html">Contact</a>
+      <a href="methodology/index.html">Methodology</a>
+      <a href="disclaimer/index.html">Disclaimer</a>
+      <a href="commission-disclosure/index.html">Commission Disclosure</a>
+      <a href="mutual-funds/amc/index.html">Fund Houses We Distribute</a>
+      <a href="site-map/index.html">Site Map</a>
+    </nav>
+    <p class="site-foot__id">Money Honey Financial Services Private Limited &middot; AMFI Registered Mutual Fund Distributor &amp; SIF Distributor &middot; ARN-000000 &middot; Registered 1 Jan 2015, valid till 31 Dec 2027</p>
+    <p class="site-foot__warn">Mutual Fund investments are subject to market risks, read all scheme related documents carefully.</p>
+    <p class="site-foot__warn">Investments in Specialized Investment Fund involves relatively higher risk including potential loss of capital, liquidity risk and market volatility. Please read all investment strategy related documents carefully before making the investment decision.</p>
+  </div>
+</footer>
+<script>
+/* MoneyHoney · shared interactions. Everything here is progressive: without it the
+   page is complete and readable. It never changes any text except to count a figure
+   up to the exact string that was already there. */
+(function () {
+  'use strict';
+  var motion = !(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches);
+  var io = 'IntersectionObserver' in window;
+
+  /* 1. Reading progress bar (decorative) */
+  var bar = document.createElement('div');
+  bar.className = 'mh-progress'; bar.setAttribute('aria-hidden', 'true');
+  document.body.appendChild(bar);
+  function progress() {
+    var h = document.documentElement, max = h.scrollHeight - h.clientHeight;
+    bar.style.setProperty('--p', max > 0 ? Math.min(1, h.scrollTop / max).toFixed(4) : 0);
+  }
+  addEventListener('scroll', progress, { passive: true }); addEventListener('resize', progress); progress();
+
+  /* 2. Scroll reveal, staggered within each group */
+  if (motion && io) {
+    document.documentElement.classList.add('mh-anim');
+    var groups = ['.linkgrid', '.ledger', '.pcards', '.steps', '.pdfs', '.facts', '.res-grid', '.close-steps', '.faq', '.sol-links'];
+    groups.forEach(function (sel) {
+      document.querySelectorAll(sel).forEach(function (g) {
+        Array.prototype.forEach.call(g.children, function (el, i) { el.classList.add('reveal'); el.style.setProperty('--i', Math.min(i, 8)); });
+      });
+    });
+    document.querySelectorAll('.headline, .vb-main > section > h2, main > h2, .page-home .section__head, .nextstep, .site-foot__warn').forEach(function (el) { el.classList.add('reveal'); });
+    var seen = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('is-in'); seen.unobserve(e.target); } });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
+    document.querySelectorAll('.reveal').forEach(function (el) { seen.observe(el); });
+    /* anything already above the fold shows at once */
+    requestAnimationFrame(function () {
+      document.querySelectorAll('.reveal').forEach(function (el) {
+        var r = el.getBoundingClientRect(); if (r.top < innerHeight && r.bottom > 0) el.classList.add('is-in');
+      });
+    });
+  }
+
+  /* 3. Range sliders: paint the filled part of the track */
+  function paint(sl) {
+    var lo = +sl.min || 0, hi = +sl.max || 100, v = +sl.value;
+    sl.style.setProperty('--p', (hi > lo ? (v - lo) / (hi - lo) * 100 : 0).toFixed(2) + '%');
+  }
+  document.querySelectorAll('input[type=range]').forEach(function (sl) {
+    paint(sl);
+    sl.addEventListener('input', function () { paint(sl); });
+    var box = sl.dataset.for && document.getElementById(sl.dataset.for);
+    if (box) { box.addEventListener('input', function () { paint(sl); }); box.addEventListener('change', function () { paint(sl); }); }
+  });
+  document.querySelectorAll('[data-presets] button, [data-picker] button').forEach(function (b) {
+    b.addEventListener('click', function () { setTimeout(function () { document.querySelectorAll('input[type=range]').forEach(paint); }, 0); });
+  });
+
+  /* 4. A figure that changes gets a brief colour tick */
+  if (motion && 'MutationObserver' in window) {
+    var tick = new MutationObserver(function (ms) {
+      ms.forEach(function (m) {
+        var el = m.target.nodeType === 3 ? m.target.parentElement : m.target;
+        el = el && el.closest('.stat__value, .m');
+        if (!el) return;
+        el.classList.remove('is-tick'); void el.offsetWidth; el.classList.add('is-tick');
+      });
+    });
+    document.querySelectorAll('.stat__value, .m').forEach(function (el) { tick.observe(el, { characterData: true, childList: true, subtree: true }); });
+  }
+
+  /* 5. The sticky result bar stays out of the way while the calculator itself is on screen */
+  var gap = document.querySelector('.gapbar'), rail = document.getElementById('where-you-stand');
+  if (gap && rail && io) {
+    var watch = new IntersectionObserver(function (es) { gap.classList.toggle('is-hidden', es[0].isIntersecting); }, { threshold: 0.15 });
+    watch.observe(rail);
+  }
+
+  /* 6. Home page fact tiles count up to the exact figure already printed */
+  if (motion && io) {
+    document.querySelectorAll('.page-home .facts .stat__value').forEach(function (el) {
+      var final = el.textContent, n = final.replace(/,/g, '');
+      if (!/^\d+$/.test(n)) return;
+      var end = +n, obs = new IntersectionObserver(function (es) {
+        if (!es[0].isIntersecting) return;
+        obs.disconnect();
+        var t0 = performance.now();
+        (function step(t) {
+          var k = Math.min(1, (t - t0) / 900), v = Math.round(end * (1 - Math.pow(1 - k, 3)));
+          el.textContent = k < 1 ? v.toLocaleString('en-IN') : final;
+          if (k < 1) requestAnimationFrame(step);
+        })(t0);
+      });
+      obs.observe(el);
+    });
+  }
+
+  /* 7. Interactive charts: hover, tap or focus a bar to read its value; click a legend item to hide a series.
+        Values come from the page's own calculator (window.mhCalc) and from each chart's aria-label,
+        so nothing is invented. */
+  var tip = document.createElement('div');
+  tip.className = 'mh-tip'; tip.setAttribute('role', 'tooltip'); tip.hidden = true;
+  document.body.appendChild(tip);
+  function tipShow(title, rows, x, y) {
+    tip.textContent = '';
+    if (title) { var b = document.createElement('b'); b.textContent = title; tip.appendChild(b); }
+    rows.forEach(function (r) {
+      var line = document.createElement('span');
+      if (r[2]) { var sw = document.createElement('i'); sw.style.background = r[2]; line.appendChild(sw); }
+      var l = document.createElement('em'); l.textContent = r[0]; line.appendChild(l);
+      var v = document.createElement('strong'); v.textContent = r[1]; line.appendChild(v);
+      tip.appendChild(line);
+    });
+    tip.hidden = false;
+    var w = tip.offsetWidth, h = tip.offsetHeight, pad = 8;
+    var left = Math.min(Math.max(x, w / 2 + pad), innerWidth - w / 2 - pad);
+    var top = y - h - 12; if (top < pad) top = y + 18;
+    tip.style.left = left + 'px'; tip.style.top = top + 'px';
+    requestAnimationFrame(function () { tip.classList.add('is-show'); });
+  }
+  function tipHide() { tip.classList.remove('is-show'); tip.hidden = true; }
+  addEventListener('scroll', tipHide, { passive: true }); addEventListener('resize', tipHide);
+  document.addEventListener('pointerdown', function (e) { if (!e.target.closest('svg')) tipHide(); });
+  function inr(v) { var n = Math.floor(Math.abs(v) + 0.5); return (v < 0 && n ? '-' : '') + '₹' + n.toLocaleString('en-IN'); }
+  function centerTop(el) { var b = el.getBoundingClientRect(); return [b.left + b.width / 2, b.top]; }
+
+  /* 7a. Story charts */
+  document.querySelectorAll('svg.schart').forEach(function (svg) {
+    var items = (svg.getAttribute('aria-label') || '').split('; ').map(function (p) {
+      var parts = p.split(': '); var v = parts.pop(); return [parts.pop() || '', v];
+    });
+    var bars = svg.querySelectorAll('rect.chbar, rect.cbar');
+    if (bars.length !== items.length) return;
+    bars.forEach(function (r, i) {
+      r.setAttribute('tabindex', '0'); r.setAttribute('role', 'img'); r.setAttribute('aria-label', items[i][0] + ': ' + items[i][1]);
+      function on() { svg.classList.add('is-hover'); r.classList.add('is-on'); var c = centerTop(r); tipShow(items[i][0], [['', items[i][1]]], c[0], c[1] - (r.classList.contains('cbar') ? 26 : 0)); }
+      function off() { svg.classList.remove('is-hover'); r.classList.remove('is-on'); tipHide(); }
+      r.addEventListener('pointerenter', on); r.addEventListener('pointerleave', off);
+      r.addEventListener('focus', on); r.addEventListener('blur', off);
+      r.addEventListener('click', function (e) { e.stopPropagation(); if (tip.hidden) on(); else off(); });
+    });
+  });
+
+  /* 7b. The calculator's chart in the rail: one hit zone per year, rebuilt after every recalculation */
+  var chart = document.getElementById('chart');
+  if (chart && window.mhCalc) {
+    var legend = Array.prototype.map.call(chart.parentNode.querySelectorAll('.legend > span'), function (s) { return s.textContent.trim(); });
+    var colors = ['var(--chart-3)', 'var(--chart-1)'];
+    var yearHead = (function () { var th = document.querySelector('#ytab thead th'); return th ? th.textContent.trim() : 'Year'; })();
+    function wire(r) {
+      var old = chart.querySelector('.mh-hits'); if (old) old.remove();
+      var bars = r.bars || []; if (!bars.length) return;
+      var vb = chart.viewBox.baseVal, x0 = 8, slot = (vb.width - 8 - x0) / bars.length;
+      var rects = chart.querySelectorAll(':scope > rect');
+      var g = document.createElementNS('http://www.w3.org/2000/svg', 'g'); g.setAttribute('class', 'mh-hits');
+      bars.forEach(function (b, k) {
+        var h = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+        h.setAttribute('x', (x0 + k * slot).toFixed(1)); h.setAttribute('y', 0); h.setAttribute('width', slot.toFixed(1)); h.setAttribute('height', vb.height);
+        h.setAttribute('tabindex', '0'); h.setAttribute('role', 'img');
+        h.setAttribute('aria-label', yearHead + ' ' + b[0] + ': ' + legend[0] + ' ' + inr(b[1]) + ', ' + legend[1] + ' ' + inr(b[2]));
+        function on() {
+          chart.classList.add('is-hover');
+          [rects[2 * k], rects[2 * k + 1]].forEach(function (x) { if (x) x.classList.add('is-on'); });
+          var tall = rects[2 * k + 1] || rects[2 * k] || h, c = centerTop(tall);
+          tipShow(yearHead + ' ' + b[0], [[legend[0], inr(b[1]), colors[0]], [legend[1], inr(b[2]), colors[1]]], c[0], c[1]);
+        }
+        function off() { chart.classList.remove('is-hover'); chart.querySelectorAll('.is-on').forEach(function (x) { x.classList.remove('is-on'); }); tipHide(); }
+        h.addEventListener('pointerenter', on); h.addEventListener('pointerleave', off);
+        h.addEventListener('focus', on); h.addEventListener('blur', off);
+        h.addEventListener('click', function (e) { e.stopPropagation(); if (tip.hidden) on(); else off(); });
+        g.appendChild(h);
+      });
+      chart.appendChild(g);
+    }
+    try { wire(window.mhCalc({})); } catch (e) {}
+    document.addEventListener('mh-calc', function (e) { wire(e.detail); });
+    /* legend items toggle their series */
+    chart.parentNode.querySelectorAll('.legend > span').forEach(function (sp, i) {
+      sp.setAttribute('role', 'button'); sp.setAttribute('tabindex', '0'); sp.setAttribute('aria-pressed', 'true');
+      function toggle() {
+        var hidden = chart.classList.toggle(i ? 'hide-b' : 'hide-a');
+        sp.setAttribute('aria-pressed', hidden ? 'false' : 'true');
+      }
+      sp.addEventListener('click', toggle);
+      sp.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+    });
+  }
+
+  /* 8. Landmarks, names and keyboard reach for generated pages. Nothing visible changes:
+        ARIA roles and names are taken from text already on the page, and scrollable
+        panels become focusable so keyboard users can scroll them. */
+  (function () {
+    var body = document.body, h1 = document.querySelector('h1'), n = 0;
+    function idOf(el) { if (!el.id) el.id = 'mh-lm-' + (++n); return el.id; }
+    if (!document.querySelector('main, [role="main"]')) {
+      var main = Array.prototype.find.call(body.children, function (el) { return el.matches('div.wrap') && el.querySelector('section'); });
+      if (main) main.setAttribute('role', 'main');
+    }
+    Array.prototype.slice.call(body.children).forEach(function (el) {
+      if (el.matches('header, nav, main, aside, footer.site-foot, script, style, [role], [hidden], [aria-hidden="true"], .mh-progress, .mh-tip') || !el.textContent.trim()) return;
+      if (el.querySelector('main, aside, [role="main"]')) return;               /* already holds the main or a sidebar landmark */
+      if (getComputedStyle(el).display === 'none') return;
+      if (el.matches('.secnav')) {                                                /* section links: a navigation named after the page */
+        el.setAttribute('role', 'navigation'); if (h1) el.setAttribute('aria-labelledby', idOf(h1)); return;
+      }
+      var label = el.querySelector('h1, h2, h3, h4, b, .t'); if (!label) return;
+      if (el.tagName === 'FOOTER') {                                              /* a page footer cannot be a region itself: wrap it */
+        var box = document.createElement('div'); box.setAttribute('role', 'region'); box.setAttribute('aria-labelledby', idOf(label));
+        el.parentNode.insertBefore(box, el); box.appendChild(el); el.setAttribute('role', 'group'); return;
+      }
+      el.setAttribute('role', 'region'); el.setAttribute('aria-labelledby', idOf(label));
+    });
+    function enhance(root) {
+      /* compare checkboxes drawn by the screener and explorer get the row's scheme name as their label */
+      root.querySelectorAll('input[type=checkbox]:not([aria-label]):not([id])').forEach(function (box) {
+        if (box.closest('label')) return;
+        var row = box.closest('tr, .card, .nfo-card'), nm = row && row.querySelector('.nm, a, td'), cmp = document.querySelector('.cmpbar b');
+        if (nm) box.setAttribute('aria-label', (cmp ? cmp.textContent.trim() + ' ' : '') + nm.textContent.trim());
+      });
+      /* panels that scroll sideways or inside themselves are reachable with the keyboard */
+      root.querySelectorAll('.scrollx, .chart-wrap, .table-wrap, .ledger-scroll, .gw, .sx, .vlist, .variant-paths .steps').forEach(function (el) {
+        if (!el.hasAttribute('tabindex')) el.setAttribute('tabindex', '0');
+      });
+    }
+    enhance(document);
+    var app = document.getElementById('app') || document.getElementById('list');
+    if (app && 'MutationObserver' in window) new MutationObserver(function () { enhance(app); }).observe(app, { childList: true, subtree: true });
+  })();
+})();
+
+</script>
+</body>
+</html>
