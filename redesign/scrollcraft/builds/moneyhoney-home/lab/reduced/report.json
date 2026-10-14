@@ -1,0 +1,1862 @@
+{
+  "doc": {
+    "height": 8917,
+    "vh": 900,
+    "acts": [
+      "flow",
+      "pin",
+      "pan",
+      "pin",
+      "flow",
+      "pin"
+    ],
+    "world": null
+  },
+  "report": [
+    {
+      "i": 0,
+      "y": 0,
+      "pct": 0,
+      "settled": true,
+      "contrast": [],
+      "cues": [],
+      "clips": [],
+      "rails": [
+        0
+      ],
+      "wipes": [
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none"
+      ],
+      "act": "flow",
+      "stages": [
+        684,
+        2844,
+        3624,
+        7837
+      ],
+      "segs": [],
+      "custom": [
+        "00000U"
+      ],
+      "customHold": false,
+      "seg": null,
+      "segp": null,
+      "bg": "#FFFFFF"
+    },
+    {
+      "i": 1,
+      "y": 95,
+      "pct": 1,
+      "settled": true,
+      "contrast": [
+        {
+          "t": "Find a Solution Start from the problem y",
+          "dir": "dark-on-light",
+          "worst": 15.68,
+          "mean": 15.68
+        }
+      ],
+      "cues": [
+        {
+          "t": "Find a Solution Start from the problem you wan",
+          "o": 1
+        }
+      ],
+      "clips": [],
+      "rails": [
+        0
+      ],
+      "wipes": [
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none"
+      ],
+      "act": "flow",
+      "stages": [
+        589,
+        2749,
+        3529,
+        7742
+      ],
+      "segs": [],
+      "custom": [
+        "00000U"
+      ],
+      "customHold": false,
+      "seg": null,
+      "segp": null,
+      "bg": "#FFFFFF"
+    },
+    {
+      "i": 2,
+      "y": 375,
+      "pct": 5,
+      "settled": true,
+      "contrast": [
+        {
+          "t": "Find a Solution Start from the problem y",
+          "dir": "dark-on-light",
+          "worst": 15.68,
+          "mean": 15.68
+        }
+      ],
+      "cues": [
+        {
+          "t": "Find a Solution Start from the problem you wan",
+          "o": 1
+        }
+      ],
+      "clips": [],
+      "rails": [
+        0
+      ],
+      "wipes": [
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none"
+      ],
+      "act": "pin",
+      "stages": [
+        309,
+        2469,
+        3249,
+        7462
+      ],
+      "segs": [],
+      "custom": [
+        "00000U"
+      ],
+      "customHold": false,
+      "seg": null,
+      "segp": null,
+      "bg": "#FFFFFF"
+    },
+    {
+      "i": 3,
+      "y": 654,
+      "pct": 8,
+      "settled": true,
+      "contrast": [
+        {
+          "t": "Find a Solution Start from the problem y",
+          "dir": "dark-on-light",
+          "worst": 15.68,
+          "mean": 15.68
+        }
+      ],
+      "cues": [
+        {
+          "t": "Find a Solution Start from the problem you wan",
+          "o": 1
+        }
+      ],
+      "clips": [],
+      "rails": [
+        0
+      ],
+      "wipes": [
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none"
+      ],
+      "act": "pin",
+      "stages": [
+        30,
+        2190,
+        2970,
+        7183
+      ],
+      "segs": [],
+      "custom": [
+        "00000U"
+      ],
+      "customHold": false,
+      "seg": null,
+      "segp": null,
+      "bg": "#FFFFFF"
+    },
+    {
+      "i": 4,
+      "y": 709,
+      "pct": 9,
+      "settled": true,
+      "contrast": [
+        {
+          "t": "Find a Solution Start from the problem y",
+          "dir": "dark-on-light",
+          "worst": 15.68,
+          "mean": 15.68
+        }
+      ],
+      "cues": [
+        {
+          "t": "Find a Solution Start from the problem you wan",
+          "o": 1
+        }
+      ],
+      "clips": [],
+      "rails": [
+        0
+      ],
+      "wipes": [
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none"
+      ],
+      "act": "pin",
+      "stages": [
+        0,
+        2135,
+        2915,
+        7128
+      ],
+      "segs": [],
+      "custom": [
+        "00000U"
+      ],
+      "customHold": false,
+      "seg": null,
+      "segp": null,
+      "bg": "#FFFFFF"
+    },
+    {
+      "i": 5,
+      "y": 951,
+      "pct": 12,
+      "settled": true,
+      "contrast": [
+        {
+          "t": "Find a Solution Start from the problem y",
+          "dir": "dark-on-light",
+          "worst": 15.68,
+          "mean": 15.68
+        }
+      ],
+      "cues": [
+        {
+          "t": "Find a Solution Start from the problem you wan",
+          "o": 1
+        }
+      ],
+      "clips": [],
+      "rails": [
+        0
+      ],
+      "wipes": [
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none"
+      ],
+      "act": "pin",
+      "stages": [
+        0,
+        1893,
+        2673,
+        6886
+      ],
+      "segs": [],
+      "custom": [
+        "00000U"
+      ],
+      "customHold": false,
+      "seg": null,
+      "segp": null,
+      "bg": "#FFFFFF"
+    },
+    {
+      "i": 6,
+      "y": 1193,
+      "pct": 15,
+      "settled": true,
+      "contrast": [
+        {
+          "t": "Find a Solution Start from the problem y",
+          "dir": "dark-on-light",
+          "worst": 15.68,
+          "mean": 15.68
+        }
+      ],
+      "cues": [
+        {
+          "t": "Find a Solution Start from the problem you wan",
+          "o": 1
+        }
+      ],
+      "clips": [],
+      "rails": [
+        0
+      ],
+      "wipes": [
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none"
+      ],
+      "act": "pin",
+      "stages": [
+        0,
+        1651,
+        2431,
+        6644
+      ],
+      "segs": [],
+      "custom": [
+        "00000U"
+      ],
+      "customHold": false,
+      "seg": null,
+      "segp": null,
+      "bg": "#FFFFFF"
+    },
+    {
+      "i": 7,
+      "y": 1435,
+      "pct": 18,
+      "settled": true,
+      "contrast": [
+        {
+          "t": "Find a Solution Start from the problem y",
+          "dir": "dark-on-light",
+          "worst": 15.68,
+          "mean": 15.68
+        }
+      ],
+      "cues": [
+        {
+          "t": "Find a Solution Start from the problem you wan",
+          "o": 1
+        }
+      ],
+      "clips": [],
+      "rails": [
+        0
+      ],
+      "wipes": [
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none"
+      ],
+      "act": "pin",
+      "stages": [
+        0,
+        1409,
+        2189,
+        6402
+      ],
+      "segs": [],
+      "custom": [
+        "00000U"
+      ],
+      "customHold": false,
+      "seg": null,
+      "segp": null,
+      "bg": "#FFFFFF"
+    },
+    {
+      "i": 8,
+      "y": 1677,
+      "pct": 21,
+      "settled": true,
+      "contrast": [
+        {
+          "t": "Find a Solution Start from the problem y",
+          "dir": "dark-on-light",
+          "worst": 15.68,
+          "mean": 15.68
+        }
+      ],
+      "cues": [
+        {
+          "t": "Find a Solution Start from the problem you wan",
+          "o": 1
+        }
+      ],
+      "clips": [],
+      "rails": [
+        0
+      ],
+      "wipes": [
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none"
+      ],
+      "act": "pin",
+      "stages": [
+        0,
+        1167,
+        1947,
+        6160
+      ],
+      "segs": [],
+      "custom": [
+        "00000U"
+      ],
+      "customHold": false,
+      "seg": null,
+      "segp": null,
+      "bg": "#FFFFFF"
+    },
+    {
+      "i": 9,
+      "y": 1919,
+      "pct": 24,
+      "settled": true,
+      "contrast": [],
+      "cues": [
+        {
+          "t": "Find a Solution Start from the problem you wan",
+          "o": 0.25
+        }
+      ],
+      "clips": [],
+      "rails": [
+        0
+      ],
+      "wipes": [
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none"
+      ],
+      "act": "pin",
+      "stages": [
+        0,
+        925,
+        1705,
+        5918
+      ],
+      "segs": [],
+      "custom": [
+        "00000U"
+      ],
+      "customHold": false,
+      "seg": null,
+      "segp": null,
+      "bg": "#FFFFFF"
+    },
+    {
+      "i": 10,
+      "y": 2726,
+      "pct": 34,
+      "settled": true,
+      "contrast": [],
+      "cues": [],
+      "clips": [],
+      "rails": [
+        0
+      ],
+      "wipes": [
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none"
+      ],
+      "act": "pan",
+      "stages": [
+        -782,
+        118,
+        898,
+        5111
+      ],
+      "segs": [],
+      "custom": [
+        "00000U"
+      ],
+      "customHold": false,
+      "seg": null,
+      "segp": null,
+      "bg": "#FFFFFF"
+    },
+    {
+      "i": 11,
+      "y": 2749,
+      "pct": 34,
+      "settled": true,
+      "contrast": [],
+      "cues": [],
+      "clips": [],
+      "rails": [
+        0
+      ],
+      "wipes": [
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none"
+      ],
+      "act": "pan",
+      "stages": [
+        -805,
+        95,
+        875,
+        5088
+      ],
+      "segs": [],
+      "custom": [
+        "00000U"
+      ],
+      "customHold": false,
+      "seg": null,
+      "segp": null,
+      "bg": "#FFFFFF"
+    },
+    {
+      "i": 12,
+      "y": 2772,
+      "pct": 35,
+      "settled": true,
+      "contrast": [],
+      "cues": [],
+      "clips": [],
+      "rails": [
+        0
+      ],
+      "wipes": [
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none"
+      ],
+      "act": "pan",
+      "stages": [
+        -828,
+        72,
+        852,
+        5065
+      ],
+      "segs": [],
+      "custom": [
+        "00000U"
+      ],
+      "customHold": false,
+      "seg": null,
+      "segp": null,
+      "bg": "#FFFFFF"
+    },
+    {
+      "i": 13,
+      "y": 2795,
+      "pct": 35,
+      "settled": true,
+      "contrast": [],
+      "cues": [],
+      "clips": [],
+      "rails": [
+        0
+      ],
+      "wipes": [
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none"
+      ],
+      "act": "pan",
+      "stages": [
+        -851,
+        49,
+        829,
+        5042
+      ],
+      "segs": [],
+      "custom": [
+        "00000U"
+      ],
+      "customHold": false,
+      "seg": null,
+      "segp": null,
+      "bg": "#FFFFFF"
+    },
+    {
+      "i": 14,
+      "y": 2818,
+      "pct": 35,
+      "settled": true,
+      "contrast": [],
+      "cues": [],
+      "clips": [],
+      "rails": [
+        0
+      ],
+      "wipes": [
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none"
+      ],
+      "act": "pan",
+      "stages": [
+        -874,
+        26,
+        806,
+        5019
+      ],
+      "segs": [],
+      "custom": [
+        "00000U"
+      ],
+      "customHold": false,
+      "seg": null,
+      "segp": null,
+      "bg": "#FFFFFF"
+    },
+    {
+      "i": 15,
+      "y": 2841,
+      "pct": 35,
+      "settled": true,
+      "contrast": [],
+      "cues": [],
+      "clips": [],
+      "rails": [
+        0
+      ],
+      "wipes": [
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none"
+      ],
+      "act": "pan",
+      "stages": [
+        -897,
+        3,
+        783,
+        4996
+      ],
+      "segs": [],
+      "custom": [
+        "00000U"
+      ],
+      "customHold": false,
+      "seg": null,
+      "segp": null,
+      "bg": "#FFFFFF"
+    },
+    {
+      "i": 16,
+      "y": 3678,
+      "pct": 46,
+      "settled": true,
+      "contrast": [
+        {
+          "t": "Mutual Funds by Asset Class",
+          "dir": "light-on-dark",
+          "worst": 13.85,
+          "mean": 13.85
+        }
+      ],
+      "cues": [
+        {
+          "t": "Mutual Funds by Asset Class",
+          "o": 1
+        }
+      ],
+      "clips": [],
+      "rails": [
+        0
+      ],
+      "wipes": [
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none"
+      ],
+      "act": "pin",
+      "stages": [
+        -1734,
+        -834,
+        0,
+        4159
+      ],
+      "segs": [],
+      "custom": [
+        "00000U"
+      ],
+      "customHold": false,
+      "seg": null,
+      "segp": null,
+      "bg": "#FFFFFF"
+    },
+    {
+      "i": 17,
+      "y": 4197,
+      "pct": 52,
+      "settled": true,
+      "contrast": [
+        {
+          "t": "Mutual Funds by Asset Class",
+          "dir": "light-on-dark",
+          "worst": 13.85,
+          "mean": 13.85
+        },
+        {
+          "t": "Equity Funds11 categories, 614 schemes",
+          "dir": "own-fill",
+          "worst": 10,
+          "mean": 10
+        }
+      ],
+      "cues": [
+        {
+          "t": "Mutual Funds by Asset Class",
+          "o": 1
+        },
+        {
+          "t": "Equity Funds11 categories, 614 schemes",
+          "o": 1
+        }
+      ],
+      "clips": [],
+      "rails": [
+        0
+      ],
+      "wipes": [
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none"
+      ],
+      "act": "pin",
+      "stages": [
+        -2253,
+        -1353,
+        0,
+        3640
+      ],
+      "segs": [],
+      "custom": [
+        "200000U"
+      ],
+      "customHold": false,
+      "seg": null,
+      "segp": null,
+      "bg": "#FFFFFF"
+    },
+    {
+      "i": 18,
+      "y": 4715,
+      "pct": 59,
+      "settled": true,
+      "contrast": [
+        {
+          "t": "Mutual Funds by Asset Class",
+          "dir": "light-on-dark",
+          "worst": 13.85,
+          "mean": 13.85
+        },
+        {
+          "t": "Equity Funds11 categories, 614 schemes",
+          "dir": "own-fill",
+          "worst": 10,
+          "mean": 10
+        },
+        {
+          "t": "Debt Funds16 categories, 434 schemes",
+          "dir": "own-fill",
+          "worst": 10,
+          "mean": 10
+        }
+      ],
+      "cues": [
+        {
+          "t": "Mutual Funds by Asset Class",
+          "o": 1
+        },
+        {
+          "t": "Equity Funds11 categories, 614 schemes",
+          "o": 1
+        },
+        {
+          "t": "Debt Funds16 categories, 434 schemes",
+          "o": 1
+        },
+        {
+          "t": "Hybrid Funds6 categories, 19 schemes",
+          "o": 0.48
+        }
+      ],
+      "clips": [],
+      "rails": [
+        0
+      ],
+      "wipes": [
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none"
+      ],
+      "act": "pin",
+      "stages": [
+        -2771,
+        -1871,
+        0,
+        3122
+      ],
+      "segs": [],
+      "custom": [
+        "2020400U"
+      ],
+      "customHold": false,
+      "seg": null,
+      "segp": null,
+      "bg": "#FFFFFF"
+    },
+    {
+      "i": 19,
+      "y": 5233,
+      "pct": 65,
+      "settled": true,
+      "contrast": [
+        {
+          "t": "Mutual Funds by Asset Class",
+          "dir": "light-on-dark",
+          "worst": 13.85,
+          "mean": 13.85
+        },
+        {
+          "t": "Equity Funds11 categories, 614 schemes",
+          "dir": "own-fill",
+          "worst": 10,
+          "mean": 10
+        },
+        {
+          "t": "Debt Funds16 categories, 434 schemes",
+          "dir": "own-fill",
+          "worst": 10,
+          "mean": 10
+        },
+        {
+          "t": "Hybrid Funds6 categories, 179 schemes",
+          "dir": "own-fill",
+          "worst": 10,
+          "mean": 10
+        },
+        {
+          "t": "Index Funds and Other Schemes4 categorie",
+          "dir": "own-fill",
+          "worst": 10,
+          "mean": 10
+        }
+      ],
+      "cues": [
+        {
+          "t": "Mutual Funds by Asset Class",
+          "o": 1
+        },
+        {
+          "t": "Equity Funds11 categories, 614 schemes",
+          "o": 1
+        },
+        {
+          "t": "Debt Funds16 categories, 434 schemes",
+          "o": 1
+        },
+        {
+          "t": "Hybrid Funds6 categories, 179 schemes",
+          "o": 1
+        },
+        {
+          "t": "Index Funds and Other Schemes4 categories, 227",
+          "o": 1
+        }
+      ],
+      "clips": [],
+      "rails": [
+        0
+      ],
+      "wipes": [
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none"
+      ],
+      "act": "pin",
+      "stages": [
+        -3289,
+        -2389,
+        0,
+        2604
+      ],
+      "segs": [],
+      "custom": [
+        "20202090U"
+      ],
+      "customHold": false,
+      "seg": null,
+      "segp": null,
+      "bg": "#FFFFFF"
+    },
+    {
+      "i": 20,
+      "y": 5752,
+      "pct": 72,
+      "settled": true,
+      "contrast": [
+        {
+          "t": "Mutual Funds by Asset Class",
+          "dir": "light-on-dark",
+          "worst": 13.85,
+          "mean": 13.85
+        },
+        {
+          "t": "Equity Funds11 categories, 614 schemes",
+          "dir": "own-fill",
+          "worst": 10,
+          "mean": 10
+        },
+        {
+          "t": "Debt Funds16 categories, 434 schemes",
+          "dir": "own-fill",
+          "worst": 10,
+          "mean": 10
+        },
+        {
+          "t": "Hybrid Funds6 categories, 179 schemes",
+          "dir": "own-fill",
+          "worst": 10,
+          "mean": 10
+        },
+        {
+          "t": "Index Funds and Other Schemes4 categorie",
+          "dir": "own-fill",
+          "worst": 10,
+          "mean": 10
+        },
+        {
+          "t": "Solution Oriented Funds2 categories, 34 ",
+          "dir": "own-fill",
+          "worst": 10,
+          "mean": 10
+        }
+      ],
+      "cues": [
+        {
+          "t": "Mutual Funds by Asset Class",
+          "o": 1
+        },
+        {
+          "t": "Equity Funds11 categories, 614 schemes",
+          "o": 1
+        },
+        {
+          "t": "Debt Funds16 categories, 434 schemes",
+          "o": 1
+        },
+        {
+          "t": "Hybrid Funds6 categories, 179 schemes",
+          "o": 1
+        },
+        {
+          "t": "Index Funds and Other Schemes4 categories, 506",
+          "o": 1
+        },
+        {
+          "t": "Solution Oriented Funds2 categories, 34 scheme",
+          "o": 1
+        }
+      ],
+      "clips": [],
+      "rails": [
+        0
+      ],
+      "wipes": [
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none"
+      ],
+      "act": "pin",
+      "stages": [
+        -3808,
+        -2908,
+        0,
+        2085
+      ],
+      "segs": [],
+      "custom": [
+        "2020202015U"
+      ],
+      "customHold": false,
+      "seg": null,
+      "segp": null,
+      "bg": "#FFFFFF"
+    },
+    {
+      "i": 21,
+      "y": 6270,
+      "pct": 78,
+      "settled": true,
+      "contrast": [
+        {
+          "t": "Index Funds and Other Schemes4 categorie",
+          "dir": "own-fill",
+          "worst": 10,
+          "mean": 10
+        },
+        {
+          "t": "Solution Oriented Funds2 categories, 41 ",
+          "dir": "own-fill",
+          "worst": 10,
+          "mean": 10
+        }
+      ],
+      "cues": [
+        {
+          "t": "Mutual Funds by Asset Class",
+          "o": 0.35
+        },
+        {
+          "t": "Equity Funds11 categories, 614 schemes",
+          "o": 0.39
+        },
+        {
+          "t": "Debt Funds16 categories, 434 schemes",
+          "o": 0.52
+        },
+        {
+          "t": "Hybrid Funds6 categories, 179 schemes",
+          "o": 0.71
+        },
+        {
+          "t": "Index Funds and Other Schemes4 categories, 506",
+          "o": 0.95
+        },
+        {
+          "t": "Solution Oriented Funds2 categories, 41 scheme",
+          "o": 1
+        }
+      ],
+      "clips": [],
+      "rails": [
+        0
+      ],
+      "wipes": [
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none"
+      ],
+      "act": "pin",
+      "stages": [
+        -4326,
+        -3426,
+        0,
+        1567
+      ],
+      "segs": [],
+      "custom": [
+        "2020202020U"
+      ],
+      "customHold": false,
+      "seg": null,
+      "segp": null,
+      "bg": "#FFFFFF"
+    },
+    {
+      "i": 22,
+      "y": 6354,
+      "pct": 79,
+      "settled": true,
+      "contrast": [],
+      "cues": [],
+      "clips": [],
+      "rails": [
+        0
+      ],
+      "wipes": [
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none"
+      ],
+      "act": "pin",
+      "stages": [
+        -4410,
+        -3510,
+        -30,
+        1483
+      ],
+      "segs": [],
+      "custom": [
+        "2020202020U"
+      ],
+      "customHold": false,
+      "seg": null,
+      "segp": null,
+      "bg": "#FFFFFF"
+    },
+    {
+      "i": 23,
+      "y": 6645,
+      "pct": 83,
+      "settled": true,
+      "contrast": [],
+      "cues": [],
+      "clips": [],
+      "rails": [
+        0
+      ],
+      "wipes": [
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none"
+      ],
+      "act": "pin",
+      "stages": [
+        -4701,
+        -3801,
+        -321,
+        1192
+      ],
+      "segs": [],
+      "custom": [
+        "2020202020U"
+      ],
+      "customHold": false,
+      "seg": null,
+      "segp": null,
+      "bg": "#FFFFFF"
+    },
+    {
+      "i": 24,
+      "y": 6935,
+      "pct": 87,
+      "settled": true,
+      "contrast": [],
+      "cues": [],
+      "clips": [],
+      "rails": [
+        0
+      ],
+      "wipes": [
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none"
+      ],
+      "act": "flow",
+      "stages": [
+        -4991,
+        -4091,
+        -611,
+        902
+      ],
+      "segs": [],
+      "custom": [
+        "2020202020U"
+      ],
+      "customHold": false,
+      "seg": null,
+      "segp": null,
+      "bg": "#FFFFFF"
+    },
+    {
+      "i": 25,
+      "y": 7226,
+      "pct": 90,
+      "settled": true,
+      "contrast": [
+        {
+          "t": "About Contact Methodology Disclaimer Com",
+          "dir": "light-on-dark",
+          "worst": 17.37,
+          "mean": 17.37
+        }
+      ],
+      "cues": [
+        {
+          "t": "About Contact Methodology Disclaimer Commissio",
+          "o": 1
+        }
+      ],
+      "clips": [],
+      "rails": [
+        0
+      ],
+      "wipes": [
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none"
+      ],
+      "act": "flow",
+      "stages": [
+        -5282,
+        -4382,
+        -902,
+        611
+      ],
+      "segs": [],
+      "custom": [
+        "2020202020U"
+      ],
+      "customHold": false,
+      "seg": null,
+      "segp": null,
+      "bg": "#FFFFFF"
+    },
+    {
+      "i": 26,
+      "y": 7516,
+      "pct": 94,
+      "settled": true,
+      "contrast": [
+        {
+          "t": "About Contact Methodology Disclaimer Com",
+          "dir": "light-on-dark",
+          "worst": 17.37,
+          "mean": 17.37
+        }
+      ],
+      "cues": [
+        {
+          "t": "About Contact Methodology Disclaimer Commissio",
+          "o": 1
+        }
+      ],
+      "clips": [],
+      "rails": [
+        0
+      ],
+      "wipes": [
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none"
+      ],
+      "act": "pin",
+      "stages": [
+        -5572,
+        -4672,
+        -1192,
+        321
+      ],
+      "segs": [],
+      "custom": [
+        "2020202020U"
+      ],
+      "customHold": false,
+      "seg": null,
+      "segp": null,
+      "bg": "#FFFFFF"
+    },
+    {
+      "i": 27,
+      "y": 7807,
+      "pct": 97,
+      "settled": true,
+      "contrast": [
+        {
+          "t": "About Contact Methodology Disclaimer Com",
+          "dir": "light-on-dark",
+          "worst": 17.37,
+          "mean": 17.37
+        }
+      ],
+      "cues": [
+        {
+          "t": "About Contact Methodology Disclaimer Commissio",
+          "o": 1
+        }
+      ],
+      "clips": [],
+      "rails": [
+        0
+      ],
+      "wipes": [
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none"
+      ],
+      "act": "pin",
+      "stages": [
+        -5863,
+        -4963,
+        -1483,
+        30
+      ],
+      "segs": [],
+      "custom": [
+        "2020202020U"
+      ],
+      "customHold": false,
+      "seg": null,
+      "segp": null,
+      "bg": "#FFFFFF"
+    },
+    {
+      "i": 28,
+      "y": 7840,
+      "pct": 98,
+      "settled": true,
+      "contrast": [
+        {
+          "t": "About Contact Methodology Disclaimer Com",
+          "dir": "light-on-dark",
+          "worst": 17.37,
+          "mean": 17.37
+        }
+      ],
+      "cues": [
+        {
+          "t": "About Contact Methodology Disclaimer Commissio",
+          "o": 1
+        }
+      ],
+      "clips": [],
+      "rails": [
+        0
+      ],
+      "wipes": [
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none"
+      ],
+      "act": "pin",
+      "stages": [
+        -5896,
+        -4996,
+        -1516,
+        0
+      ],
+      "segs": [],
+      "custom": [
+        "2020202020D"
+      ],
+      "customHold": true,
+      "seg": null,
+      "segp": null,
+      "bg": "#FFFFFF"
+    },
+    {
+      "i": 29,
+      "y": 7875,
+      "pct": 98,
+      "settled": true,
+      "contrast": [
+        {
+          "t": "About Contact Methodology Disclaimer Com",
+          "dir": "light-on-dark",
+          "worst": 17.37,
+          "mean": 17.37
+        }
+      ],
+      "cues": [
+        {
+          "t": "About Contact Methodology Disclaimer Commissio",
+          "o": 1
+        }
+      ],
+      "clips": [],
+      "rails": [
+        0
+      ],
+      "wipes": [
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none"
+      ],
+      "act": "pin",
+      "stages": [
+        -5931,
+        -5031,
+        -1551,
+        0
+      ],
+      "segs": [],
+      "custom": [
+        "2020202020D"
+      ],
+      "customHold": true,
+      "seg": null,
+      "segp": null,
+      "bg": "#FFFFFF"
+    },
+    {
+      "i": 30,
+      "y": 7910,
+      "pct": 99,
+      "settled": true,
+      "contrast": [
+        {
+          "t": "About Contact Methodology Disclaimer Com",
+          "dir": "light-on-dark",
+          "worst": 17.37,
+          "mean": 17.37
+        }
+      ],
+      "cues": [
+        {
+          "t": "About Contact Methodology Disclaimer Commissio",
+          "o": 1
+        }
+      ],
+      "clips": [],
+      "rails": [
+        0
+      ],
+      "wipes": [
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none"
+      ],
+      "act": "pin",
+      "stages": [
+        -5966,
+        -5066,
+        -1586,
+        0
+      ],
+      "segs": [],
+      "custom": [
+        "2020202020D"
+      ],
+      "customHold": true,
+      "seg": null,
+      "segp": null,
+      "bg": "#FFFFFF"
+    },
+    {
+      "i": 31,
+      "y": 7944,
+      "pct": 99,
+      "settled": true,
+      "contrast": [
+        {
+          "t": "About Contact Methodology Disclaimer Com",
+          "dir": "light-on-dark",
+          "worst": 17.37,
+          "mean": 17.37
+        }
+      ],
+      "cues": [
+        {
+          "t": "About Contact Methodology Disclaimer Commissio",
+          "o": 1
+        }
+      ],
+      "clips": [],
+      "rails": [
+        0
+      ],
+      "wipes": [
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none"
+      ],
+      "act": "pin",
+      "stages": [
+        -6000,
+        -5100,
+        -1620,
+        0
+      ],
+      "segs": [],
+      "custom": [
+        "2020202020D"
+      ],
+      "customHold": true,
+      "seg": null,
+      "segp": null,
+      "bg": "#FFFFFF"
+    },
+    {
+      "i": 32,
+      "y": 7979,
+      "pct": 100,
+      "settled": true,
+      "contrast": [
+        {
+          "t": "About Contact Methodology Disclaimer Com",
+          "dir": "light-on-dark",
+          "worst": 17.37,
+          "mean": 17.37
+        }
+      ],
+      "cues": [
+        {
+          "t": "About Contact Methodology Disclaimer Commissio",
+          "o": 1
+        }
+      ],
+      "clips": [],
+      "rails": [
+        0
+      ],
+      "wipes": [
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none"
+      ],
+      "act": "pin",
+      "stages": [
+        -6035,
+        -5135,
+        -1655,
+        0
+      ],
+      "segs": [],
+      "custom": [
+        "2020202020D"
+      ],
+      "customHold": true,
+      "seg": null,
+      "segp": null,
+      "bg": "#FFFFFF"
+    },
+    {
+      "i": 33,
+      "y": 8013,
+      "pct": 100,
+      "settled": true,
+      "contrast": [
+        {
+          "t": "About Contact Methodology Disclaimer Com",
+          "dir": "light-on-dark",
+          "worst": 17.37,
+          "mean": 17.37
+        }
+      ],
+      "cues": [
+        {
+          "t": "About Contact Methodology Disclaimer Commissio",
+          "o": 1
+        }
+      ],
+      "clips": [],
+      "rails": [
+        0
+      ],
+      "wipes": [
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none"
+      ],
+      "act": "pin",
+      "stages": [
+        -6069,
+        -5169,
+        -1689,
+        0
+      ],
+      "segs": [],
+      "custom": [
+        "2020202020D"
+      ],
+      "customHold": true,
+      "seg": null,
+      "segp": null,
+      "bg": "#FFFFFF"
+    },
+    {
+      "i": 34,
+      "y": 8017,
+      "pct": 100,
+      "settled": true,
+      "contrast": [
+        {
+          "t": "About Contact Methodology Disclaimer Com",
+          "dir": "light-on-dark",
+          "worst": 17.37,
+          "mean": 17.37
+        }
+      ],
+      "cues": [
+        {
+          "t": "About Contact Methodology Disclaimer Commissio",
+          "o": 1
+        }
+      ],
+      "clips": [],
+      "rails": [
+        0
+      ],
+      "wipes": [
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none"
+      ],
+      "act": "pin",
+      "stages": [
+        -6073,
+        -5173,
+        -1693,
+        0
+      ],
+      "segs": [],
+      "custom": [
+        "2020202020D"
+      ],
+      "customHold": true,
+      "seg": null,
+      "segp": null,
+      "bg": "#FFFFFF"
+    }
+  ],
+  "consoleErrors": [],
+  "failed": []
+}

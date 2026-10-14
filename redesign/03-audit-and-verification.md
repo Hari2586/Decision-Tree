@@ -124,3 +124,32 @@ Checks after the change: no overflow at 390 or 1280px, 0 axe violations on all t
 Eleven line icons, one per solution, added as CSS backgrounds keyed to each link's destination: honey tiles on the Solutions hub cards and Related Solutions cards, 18px marks on the home page chips, and a faint watermark in each solution page's headline panel (the body carries a `sol-<slug>` class for that). Headings carry no icons. No markup or text changed; icons are decorative and invisible to screen readers.
 
 Re-check: no overflow at 390 or 1280px, 0 axe violations on the home page, hub and three solution pages, no JavaScript errors, content match 100% on all five.
+
+
+## Batch 4: scroll-craft home page (14 Oct 2026)
+
+The home page was rebuilt with the scroll-craft skill (installed at `.claude/skills/scroll-craft/`). Brief, grammar choice, feeling curve, peak and signature move are in `scrollcraft/builds/moneyhoney-home/BRIEF.md` (self-authored under explicit creative delegation; no interview answers existed).
+
+**Grammar:** gallery / catalog. The page is a collection of labelled objects (name plus fact), which is that grammar's own label schema. Six acts: flow, pin with reveal, pan with tilt, pin with count (the peak, 4.0 viewport-heights), flow, pin. No scrub clips: there is no footage and no image-generation key, and the grammar permits a typographic page.
+
+**Signature move:** the shelf gauge. A fixed rail (right edge on desktop, bottom on phones) carries four room markers that jump to the four collections and a five-segment gauge sized to the asset-class scheme counts printed on the page (614, 434, 179, 506, 41). It is empty from the first screen, fills in the navy room in step with each plate's arrival, and the readout lands on 1,774, the figure on the first plate. On the close it docks onto the colophon plate. Real numbers only; the engine is untouched.
+
+**Content lock:** `tools/verify.py` reports 100% MATCH against `original/index.html` (title, meta, JSON-LD, aria-labels, every href in order, the full visible text stream). The rail's room labels and readout are CSS `attr()` content on chrome, not DOM text, and the markers take their accessible names from the existing headings through `aria-labelledby`. Section order is unchanged.
+
+**Harness (shoot.mjs), three passes, final run:**
+
+| Pass | Length | Dead scroll | Contrast over media | Console / failed requests |
+|---|---|---|---|---|
+| Desktop 1440x900 | 12.2 vh, 6 acts | none | all cues clear 4.5:1 at worst frame | none |
+| Phone 390x844 | 13.0 vh | none | all clear | none |
+| Reduced motion | 9.9 vh (the rail relays as a grid) | none | all clear | none |
+
+One "cue never peaks" line appeared on earlier runs for the Hybrid Funds plate: the harness keys cues by their text, and that plate's count changes its text while it counts, so the mid-count key is only ever seen once. A direct opacity read at p = 0.6 gives 1 for every plate that has arrived.
+
+**axe-core 4.10.2 (wcag2a, wcag2aa, best-practice):** 0 violations at 1440 and 390. No horizontal overflow (scrollWidth equals clientWidth at both widths). Tab order: logo, the nine nav links, See All Solutions, the eleven solution labels, the rail cards, the plates, the shelves, the footer links, then the four room markers. Rail overflow measured at 2,888 px (desktop) and 3,266 px (phone), so the pan act travels.
+
+**Feel check (cold, from the contact sheets, one word per act):** 1 orientation, 2 sorted, 3 breadth, 4 completeness, 5 quiet, 6 rest. Against the intended curve (orientation, recognition, breadth, completeness, curiosity, rest), acts 2 and 5 read weaker than planned. Act 2 was changed: the solution labels are larger with a bigger icon well so they read as doors rather than tags. Act 5 was left as the deliberate walk back to the exit after the peak. The peak is the largest visual change on the sheet (the only dark room) and holds the most scroll room. The last screen holds with content on it and the gauge docked.
+
+**Not verified:** a real phone (headless Chrome cannot reproduce iOS scrolling, autoplay policy or Low Power Mode). There are no video clips, so the usual iOS clip-lifecycle risks do not apply, but the sticky stages and the bottom rail should be checked on a device.
+
+**Fixes made during verification:** an `::after` rule lifted with the icon rules overrode the card icon placement (icons rendered orange at the card corner); the header nav wrapped under the logo at 1440; the rail's authored tail was too long (34vw to 14vw, overshoot 0.08 to 0.03); pre-settle card opacity tripped axe contrast on off-screen cards (settle is now motion only); the demo notice sat outside a landmark (moved inside the header, as on the other pages); a missing favicon caused a 404.
