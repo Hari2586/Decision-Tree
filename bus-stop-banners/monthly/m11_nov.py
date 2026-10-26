@@ -2,8 +2,8 @@
 from framework import call, lockup, logo, qr_block, side_cta
 
 KEY = "11-nov"
-MSG = {"en": 'Hi! Bus stop ad: Invest my bonus.',
-       "hi": 'Hi! Bus stop ad: Bonus invest karna hai.'}
+MSG = {"en": "Hello MoneyHoney! I saw your Diwali bonus ad at the bus stop. I would like to know how to invest my bonus.",
+       "hi": "Namaste MoneyHoney! Maine bus stop par aapka Diwali bonus wala ad dekha. Mujhe apna bonus invest karne ke baare mein baat karni hai."}
 NOTE = ("*Illustration: &#8377;1 lakh invested once for 15 years at an assumed 12% p.a. return, for understanding only. "
               "Mutual funds do not guarantee returns; actual returns may be higher or lower.")
 SIDE_NOTE = ''
