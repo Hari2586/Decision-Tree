@@ -16,7 +16,7 @@ T = {
         s_alert=("Bank alert", "Bonus of &#8377;1,00,000 credited"), s_h="Give your bonus a job.",
         s_sub="Before the sales find one for it.",
         b_h1='Where will your bonus be <span class="o">next Diwali?</span>',
-        b_sub="Spend a little, invest the rest. Lump sum or step-by-step (STP): we&rsquo;ll help you choose.",
+        b_sub="Spend a little, invest the rest. Lump sum or SIP: we&rsquo;ll help you choose.",
         yrs=["Today", "5 yrs", "10 yrs", "15 yrs"]),
     "hi": dict(
         top="आपका &#8377;1 लाख का बोनस। दो रास्ते।", or_="या",
@@ -25,7 +25,7 @@ T = {
         s_alert=("बैंक अलर्ट", "&#8377;1,00,000 का बोनस क्रेडिट हुआ"), s_h="अपने बोनस को काम पर लगाइए।",
         s_sub="इससे पहले कि सेल उसे खर्च करवा दे।",
         b_h1='अगली दिवाली <span class="o">आपका बोनस कहाँ होगा?</span>',
-        b_sub="थोड़ा खर्च करें, बाकी निवेश करें। एकमुश्त या STP: हम चुनने में मदद करेंगे।",
+        b_sub="थोड़ा खर्च करें, बाकी निवेश करें। एकमुश्त या SIP: हम चुनने में मदद करेंगे।",
         yrs=["आज", "5 साल", "10 साल", "15 साल"]),
 }
 
@@ -87,19 +87,23 @@ def panels(lang, t):
 
 
 def side(lang, t):
+    # One evenly spaced column above the call-to-action: logo, bank alert, then the message.
     return dict(bg="var(--navy)", note=False, css="""
-.lk { position:absolute; left:24px; top:18px; }
-.alert { position:absolute; left:24px; right:24px; top:62px; background:#fff; border-radius:14px; padding:10px 14px;
-  display:flex; align-items:center; gap:12px; box-shadow:0 10px 24px rgba(0,0,0,.3); }
-.alert .rs { width:36px; height:36px; flex:none; border-radius:50%; background:var(--orange); color:#fff; font-weight:800;
-  font-size:20px; display:flex; align-items:center; justify-content:center; font-family:'DM Sans', sans-serif; }
-.alert .k { font-size:12px; font-weight:700; color:var(--muted); }
-.alert .v { font-size:16px; font-weight:800; color:var(--navy); white-space:nowrap; }
-.hl { position:absolute; left:24px; right:24px; top:136px; color:#fff; font-size:32px; }
-body.hi .hl { font-size:30px; }
-.sub { position:absolute; left:24px; right:24px; top:210px; color:var(--orange); font-size:18px; font-weight:700; }
+.col { position:absolute; left:24px; right:24px; top:18px; bottom:122px; display:flex; flex-direction:column;
+  justify-content:space-between; }
+.col .lockup { align-self:flex-start; }
+.alert { background:#fff; border-radius:12px; padding:8px 14px; display:flex; align-items:center; gap:12px;
+  box-shadow:0 10px 24px rgba(0,0,0,.3); }
+.alert .rs { width:34px; height:34px; flex:none; border-radius:50%; background:var(--orange); color:#fff; font-weight:800;
+  font-size:19px; display:flex; align-items:center; justify-content:center; font-family:'DM Sans', sans-serif; }
+.alert .k { font-size:12px; font-weight:700; color:var(--muted); line-height:1.2; }
+.alert .v { font-size:16px; font-weight:800; color:var(--navy); white-space:nowrap; line-height:1.3; }
+.msg .hl { color:#fff; font-size:28px; white-space:nowrap; }
+.msg .sub { color:var(--orange); font-size:18px; font-weight:700; margin-top:4px; white-space:nowrap; }
 """, html=f"""
-<div class="lk">{lockup(22, chip=True)}</div>
+<div class="col">
+{lockup(22, chip=True)}
 <div class="alert"><div class="rs">&#8377;</div><div><div class="k">{t['s_alert'][0]}</div><div class="v">{t['s_alert'][1]}</div></div></div>
-<div class="hl d">{t['s_h']}</div><div class="sub">{t['s_sub']}</div>
+<div class="msg"><div class="hl d">{t['s_h']}</div><div class="sub">{t['s_sub']}</div></div>
+</div>
 {side_cta(lang, MSG[lang], color="#fff")}""")

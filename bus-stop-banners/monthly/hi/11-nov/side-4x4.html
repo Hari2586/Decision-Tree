@@ -64,16 +64,17 @@ body.hi *:not(.lat) { letter-spacing:0 !important; }
 
 .banner { width:400px; height:400px; background:var(--navy); }
 
-.lk { position:absolute; left:24px; top:18px; }
-.alert { position:absolute; left:24px; right:24px; top:62px; background:#fff; border-radius:14px; padding:10px 14px;
-  display:flex; align-items:center; gap:12px; box-shadow:0 10px 24px rgba(0,0,0,.3); }
-.alert .rs { width:36px; height:36px; flex:none; border-radius:50%; background:var(--orange); color:#fff; font-weight:800;
-  font-size:20px; display:flex; align-items:center; justify-content:center; font-family:'DM Sans', sans-serif; }
-.alert .k { font-size:12px; font-weight:700; color:var(--muted); }
-.alert .v { font-size:16px; font-weight:800; color:var(--navy); white-space:nowrap; }
-.hl { position:absolute; left:24px; right:24px; top:136px; color:#fff; font-size:32px; }
-body.hi .hl { font-size:30px; }
-.sub { position:absolute; left:24px; right:24px; top:210px; color:var(--orange); font-size:18px; font-weight:700; }
+.col { position:absolute; left:24px; right:24px; top:18px; bottom:122px; display:flex; flex-direction:column;
+  justify-content:space-between; }
+.col .lockup { align-self:flex-start; }
+.alert { background:#fff; border-radius:12px; padding:8px 14px; display:flex; align-items:center; gap:12px;
+  box-shadow:0 10px 24px rgba(0,0,0,.3); }
+.alert .rs { width:34px; height:34px; flex:none; border-radius:50%; background:var(--orange); color:#fff; font-weight:800;
+  font-size:19px; display:flex; align-items:center; justify-content:center; font-family:'DM Sans', sans-serif; }
+.alert .k { font-size:12px; font-weight:700; color:var(--muted); line-height:1.2; }
+.alert .v { font-size:16px; font-weight:800; color:var(--navy); white-space:nowrap; line-height:1.3; }
+.msg .hl { color:#fff; font-size:28px; white-space:nowrap; }
+.msg .sub { color:var(--orange); font-size:18px; font-weight:700; margin-top:4px; white-space:nowrap; }
 
 </style>
 </head>
@@ -81,9 +82,11 @@ body.hi .hl { font-size:30px; }
 <div class="banner">
 <div class="stage">
 
-<div class="lk"><div class="lockup chip" style="--lh:22px;"><img src="../../assets/logo.svg" alt="MoneyHoney"><span class="since lat">Since 2008</span></div></div>
+<div class="col">
+<div class="lockup chip" style="--lh:22px;"><img src="../../assets/logo.svg" alt="MoneyHoney"><span class="since lat">Since 2008</span></div>
 <div class="alert"><div class="rs">&#8377;</div><div><div class="k">बैंक अलर्ट</div><div class="v">&#8377;1,00,000 का बोनस क्रेडिट हुआ</div></div></div>
-<div class="hl d">अपने बोनस को काम पर लगाइए।</div><div class="sub">इससे पहले कि सेल उसे खर्च करवा दे।</div>
+<div class="msg"><div class="hl d">अपने बोनस को काम पर लगाइए।</div><div class="sub">इससे पहले कि सेल उसे खर्च करवा दे।</div></div>
+</div>
 <div class="scta" style="left:24px; bottom:14px; color:#fff; --ico:var(--orange)"><div class="qr" style="width:86px;height:86px"><svg viewBox="0 0 41 41" width="100%" height="100%" shape-rendering="crispEdges" class="segno"><path class="qrline" stroke="#16205b" d="M0 0.5h7m2 0h2m2 0h2m1 0h11m1 0h1m1 0h2m2 0h7m-41 1h1m5 0h1m6 0h2m1 0h2m3 0h1m3 0h3m2 0h1m1 0h1m1 0h1m5 0h1m-41 1h1m1 0h3m1 0h1m1 0h4m1 0h7m1 0h2m2 0h1m2 0h1m2 0h1m2 0h1m1 0h3m1 0h1m-41 1h1m1 0h3m1 0h1m1 0h4m1 0h2m1 0h1m3 0h2m4 0h1m1 0h1m1 0h1m3 0h1m1 0h3m1 0h1m-41 1h1m1 0h3m1 0h1m1 0h6m3 0h3m1 0h3m1 0h1m2 0h1m2 0h1m2 0h1m1 0h3m1 0h1m-41 1h1m5 0h1m1 0h1m2 0h1m3 0h2m1 0h1m2 0h1m3 0h5m2 0h1m1 0h1m5 0h1m-41 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-33 1h2m2 0h2m2 0h1m1 0h2m1 0h1m1 0h2m1 0h3m-29 1h1m1 0h5m3 0h4m1 0h1m1 0h2m1 0h1m4 0h1m1 0h1m1 0h1m2 0h1m1 0h5m-39 1h1m2 0h1m3 0h3m1 0h1m3 0h1m3 0h1m1 0h4m1 0h1m3 0h7m1 0h1m1 0h1m-41 1h1m2 0h9m6 0h1m2 0h2m1 0h2m1 0h2m3 0h3m4 0h1m-40 1h2m1 0h1m3 0h2m1 0h6m2 0h1m2 0h1m4 0h3m2 0h2m3 0h2m1 0h2m-41 1h1m1 0h1m1 0h3m1 0h1m1 0h1m1 0h3m2 0h1m2 0h1m1 0h1m1 0h2m1 0h5m1 0h1m1 0h1m1 0h3m-39 1h1m3 0h1m1 0h1m1 0h4m3 0h3m2 0h1m5 0h1m4 0h3m1 0h2m1 0h2m-40 1h1m2 0h1m1 0h2m1 0h3m1 0h3m1 0h1m2 0h1m2 0h6m2 0h1m1 0h1m2 0h1m2 0h1m-40 1h2m1 0h3m2 0h4m2 0h3m1 0h1m2 0h1m1 0h1m3 0h1m3 0h2m1 0h4m1 0h2m-41 1h2m2 0h3m2 0h3m1 0h3m1 0h1m2 0h1m2 0h5m1 0h5m1 0h1m2 0h3m-41 1h1m1 0h1m2 0h1m1 0h1m1 0h2m1 0h1m1 0h3m1 0h3m1 0h3m3 0h2m1 0h2m1 0h4m2 0h1m-41 1h2m1 0h5m3 0h1m1 0h2m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m2 0h3m2 0h1m1 0h1m1 0h2m-36 1h2m1 0h1m3 0h1m4 0h3m9 0h2m1 0h2m1 0h1m3 0h1m3 0h1m-41 1h1m1 0h1m2 0h2m2 0h3m1 0h1m1 0h1m2 0h1m1 0h3m5 0h1m8 0h2m1 0h1m-40 1h1m2 0h2m1 0h1m1 0h1m2 0h1m1 0h1m4 0h1m1 0h1m1 0h1m1 0h2m1 0h1m1 0h2m1 0h1m1 0h2m2 0h2m-40 1h2m1 0h1m1 0h3m1 0h6m2 0h1m1 0h2m2 0h1m2 0h1m2 0h1m1 0h1m1 0h3m-37 1h3m4 0h4m1 0h3m1 0h1m1 0h1m1 0h2m2 0h1m1 0h1m7 0h1m1 0h2m1 0h2m-39 1h1m1 0h4m2 0h1m3 0h2m1 0h2m1 0h1m4 0h1m1 0h1m1 0h3m4 0h1m1 0h1m-37 1h1m9 0h1m1 0h3m2 0h1m2 0h3m1 0h1m1 0h1m1 0h2m1 0h5m2 0h1m-40 1h1m1 0h2m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m3 0h1m3 0h1m3 0h5m1 0h1m1 0h1m1 0h1m2 0h1m-39 1h2m1 0h1m4 0h3m2 0h1m1 0h1m2 0h5m2 0h3m1 0h5m1 0h2m-37 1h1m2 0h1m1 0h1m1 0h1m3 0h2m1 0h1m1 0h1m4 0h1m2 0h1m3 0h3m1 0h1m1 0h1m1 0h2m-39 1h2m3 0h1m1 0h1m1 0h1m1 0h1m1 0h1m2 0h1m1 0h1m1 0h3m1 0h1m1 0h3m4 0h1m1 0h3m2 0h1m-41 1h1m4 0h3m2 0h1m2 0h1m1 0h2m1 0h2m1 0h1m4 0h1m2 0h2m2 0h2m1 0h2m1 0h1m-40 1h1m2 0h1m3 0h1m2 0h3m1 0h1m1 0h1m2 0h3m2 0h1m1 0h1m1 0h1m1 0h1m2 0h2m2 0h1m1 0h1m-40 1h1m1 0h2m2 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h4m2 0h1m2 0h2m2 0h2m1 0h7m-31 1h8m1 0h5m1 0h1m1 0h2m1 0h1m2 0h2m3 0h1m3 0h1m-41 1h7m2 0h1m1 0h2m1 0h4m2 0h2m3 0h3m2 0h3m1 0h1m1 0h1m1 0h2m-40 1h1m5 0h1m1 0h3m3 0h6m1 0h5m1 0h1m3 0h2m3 0h1m2 0h1m-40 1h1m1 0h3m1 0h1m1 0h2m2 0h1m2 0h1m3 0h1m1 0h1m4 0h2m2 0h1m1 0h8m-40 1h1m1 0h3m1 0h1m1 0h1m3 0h2m1 0h1m1 0h3m1 0h4m2 0h3m2 0h2m1 0h1m2 0h1m-39 1h1m1 0h3m1 0h1m1 0h6m1 0h1m5 0h1m2 0h1m2 0h1m1 0h1m1 0h6m-37 1h1m5 0h1m3 0h1m1 0h1m3 0h1m4 0h1m1 0h2m1 0h2m2 0h1m1 0h3m1 0h2m1 0h1m-40 1h7m1 0h2m1 0h1m2 0h4m2 0h1m4 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h2m1 0h1"/></svg></div><div><div class="sl" style="font-size:14px">स्कैन करें, बात करें</div><div class="call " style="font-size:30px"><svg viewBox="0 0 24 24" class="ico" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span>74000 60800</span></div></div></div>
 </div>
 
