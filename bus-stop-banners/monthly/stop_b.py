@@ -262,7 +262,7 @@ TOPICS = {
                  ("&asymp; &#8377;33 लाख*", "20 साल बाद SIP फंड*")],
         b_sub="लोन भी चुकता, और ब्याज जितना फंड भी।*"),
     "11-nov": dict(
-        name="Marriage Planning", msg="Hi! Bus stop ad: Bachchon ki shaadi ki planning.", note=WED_NOTE,
+        name="Marriage Planning", msg="Namaste MoneyHoney! Maine bus stop par aapka shaadi wala ad dekha. Mujhe bachchon ki shaadi ke liye nivesh ke baare mein baat karni hai.", note=WED_NOTE,
         icon="rings", front=("A", "cream"), side=("C", "navy"), back=("steps", "white"),
         kick="शादियों का मौसम", h1="आज &#8377;20 लाख की शादी,", h2="15 साल बाद &asymp; &#8377;48 लाख।*",
         sub="बच्चों की शादी का सपना, आज से प्लान कीजिए।",
@@ -364,10 +364,10 @@ def side(t):
         html += f'<div class="big">{t["s_big"]}</div><div class="cap">{t["s_h"]}</div>'
     else:  # C checklist
         rows = "".join(f'<div class="ck"><span class="m">{m}</span><span>{x}</span></div>' for m, x in t["s_list"])
-        css += f""".sh {{ top:54px; font-size:25px; }}
-.cks {{ position:absolute; left:24px; right:24px; top:92px; }}
-.ck {{ display:flex; align-items:center; gap:12px; font-size:18px; font-weight:700; color:{ink}; padding:2px 0; }}
-.ck .m {{ width:26px; height:26px; flex:none; border-radius:50%; background:{acc}; color:{'var(--navy)' if pal == 'orange' else '#fff'};
+        css += f""".sh {{ top:62px; font-size:25px; }}
+.cks {{ position:absolute; left:24px; right:24px; top:98px; }}
+.ck {{ display:flex; align-items:center; gap:10px; font-size:17px; font-weight:700; color:{ink}; padding:1px 0; line-height:1.35; }}
+.ck .m {{ width:24px; height:24px; flex:none; border-radius:50%; background:{acc}; color:{'var(--navy)' if pal == 'orange' else '#fff'};
   display:flex; align-items:center; justify-content:center; font-size:17px; font-weight:800; font-family:'DM Sans', sans-serif; }}
 .ck:last-child {{ color:{acc}; }}"""
         html += f'<div class="sh d">{t["s_h"]}</div><div class="cks">{rows}</div>'
