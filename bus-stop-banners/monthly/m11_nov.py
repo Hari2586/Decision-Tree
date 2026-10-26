@@ -15,7 +15,7 @@ T = {
         b_lbl="Option B", b_h="Invest it.", b_s="&asymp; &#8377;5.5 lakh* in 15 years.",
         s_alert=("Bank alert", "Bonus of &#8377;1,00,000 credited"), s_h="Give your bonus a job.",
         s_sub="Before the sales find one for it.",
-        b_h1='Where will your bonus be <span class="o">next Diwali?</span>',
+        b_h1='Where will your bonus be <span class="o">this Diwali?</span>',
         b_sub="Spend a little, invest the rest. Lump sum or SIP: we&rsquo;ll help you choose.",
         yrs=["Today", "5 yrs", "10 yrs", "15 yrs"]),
     "hi": dict(
@@ -24,7 +24,7 @@ T = {
         b_lbl="रास्ता B", b_h="निवेश करें।", b_s="15 साल में &asymp; &#8377;5.5 लाख*।",
         s_alert=("बैंक अलर्ट", "&#8377;1,00,000 का बोनस क्रेडिट हुआ"), s_h="अपने बोनस को काम पर लगाइए।",
         s_sub="इससे पहले कि सेल उसे खर्च करवा दे।",
-        b_h1='अगली दिवाली <span class="o">आपका बोनस कहाँ होगा?</span>',
+        b_h1='इस दिवाली <span class="o">आपका बोनस कहाँ होगा?</span>',
         b_sub="थोड़ा खर्च करें, बाकी निवेश करें। एकमुश्त या SIP: हम चुनने में मदद करेंगे।",
         yrs=["आज", "5 साल", "10 साल", "15 साल"]),
 }
